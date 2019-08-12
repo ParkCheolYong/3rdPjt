@@ -46,7 +46,10 @@ public class HomeController {
 		
 		return "more/faq";
 	}
-	
+	@RequestMapping("notice")
+	public String notice() {
+		return "more/notice";
+	}
 	@RequestMapping("/event")
 	public String list(Model model) {
 		
