@@ -10,30 +10,6 @@
 	href="${pageContext.request.contextPath}/css/faq.css">
 <style type="text/css">
 
-.faq_list .list li .ans.on {
-	margin-bottom: 0;
-	padding: 35px 32px;
-	border-radius: 0;
-	background: rgba(0, 0, 0, 0.08);
-	font-size: 16px;
-	line-height: 26px
-}
-
-
-
-.faq_list .list li .ans {
-	overflow: hidden;
-	word-wrap: break-word;
-	word-break: break-all;
-}
-
-.faq_list .list li .ans.on {
-	height: auto;
-	opacity: 1;
-} 
-
-
-
 </style>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
