@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bit.good.dao.Edao">
+	<select id="listDao" resultType="com.bit.good.dto.EventDto">
+		SELECT * FROM EVENT ORDER BY NO DESC
+	</select>
+	<insert id="writeDao">
+		INSERT INTO EVENT VALUES (EVENT_SEQ.NEXTVAL, #{param1}, #{param2}, #{param3}, #{param4}, #{param5})
+	</insert>
+	<delete id="deleteDao">
+		DELETE FROM EVENT WHERE NO = #{param1}
+	</delete>
+</mapper>
