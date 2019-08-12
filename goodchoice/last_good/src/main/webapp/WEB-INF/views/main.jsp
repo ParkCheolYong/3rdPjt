@@ -187,11 +187,11 @@
 	border: 2px solid rgba(255, 255, 255, 0.7);
 }
 </style>
-
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 </head>
 
 <body>
-	<%@include file="/common/header.jsp"%>
+	<%@include file="/common/header.jspf"%>
 
 	<div class="mainContent"></div>
 	<div id="top-background"></div>
@@ -225,7 +225,9 @@
 						alt="여기어때 서체" /><strong>여기어때 서체 출시</strong>젊고 당당한 여기어때 잘난체<br />지금
 						다운로드 받으세요!</a></li>
 			</ul>
+		</div>
 			</div>
+
 		<div class="appDown">
 			<p>
 				앱 다운 받고 <b>더 많은 혜택</b> 받으세요
@@ -299,9 +301,9 @@
 						class="swiper-pagination-bullet"></span>
 				</div>
 			</section>
-		</div>
+		</div> <!-- //eventMain end -->
 		
-<%@include file="/common/footer.jsp"%>
+<%@include file="/common/footer.jspf"%>
 
 </body>
 </html>

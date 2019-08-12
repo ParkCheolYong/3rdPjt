@@ -171,10 +171,10 @@ button span {
 }
 
 .srch_bar {
-
-	position: relative;
+	position: absolute;
+	margin-top:72px;
 	left: 50%;
-	width: 787px;
+	width: 600px; /*787px*/
 	height: 352px;
 	margin-left: -305px;
 	padding: 24px 20px;
@@ -220,3 +220,59 @@ button span {
 	background: url(https://lh3.googleusercontent.com/Y8Jnjg3xHtIbrSpz9oZY95onAgkY29hiJ5a3z_J7GFegh_GEJRi3k1C1IIetQ2BoBHxbROA-xVp7NKToWTLuB3kHPiYjwtmeaa_8kCHGwjfzMq15ObgGa7Lyhyawdu2sXxqkIGtP7y7o9l1X3iBdNg9Caa2YpDbOf8fs6CGSV5DCv20UM8_Ss585gfqSeheVwsq5goNff6ltTMZpyyDfXA23dCKP6ZQlUc31Y7fAWKqJ6NdjKIeeX65dEb_s3SVqU1ax7EW_lqK8MTOgyuiLLVcKf67ew7kHHNPDAVAVb7ITGPPf_VgoQxo7lu2CHAAIK09T0Q4UffXuVDabb1yu6GpJMP7aHlsizLLNPbut9CK-ixaVrEDFUlqHdVHBRC5mbm2hdUexLVOKVlEX1YNfEF0sgtbGA0EFmRDrlWiLHVFfVFUQRX9Bd95FnJBYgH2twJt3UZmc9q8H9ygLDfG3NWHQWdbl3DSQ_Hf4VSMqpYYyCymSpSmAaw1ja82JsFLfFTsYQUZgSZ-mpbCZgUI4ZU4Xt0P4ojkuBLZsRZB-8Rug3xRrlFJdfwfcRmO9gqyx7eVj0RaBhqB3FORi7pnIQ0IuDmk5I-SRJrNL0JmogzUBseO--qZ0YXfp-oZLQxi3e7fI4m9L6bnqoK7PPuhxnoY=s72-no) 50% 50% no-repeat;
 	background-size: 24px auto;
 } 
+
+
+<!-- //footer -->
+
+footer {
+    overflow: hidden;
+    clear: both;
+    position: relative;
+    margin-top: 120px;
+    padding: 63px 31px 40px 31px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    background: rgb(245,245,245);
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(0,0,0,0.38);
+            
+            
+}
+        footer .align {
+    width: 1024px;
+    margin: 0 auto;
+}
+        footer.show {
+    opacity: 1;
+    visibility: visible;
+}footer .link li {
+    
+    float: left;
+    margin-bottom: 0;
+    line-height: normal;
+    font-style:normal;
+    
+}footer .ico a {
+    margin-right: 25px;
+    font-size: 30px;
+  
+}
+
+footer .ico a {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    font-size: 22px;
+    color: rgba(0,0,0,0.48);
+}
+        ul, ol, li {
+    list-style: none;
+}
+        footer .link li a {
+    color: rgba(0,0,0,0.87);
+}footer address {
+    line-height: 22px;
+}address, caption, em, var {
+    font-style: normal;
+    font-weight: normal;
+    }
