@@ -46,6 +46,25 @@ public class HomeController {
 		
 		return "more/faq";
 	}
+	@RequestMapping("faqAdd")
+	public String faqAdd() {
+		
+		return "more/faqAdd";
+	}
+	@RequestMapping(value = "/faqWrite",method = RequestMethod.POST)
+	public String faqWrite(HttpServletRequest request, Model model) {
+		IFaqDao dao =sqlSession.getMapper(IFaqDao.class);
+		dao.faqWriteDao(request.getParameter("sub"), request.getParameter("content"));
+		
+		
+		return "redirect:faq";
+	}
+	@RequestMapping("/faqDelete")
+	public String faqDelete(HttpServletRequest request, Model model) {
+		IFaqDao dao =sqlSession.getMapper(IFaqDao.class);
+		dao.deleteDao(Integer.parseInt(request.getParameter("num")));
+		return "redirect:faq";
+	}
 	
 	@RequestMapping("/event")
 	public String list(Model model) {
@@ -73,10 +92,14 @@ public class HomeController {
 	}
 
 	
-	@RequestMapping("/view")
-	public String view() {
+	@RequestMapping("/detail")
+	public String detailDao(HttpServletRequest request,Model model, int no) {
+		Edao dao=sqlSession.getMapper(Edao.class);
+		dao.detailDao(Integer.parseInt(request.getParameter("no")));
+		model.addAttribute("detail", dao.detailDao(no));
 		
-		return "/view";
+		
+		return "more/detail";
 	}
 	
 	@RequestMapping("/delete")

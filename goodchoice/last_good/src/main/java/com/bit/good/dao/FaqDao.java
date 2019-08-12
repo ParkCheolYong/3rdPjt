@@ -31,7 +31,7 @@ public class FaqDao implements IFaqDao {
 	}
 
 	@Override
-	public void writeDao(String sub, String content) {
+	public void faqWriteDao(String sub, String content) {
 		// TODO Auto-generated method stub
 		
 	}

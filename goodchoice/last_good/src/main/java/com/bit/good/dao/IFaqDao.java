@@ -6,7 +6,7 @@ import com.bit.good.dto.FaqDto;
 
 public interface IFaqDao {
 	public ArrayList<FaqDto> listDao();
-	public void writeDao(String sub, String content);
+	public void faqWriteDao(String sub, String content);
 	public FaqDto viewDao(String sub);
 	public void deleteDao(int num);
 }

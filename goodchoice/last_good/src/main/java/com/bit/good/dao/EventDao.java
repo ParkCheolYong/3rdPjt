@@ -57,8 +57,7 @@ public class EventDao implements Edao {
 	}
 
 	@Override
-	public EventDto viewDao(int no) {
-	System.out.println("viewDao()");
+	public EventDto detailDao(int no) {
 		
 		String query = "select * from event where no = " + no;
 		return template.queryForObject(query, new BeanPropertyRowMapper<EventDto>(EventDto.class));

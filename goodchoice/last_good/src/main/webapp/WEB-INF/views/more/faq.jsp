@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +9,28 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/faq.css">
 <style type="text/css">
+.faq_list .list li .ans.on {
+	margin-bottom: 0;
+	padding: 35px 32px;
+	border-radius: 0;
+	background: rgba(0, 0, 0, 0.08);
+	font-size: 16px;
+	line-height: 26px
+}
 
+.faq_list .list li .ans {
+	overflow: hidden;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.faq_list .list li .ans.on {
+	height: auto;
+	opacity: 1;
+}
 </style>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 
 $(function(){
@@ -114,25 +133,28 @@ $('.faq_list .list .link').each(function(){
 								</div>
 							</li>
 							<c:forEach items="${list }" var="dto">
-							<li>
-								<p class="link">
-									<span>${dto.sub }</span>
-								</p>
-								<div class="ans">
-									<div>
-										<font face="arial" color="#252525"><span
-											style="font-size: 13.3333px;">${dto.content }</span></font>
+								<li>
+									<p class="link">
+										<span>${dto.sub }&nbsp;&nbsp;<button style="height: 25px; width: 35px; background-color: lightgray; border: 0px;border-radius: 5px;"><a style="color: white;" href="faqDelete?num=${dto.num}">삭제</a></button></span>
+									</p>
+									<div class="ans">
+										<div>
+											<font face="arial" color="#252525"><span
+												style="font-size: 13.3333px;">${dto.content }</span></font>
+										</div>
+
 									</div>
-									
-								</div>
-							</li>
+								</li>
 							</c:forEach>
-							
+
 						</ul>
 					</div>
 				</div>
 				<!-- //List -->
-
+				<br>
+				<div style="text-align: right">
+					<button style="background-color: #F7323F; border: 0px; border-radius: 5px;  width: 60px; height: 35px; font-weight: bold;"><a style="color: white;" href="faqAdd">글쓰기</a></button>
+				</div>
 			</div>
 			<!-- //Faq -->
 

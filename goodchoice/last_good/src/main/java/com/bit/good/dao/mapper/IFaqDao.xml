@@ -7,5 +7,10 @@
 	<select id="listDao" resultType="com.bit.good.dto.FaqDto">
 		SELECT * FROM FAQ ORDER BY NUM DESC
 	</select>
-
+	<insert id="faqWriteDao">
+		INSERT INTO FAQ (NUM,SUB,CONTENT) VALUES (FAQ_SEQ.NEXTVAL, #{param1}, #{param2})
+	</insert>
+	<delete id="deleteDao">
+		DELETE FROM FAQ WHERE NUM = #{param1}
+	</delete>
 </mapper>

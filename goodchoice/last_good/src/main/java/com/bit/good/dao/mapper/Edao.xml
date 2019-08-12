@@ -7,6 +7,9 @@
 	<select id="listDao" resultType="com.bit.good.dto.EventDto">
 		SELECT * FROM EVENT ORDER BY NO DESC
 	</select>
+	<select id="detailDao" resultType="com.bit.good.dto.EventDto">
+		SELECT * FROM EVENT WHERE NO = #{param1}
+	</select>
 	<insert id="writeDao">
 		INSERT INTO EVENT VALUES (EVENT_SEQ.NEXTVAL, #{param1}, #{param2}, #{param3}, #{param4}, #{param5})
 	</insert>
