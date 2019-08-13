@@ -134,7 +134,7 @@
 						<li><a href="#">약관 및 정책</a></li>
 					</ul>
 				</li>
-				<li><a href="#"><span>로그인</span></a></li>
+				<li><a href="login"><span>로그인</span></a></li>
 			</ul>
 		</div>
 	</div>

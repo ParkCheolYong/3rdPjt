@@ -26,6 +26,11 @@ public class HomeController {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	@RequestMapping("/login")
+	public String login() {
+		return "login/login";
+	}
+	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -43,7 +48,6 @@ public class HomeController {
 	public String faq(Model model) {
 		IFaqDao dao=sqlSession.getMapper(IFaqDao.class);
 		model.addAttribute("list",dao.listDao());
-		
 		return "more/faq";
 	}
 	@RequestMapping("faqAdd")
