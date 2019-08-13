@@ -12,34 +12,38 @@
 	font-size: 12px;
 }
 
-.table {
+#second-menu .table {
 	text-align: center;
-	position: absolute;
+	position: relative;
 	width: 1000px;
 	height: 100px;
+	
 }
 
-.table a {
+#second-menu .table a {
 	text-decoration: none;
 	color: #646464;
 }
 
 #top-background {
-	position: absolute;
+	position: relative;
 	background-image: url('imgs/bae.png');
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: 50% 100%;
-	margin: 0px 0px 0px -8px;
+	margin: 0;
 	background-color: #F7323F;
 	width: 100%;
 	height: 450px;
 	padding-left: 0px;
+	padding-top: 72px;
 }
 
 #second-menu {
-	position: absolute;
-	margin: 470px 0px 0px 300px;
+	position: relative;
+	margin: auto 0;
+	width:100%;
+	display: flex;
 }
 
 .recommend {

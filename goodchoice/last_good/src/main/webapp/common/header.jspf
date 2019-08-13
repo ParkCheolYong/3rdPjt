@@ -94,7 +94,7 @@
 					<ul>
 						<li><a href="#">오션뷰</a></li>
 						<li><a href="#">파티룸</a></li>
-						<li><a href="#">야외수영장</a></li>
+						<li><a href="#">야외수영장</ a></li>
 						<li><a href="#">속초</a></li>
 						<li><a href="#">애견동반펜션</a></li>
 						<li><a href="#">여수</a></li>
@@ -129,3 +129,4 @@
 			</ul>
 		</div>
 	</div> <!-- //topbar end -->
+	<div id="bodyContent">
