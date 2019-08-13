@@ -11,20 +11,32 @@
 	margin: 650px 0px 0px 300px;
 	font-size: 12px;
 }
-
+#second-menu {
+padding:32px 0 29px 41px;background:rgb(253,253,253);
+	position: relative;
+	margin: auto 0;
+	width:100%;
+	display: flex;
+}
 #second-menu .table {
 	text-align: center;
-	position: relative;
-	width: 1000px;
-	height: 100px;
-	
+	overflow:hidden;width:1024px;margin:0 auto
+}
+#second-menu .table td{
+	float:left;width:109px;
 }
 
+#second-menu .table a{
+	text-decoration: none;
+	color: #646464;
+	display:block;height:107px;font-size:18px;color:rgba(0,0,0,0.56);text-align:center
+}
+/*
 #second-menu .table a {
 	text-decoration: none;
 	color: #646464;
 }
-
+*/
 #top-background {
 	position: relative;
 	background-image: url('imgs/bae.png');
@@ -39,12 +51,7 @@
 	padding-top: 72px;
 }
 
-#second-menu {
-	position: relative;
-	margin: auto 0;
-	width:100%;
-	display: flex;
-}
+
 
 .recommend {
 	width: 1024px;
