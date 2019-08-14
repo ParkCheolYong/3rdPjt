@@ -37,3 +37,11 @@
         </div>
 
     </footer>
+   <!-- 상단으로 -->
+<button class="btn_go_top" onclick="moveTop();">상단으로</button>
+<script>
+/* 상단으로 버튼 */
+function moveTop(){
+	$("html, body").animate({ scrollTop: 0 }, 600);
+}
+</script>
