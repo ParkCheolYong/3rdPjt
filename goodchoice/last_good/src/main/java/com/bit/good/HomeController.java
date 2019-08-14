@@ -109,4 +109,8 @@ public class HomeController {
 		dao.deleteDao(Integer.parseInt(request.getParameter("no")));
 		return "redirect:event";
 	}
+	@RequestMapping("notice")
+	public String notice() {
+		return "more/notice";
+	}
 }
