@@ -6,56 +6,65 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
+/*
 #news {
 	position: absolute;
 	margin: 650px 0px 0px 300px;
 	font-size: 12px;
-}
+}*/
 
-.table {
+#second-menu {
+padding:32px 0 29px 41px;background:rgb(253,253,253);
+	position: relative;
+	margin: auto 0;
+	width:100%;
+	display: flex;
+}
+#second-menu .table {
 	text-align: center;
-	position: absolute;
-	width: 1000px;
-	height: 100px;
+	overflow:hidden;width:1024px;margin:0 auto
+}
+#second-menu .table td{
+	float:left;width:109px;
 }
 
-.table a {
+#second-menu .table a{
+	text-decoration: none;
+	color: #646464;
+	display:block;height:107px;font-size:18px;color:rgba(0,0,0,0.56);text-align:center
+}
+/*
+#second-menu .table a {
 	text-decoration: none;
 	color: #646464;
 }
-
+*/
 #top-background {
-	position: absolute;
+	position: relative;
 	background-image: url('imgs/bae.png');
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: 50% 100%;
-	margin: 0px 0px 0px -8px;
+	margin: 0;
 	background-color: #F7323F;
 	width: 100%;
 	height: 450px;
 	padding-left: 0px;
+	padding-top: 72px;
 }
-
-#second-menu {
-	position: absolute;
-	margin: 470px 0px 0px 300px;
-}
-
 .recommend {
 	width: 1024px;
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 78px 31px 0 31px
+	padding: 78px 31px 0 31px;
 }
-
 .recommend li {
 	overflow: hidden;
 	float: left;
 	position: relative;
 	width: 473px;
 	height: 162px;
-	margin: 0 0 16px 0;
+	margin: 0 0 16px 0; 
 	padding: 0 24px 0 186px;
 	border: 1px solid rgba(0, 0, 0, 0.08);
 	box-sizing: border-box
@@ -134,7 +143,6 @@
 	width: 962px;
 	margin: 0 auto;
 }
-
 .swiper-container {
 	margin-left: auto;
 	margin-right: auto;
@@ -186,12 +194,14 @@
 	height: 9px;
 	border: 2px solid rgba(255, 255, 255, 0.7);
 }
+.recommend h2{font-size:24px;margin-bottom:35px}
+.event_main h2{font-size:24px;margin-bottom:35px}
 </style>
-
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 </head>
 
 <body>
-	<%@include file="/common/header.jsp"%>
+	<%@include file="/common/header.jspf"%>
 
 	<div class="mainContent"></div>
 	<div id="top-background"></div>
@@ -210,22 +220,23 @@
 			</tr>
 		</table>
 	</div>
-	<div id="news">
-		<h1>여기어때 소식</h1>
-		<div class="recommend">
+	
+	<div class="recommend">
+	<h2>여기어때 소식</h2>
+		<ul>
+			<!-- target="_blank" : 새윈도우창을 열어서 웹페이즈 염. 기존창 남아있음 
+         _self : 윈도우창에 그대로 현재프레임에 링크 열기
+         _parent : 현재 프레임 부모프레임에서 새 웹페이지가 열림
+         _top : 최상위 프레임에서 열림. parent와 비슷-->
+			<li><a href="#" target="_blank"><img src="imgs/bs.png" /><strong>여기어때
+						비즈니스</strong>출장부터 복지까지<br />여기어때 비즈니스로 스마트하게</a></li>
+			<li><a href="#" target="_blank"><img src="imgs/jalfont.png"
+					alt="여기어때 서체" /><strong>여기어때 서체 출시</strong>젊고 당당한 여기어때 잘난체<br />지금
+					다운로드 받으세요!</a></li>
+		</ul>
+	</div>
+	
 
-			<ul>
-				<!-- target="_blank" : 새윈도우창을 열어서 웹페이즈 염. 기존창 남아있음 
-          _self : 윈도우창에 그대로 현재프레임에 링크 열기
-          _parent : 현재 프레임 부모프레임에서 새 웹페이지가 열림
-          _top : 최상위 프레임에서 열림. parent와 비슷-->
-				<li><a href="#" target="_blank"><img src="imgs/bs.png" /><strong>여기어때
-							비즈니스</strong>출장부터 복지까지<br />여기어때 비즈니스로 스마트하게</a></li>
-				<li><a href="#" target="_blank"><img src="imgs/jalfont.png"
-						alt="여기어때 서체" /><strong>여기어때 서체 출시</strong>젊고 당당한 여기어때 잘난체<br />지금
-						다운로드 받으세요!</a></li>
-			</ul>
-			</div>
 		<div class="appDown">
 			<p>
 				앱 다운 받고 <b>더 많은 혜택</b> 받으세요
@@ -299,9 +310,9 @@
 						class="swiper-pagination-bullet"></span>
 				</div>
 			</section>
-		</div>
+		</div> <!-- //eventMain end -->
 		
-<%@include file="/common/footer.jsp"%>
+<%@include file="/common/footer.jspf"%>
 
 </body>
 </html>
