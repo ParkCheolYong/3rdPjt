@@ -26,10 +26,7 @@ public class HomeController {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	@RequestMapping("/login")
-	public String login() {
-		return "login/login";
-	}
+
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
