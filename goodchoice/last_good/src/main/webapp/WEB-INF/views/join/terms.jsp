@@ -45,7 +45,7 @@
 
         $('#terms_agree_btn[disabled]').on('click', function () {
             
-            window.location.replace("/signIn");
+            window.location.replace("terms2");
         });
     }
 });
