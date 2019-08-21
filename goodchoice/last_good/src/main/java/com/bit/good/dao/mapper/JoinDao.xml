@@ -4,13 +4,9 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.bit.good.dao.JoinDao">
-	<select id="listDao" resultType="com.bit.good.dto.FaqDto">
-		SELECT * FROM FAQ ORDER BY NUM DESC
-	</select>
-	<insert id="faqWriteDao">
-		INSERT INTO FAQ (NUM,SUB,CONTENT) VALUES (FAQ_SEQ.NEXTVAL, #{param1}, #{param2})
+	
+	<insert id="join">
+		INSERT INTO USERLIST (EMAIL,PW,NICK) VALUES (#{param1}, #{param2}, #{param3})
 	</insert>
-	<delete id="deleteDao">
-		DELETE FROM FAQ WHERE NUM = #{param1}
-	</delete>
+	
 </mapper>
