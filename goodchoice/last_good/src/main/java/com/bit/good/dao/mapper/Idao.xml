@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bit.good.dao.Idao">
+	<select id="listDao2" resultType="com.bit.good.dto.InnoprojDto">
+		SELECT * FROM INNOPROJ ORDER BY NO DESC
+	</select>
+	<insert id="writeDao2">
+		INSERT INTO INNOPROJ VALUES (INNOPROJ_SEQ.NEXTVAL, #{param1}, #{param2}, #{param3}, #{param4})
+	</insert>
+	<select id="detailDao2" resultType="com.bit.good.dto.InnoprojDto">
+		SELECT * FROM INNOPROJ WHERE NO = #{param1}
+	</select>
+	<delete id="deleteDao2">
+		DELETE FROM INNOPROJ WHERE NO = #{param1}
+	</delete>
+</mapper>
