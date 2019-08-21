@@ -95,6 +95,13 @@ button {
 	left: -65px;
 	width: 184px;
 }
+
+.menubar .list_04 {
+    top: 30px;
+    left: -90px;
+    width: 213px;
+}
+
 .menubar {
 	display: inline-block;
 	position: absolute;
@@ -207,7 +214,43 @@ button {
 	height: 30px;
 	background: url(https://lh3.googleusercontent.com/Y8Jnjg3xHtIbrSpz9oZY95onAgkY29hiJ5a3z_J7GFegh_GEJRi3k1C1IIetQ2BoBHxbROA-xVp7NKToWTLuB3kHPiYjwtmeaa_8kCHGwjfzMq15ObgGa7Lyhyawdu2sXxqkIGtP7y7o9l1X3iBdNg9Caa2YpDbOf8fs6CGSV5DCv20UM8_Ss585gfqSeheVwsq5goNff6ltTMZpyyDfXA23dCKP6ZQlUc31Y7fAWKqJ6NdjKIeeX65dEb_s3SVqU1ax7EW_lqK8MTOgyuiLLVcKf67ew7kHHNPDAVAVb7ITGPPf_VgoQxo7lu2CHAAIK09T0Q4UffXuVDabb1yu6GpJMP7aHlsizLLNPbut9CK-ixaVrEDFUlqHdVHBRC5mbm2hdUexLVOKVlEX1YNfEF0sgtbGA0EFmRDrlWiLHVFfVFUQRX9Bd95FnJBYgH2twJt3UZmc9q8H9ygLDfG3NWHQWdbl3DSQ_Hf4VSMqpYYyCymSpSmAaw1ja82JsFLfFTsYQUZgSZ-mpbCZgUI4ZU4Xt0P4ojkuBLZsRZB-8Rug3xRrlFJdfwfcRmO9gqyx7eVj0RaBhqB3FORi7pnIQ0IuDmk5I-SRJrNL0JmogzUBseO--qZ0YXfp-oZLQxi3e7fI4m9L6bnqoK7PPuhxnoY=s72-no) 50% 50% no-repeat;
 	background-size: 24px auto;
-} 
+}
+
+/* 로그인시 아이콘 */
+.over_pic {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    border-radius: 100%;
+}
+
+.menubar .pic:after {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 7px;
+    width: 0;
+    height: 0;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -o-transform: rotate(315deg);
+}
+
+.list_04 li:nth-child(2) {
+	border-line: solid 1px lightgray;	
+}
+
+
+
 /*footer*/
  footer{
 	    overflow: hidden;

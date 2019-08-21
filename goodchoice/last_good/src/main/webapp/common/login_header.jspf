@@ -1,12 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-
-<title>대한민국 1등 종합숙박웹 - 요기어때</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 
 <script src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
@@ -60,12 +53,12 @@
                         search.animate({left: 220},{
                             complete:function(){
                                 search.hide();
-                        		srch_bar.slideDown();
 		                        $('#keyword').focus();
+                        		srch_bar.slideDown();
                         		
                             }
                         });
-                        $('.menubar').hide();
+                        $('.menubar').hide();	
                         $('.mainContent').show();
                         $('.mainContent').css('display','block');
                     });
@@ -84,13 +77,11 @@
                         $('.mainContent').css('display','none');
                     });
                 });
-        
+
         
     
     </script>
-</head>
 
-<body>
 	<div id="topbar">
 		<div id="topCenter">
 			<form class="srch">
@@ -122,9 +113,7 @@
 				<li class="po"><a href="#">내주변</a></li>
 				<li><a href="#">예약내역</a></li>
 				<li class="over">
-					<button type="button">
-						<span>더보기</span>
-					</button>
+					<button type="button"><span>더보기</span></button>
 					<ul class="list_03">
 						<li><a href="#">공지사항</a></li>
 						<li><a href="event">이벤트</a></li>
@@ -134,10 +123,21 @@
 						<li><a href="#">약관 및 정책</a></li>
 					</ul>
 				</li>
-				<li><a href="login"><span>로그인</span></a></li>
+				<li class="over pic">
+					<a href="login"><span>
+						<img class="over_pic" src="imgs/login_icon.png" alt="login_icon">
+					</span></a>
+					<ul class="list_04">
+						<li><b>슬로바키아빗장</b></li>
+						<li><a href="#">내정보</a></li>
+						<li><a href="#">포인트</a></li>
+						<li><a href="#">쿠폰함</a></li>
+						<li><a href="#">예약내역</a></li>
+						<li><a href="#">최근 본 숙소</a></li>
+						<li><button type="button" class="pop_logout_open">로그아웃</button></li>
+					</ul>		
+				</li>
 			</ul>
 		</div>
-	</div>
-</body>
-
-</html>
+	</div> <!-- //topbar end -->
+	<div id="bodyContent">
