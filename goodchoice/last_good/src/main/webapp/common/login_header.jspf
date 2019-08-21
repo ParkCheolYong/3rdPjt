@@ -1,6 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<style type="text/css">
+.over_pic {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    border-radius: 100%;
+}
+.list_04 li:nth-child(2) {
+   border-line: solid 1px lightgray;   
+}
+.menubar .list_04 {
+    top: 30px;
+    left: -90px;
+    width: 213px;
+}
+</style>
 <script src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
        $(document).ready(function() {
@@ -124,7 +143,7 @@
 					</ul>
 				</li>
 				<li class="over pic">
-					<a href="login"><span>
+					<a href="#"><span>
 						<img class="over_pic" src="imgs/login_icon.png" alt="login_icon">
 					</span></a>
 					<ul class="list_04">
