@@ -89,15 +89,17 @@ var naverLogin = new naver.LoginWithNaverId(
 
 </script>
             <p class="space_or"><span>또는</span></p>
+            <form action="" method="POST">
             <div class="inp_type_1 ico_email form-errors"><!-- focus / err -->
-                <input type="email" name="uid" placeholder="이메일 주소" required class="required" value=""
+                <input type="email" name="email" placeholder="이메일 주소" required class="required" value=""
                        data-msg-required="이메일 주소를 입력해 주세요."/>
             </div>
             <div class="inp_type_1 ico_pw form-errors">
-                <input type="password" name="upw" placeholder="비밀번호" required class="required"
+                <input type="password" name="pw" placeholder="비밀번호" required class="required"
                        data-msg-required="비밀번호를 입력해 주세요."/>
             </div>
             <button class="btn_link gra_left_right_red" type="submit"><span>로그인</span></button>
+            </form>
                             <div class="link_half">
                     <div><a href="https://www.goodchoice.kr/user/passwdResetStart"><span>비밀번호 재설정</span></a></div>
                     <div><a href="terms"><span>회원가입</span></a></div>
