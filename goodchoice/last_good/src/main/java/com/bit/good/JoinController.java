@@ -9,11 +9,15 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.bit.good.dao.JoinDao;
 
 @Controller
 public class JoinController {
-
-
+	
+	@Autowired
+	private SqlSession sqlSession;
 	
 	public static String email; 
 	final int key = (int) (Math.random() * 100) + 1;
@@ -72,4 +76,12 @@ public class JoinController {
 		}
 		return re;
 	}
+	@RequestMapping(value = "/joinResult", method = RequestMethod.POST)
+	public String join(HttpServletRequest request) {
+		JoinDao dao=sqlSession.getMapper(JoinDao.class);
+		dao.join(request.getParameter("email"), request.getParameter("pw"), request.getParameter("nick"));
+		
+		return "redirect:login";
+	}
+	
 }
