@@ -530,7 +530,7 @@
 						<p>aitchjay@naver.com</p>
 						<br>
 						<div class="btns">
-							<div class="text">닉네임 타협적인로비스트</div>
+							<div class="text">닉네임 ${sessionScope.nick}</div>
 							<button class="nickEditButton" type="button">수정</button>
 							<br>
 							<br>

@@ -53,9 +53,10 @@ $('.faq_list .list .link').each(function(){
 });
 
 </script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 </head>
 <body>
-	<%@include file="/common/header.jsp"%>
+	<%@include file="/common/login_header.jspf"%>
 
 	<div id="content" class="sub_wrap more_wrap">
 
