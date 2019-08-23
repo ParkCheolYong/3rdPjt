@@ -76,6 +76,8 @@
 				$('.mainContent').hide();
 			});
 		});
+
+
 		
 		/* ------ 새로운 비밀번호 유효성 검사 ------ */
 
@@ -221,6 +223,52 @@
 	
 	
 	</script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src= "https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/messages_ko.min.js"></script>
+<script type="text/javascript">
+ $(function(){
+        $("form").validate({
+
+            //규칙
+            rules: {
+            	prePw: {
+                    required : true,
+                    minlength : 6
+                },
+                newPw: {
+                    required : true,
+                    minlength : 6
+                },
+                confirmNewPw: {
+                    required : true,
+                    equalTo : newPw
+                }
+               
+            },
+            //규칙체크 실패시 출력될 메시지
+            messages : {
+            	prePw: {
+                    minlength : "최소 {0}자 이상 입력해 주세요"
+                },
+            	newPw: {
+                    required : "6~15자 영문,숫자,특수문자를 입력해주세요.",
+                    minlength : "최소 {0}자 이상 입력해 주세요"
+                },
+                confirmNewPw: {
+                    required : "비밀번호를 한번 더 입력해 주세요.",
+                    equalTo : "비밀번호가 일치하지 않습니다."
+                }
+            },
+            submitHandler: function (frm){
+                frm.submit();   //유효성 검사를 통과시 전송
+            },
+            success: function(e){
+                //
+            }
+        });
+})
+</script>
 </head>
 
 <body>

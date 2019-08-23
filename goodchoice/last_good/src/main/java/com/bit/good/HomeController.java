@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.bit.good.dao.Edao;
 import com.bit.good.dao.IFaqDao;
 import com.bit.good.dao.Idao;
+import com.bit.good.dao.MypageDao;
+import com.bit.good.dao.PwChangeDao;
 
 @Controller
 public class HomeController {
@@ -113,7 +115,8 @@ public class HomeController {
 		return "more/notice";
 	}
 	
-	// innoproject
+	
+	// 혁신 프로젝트
 		@RequestMapping("innoproj")
 		public String list2(Model model) {
 			
@@ -154,6 +157,28 @@ public class HomeController {
 			
 			return "more/innoprojDetail";
 		}
+		
+		
+		// MYPAGE 내 정보 수정
+		@RequestMapping("/mypage")
+		public String mypage(Model model) {
+			
+			MypageDao dao=sqlSession.getMapper(MypageDao.class);
+			model.addAttribute("list", dao.mypageList());
+			
+			return "my/mypage";
+		}
+		
+		// PW CHAGE 비밀번호 수정
+		@RequestMapping("/pwchange")
+		public String pwchange(Model model) {
+					
+			PwChangeDao dao=sqlSession.getMapper(PwChangeDao.class);
+			model.addAttribute("list", dao.pwchangeList());
+					
+			return "my/pwchange";
+		}
+		 
 	
 	
 }

@@ -39,22 +39,22 @@ public class JoinController {
 		return "/join/terms2";
 	}
 
-	// mailSending ì½”ë“œ
+	// mailSending ÄÚµå
 	@RequestMapping(value = "/terms3")
 	public String mailSending(HttpServletRequest request) {
 
 		String setfrom = "bitgoodchoice@gmail.com";
-		email = request.getParameter("email"); // ë°›ëŠ” ì‚¬ëŒ ì´ë©”ì¼
+		email = request.getParameter("email"); // ¹Ş´Â »ç¶÷ ÀÌ¸ŞÀÏ
 
 		try {
 			MimeMessage message = mailSender.createMimeMessage();
 			MimeMessageHelper msg = new MimeMessageHelper(message, true, "UTF-8");
 
-			msg.setFrom(setfrom); // ë³´ë‚´ëŠ”ì‚¬ëŒ ìƒëµí•˜ê±°ë‚˜ í•˜ë©´ ì •ìƒì‘ë™ì„ ì•ˆí•¨
-			msg.setTo(email); // ë°›ëŠ”ì‚¬ëŒ ì´ë©”ì¼
-			msg.setSubject("ì•ˆë…•í•˜ì„¸ìš” ìš”ê¸°ì–´ë•Œì…ë‹ˆë‹¤."); // ë©”ì¼ì œëª©ì€ ìƒëµì´ ê°€ëŠ¥í•˜ë‹¤
+			msg.setFrom(setfrom); // º¸³»´Â»ç¶÷ »ı·«ÇÏ°Å³ª ÇÏ¸é Á¤»óÀÛµ¿À» ¾ÈÇÔ
+			msg.setTo(email); // ¹Ş´Â»ç¶÷ ÀÌ¸ŞÀÏ
+			msg.setSubject("¾È³çÇÏ¼¼¿ä ¿ä±â¾î¶§ÀÔ´Ï´Ù."); // ¸ŞÀÏÁ¦¸ñÀº »ı·«ÀÌ °¡´ÉÇÏ´Ù
 
-			msg.setText("ìŠ¹ì¸ì½”ë“œëŠ” " + key + "ì…ë‹ˆë‹¤."); // ë©”ì¼ ë‚´ìš©
+			msg.setText("½ÂÀÎÄÚµå´Â " + key + "ÀÔ´Ï´Ù."); // ¸ŞÀÏ ³»¿ë
 
 			mailSender.send(message);
 		} catch (Exception e) {

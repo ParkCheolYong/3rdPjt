@@ -14,8 +14,7 @@
 			<label for="sub">제목</label> <input type="text" name="sub" id="sub" />
 		</div>
 		<div>
-			<label for="sub2">제목2</label> <input type="text" name="sub2"
-				id="sub2" />
+			<label for="sub2">제목2</label> <input type="text" name="sub2" id="sub2" />
 		</div>
 		<select name="tag">
 			<option value="#숙박어플최초">#숙박어플최초</option>
