@@ -118,4 +118,10 @@ public class HomeController {
 
 		return "more/notice"; //페이지로 이동
 	}
+	@RequestMapping("/noticeAdd")
+	public String noticeAdd() {
+
+		return "more/noticeAdd"; //페이지로 이동
+	}
+	
 }
