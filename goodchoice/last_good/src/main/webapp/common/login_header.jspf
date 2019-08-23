@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <style type="text/css">
 .over_pic {
     position: absolute;
@@ -142,20 +143,28 @@
 						<li><a href="#">약관 및 정책</a></li>
 					</ul>
 				</li>
-				<li class="over pic">
-					<a href="#"><span>
-						<img class="over_pic" src="imgs/login_icon.png" alt="login_icon">
-					</span></a>
-					<ul class="list_04">
-						<li><b>슬로바키아빗장</b></li>
-						<li><a href="#">내정보</a></li>
-						<li><a href="#">포인트</a></li>
-						<li><a href="#">쿠폰함</a></li>
-						<li><a href="#">예약내역</a></li>
-						<li><a href="#">최근 본 숙소</a></li>
-						<li><button type="button" class="pop_logout_open">로그아웃</button></li>
-					</ul>		
-				</li>
+				<c:choose>
+					<c:when test="${empty sessionScope.nick}">
+						<li><a href="login"><span>로그인</span></a></li>
+					</c:when>
+					<c:otherwise>
+						<li class="over pic">
+							<a href="#"><span>
+								<img class="over_pic" src="imgs/login_icon.png" alt="login_icon">
+							</span></a>
+							<ul class="list_04">
+								<li><b>${sessionScope.nick}</b></li>
+								<li><a href="#">내정보</a></li>
+								<li><a href="#">포인트</a></li>
+								<li><a href="#">쿠폰함</a></li>
+								<li><a href="#">예약내역</a></li>
+								<li><a href="#">최근 본 숙소</a></li>
+								<li><button type="button" class="pop_logout_open">로그아웃</button></li>
+							</ul>		
+						</li>
+					</c:otherwise>
+				</c:choose>
+				
 			</ul>
 		</div>
 	</div> <!-- //topbar end -->
