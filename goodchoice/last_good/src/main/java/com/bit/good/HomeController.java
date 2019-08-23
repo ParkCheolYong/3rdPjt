@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bit.good.dao.Edao;
 import com.bit.good.dao.IFaqDao;
+import com.bit.good.dao.NoticeDao;
 
 @Controller
 public class HomeController {
@@ -109,8 +110,12 @@ public class HomeController {
 		dao.deleteDao(Integer.parseInt(request.getParameter("no")));
 		return "redirect:event";
 	}
-	@RequestMapping("notice")
-	public String notice() {
-		return "more/notice";
+	@RequestMapping("/notice")
+	public String notice(Model model) {
+
+		NoticeDao dao=sqlSession.getMapper(NoticeDao.class);
+		model.addAttribute("list",dao.listDao());
+
+		return "more/notice"; //페이지로 이동
 	}
 }

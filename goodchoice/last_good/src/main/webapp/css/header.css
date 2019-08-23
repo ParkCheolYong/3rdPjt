@@ -276,3 +276,8 @@ address, caption, em, var {
     font-weight: normal;
     }
     */
+.sub_top{background:none;position:relative;}
+.sub_top_wrap {height:211px;background:#f7323f;}
+.sub_top{width:1024px;height:211px;margin:0 auto;padding-top:72px;border-radius:0;}
+.sub_top h2{display:block;margin:21px 0 0 31px;font-size:38px;font-weight:normal;letter-spacing:-1px;color:#fff}
+.sub_top.bg_kong_3:after{display:inline-block;content:'';position:absolute;bottom:0;right:10px;width:179px;height:111px;background:url('//image.goodchoice.kr/images/web_v3/bg_kong_3.png') 0 0 no-repeat;background-size:auto 111px;}

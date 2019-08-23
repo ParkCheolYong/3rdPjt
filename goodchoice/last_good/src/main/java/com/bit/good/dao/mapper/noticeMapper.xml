@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bit.good.dao.NoticeDao">
+	<select id="listDao" resultType="com.bit.good.dto.NoticeDto">
+		SELECT * FROM notice ORDER BY idx DESC
+	</select>
+	<select id="detailDao" resultType="com.bit.good.dto.NoticeDto">
+		SELECT * FROM notice WHERE idx = #{idx}
+	</select>
+	<insert id="writeDao">
+		insert into notice (idx, id, sub, content) values (notice_seq.nextval, #{id}, #{sub}, #{content})
+	</insert>
+	<delete id="deleteDao">
+		DELETE FROM notice WHERE idx = #{param1}
+	</delete>
+</mapper>

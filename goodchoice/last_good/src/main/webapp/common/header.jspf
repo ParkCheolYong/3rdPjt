@@ -115,7 +115,7 @@
 				<li class="over">
 					<button type="button"><span>더보기</span></button>
 					<ul class="list_03">
-						<li><a href="#">공지사항</a></li>
+						<li><a href="notice">공지사항</a></li>
 						<li><a href="event">이벤트</a></li>
 						<li><a href="#">혁신 프로젝트</a></li>
 						<li><a href="faq">자주 묻는 질문</a></li>
