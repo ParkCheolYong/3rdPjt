@@ -17,8 +17,7 @@
 <body>
 	<div class="layer_fix layer_unfix pop_login pop_mem_reserve">
     <section>
-        <form id="loginForm" action="https://www.goodchoice.kr/user/loginProcess" autocomplete="off" method="post">
-            <input type="hidden" name="yeogi_token" value="9bc12fadafb24ee1c1b99288a129415b">
+        <form id="loginForm" action="loginUser" autocomplete="off" method="post">
             <div class="fix_title">
                 <strong class="logo"><a href="http://localhost:8080/good/">요기어때</a></strong>
             </div>
@@ -89,7 +88,6 @@ var naverLogin = new naver.LoginWithNaverId(
 
 </script>
             <p class="space_or"><span>또는</span></p>
-            <form action="" method="POST">
             <div class="inp_type_1 ico_email form-errors"><!-- focus / err -->
                 <input type="email" name="email" placeholder="이메일 주소" required class="required" value=""
                        data-msg-required="이메일 주소를 입력해 주세요."/>
@@ -99,9 +97,8 @@ var naverLogin = new naver.LoginWithNaverId(
                        data-msg-required="비밀번호를 입력해 주세요."/>
             </div>
             <button class="btn_link gra_left_right_red" type="submit"><span>로그인</span></button>
-            </form>
                             <div class="link_half">
-                    <div><a href="https://www.goodchoice.kr/user/passwdResetStart"><span>비밀번호 재설정</span></a></div>
+                    <div><a href="#"><span>비밀번호 재설정</span></a></div>
                     <div><a href="terms"><span>회원가입</span></a></div>
                 </div>
 
