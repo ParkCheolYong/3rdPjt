@@ -196,11 +196,11 @@ padding:32px 0 29px 41px;background:rgb(253,253,253);
 
 <!-- Swiper CSS end -->
 
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
+
 </head>
 
 <body>
-   <%@include file="/common/login_header.jspf"%>
+   <%@include file="/common/header.jspf"%>
 
    <div class="mainContent"></div>
    <div id="top-background"></div>

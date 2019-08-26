@@ -17,7 +17,7 @@
 </script>
 </head>
 <body>
-	<%@include file="/common/header.jsp"%>
+	<%@include file="/common/header.jspf"%>
 	<div id="content" class="sub_wrap more_wrap">
 
 		<!-- Nav -->
@@ -46,6 +46,6 @@
 		</div>
 
 	</div>
-	<%@include file="/common/footer.jsp"%>
+	<%@include file="/common/footer.jspf"%>
 </body>
 </html>
