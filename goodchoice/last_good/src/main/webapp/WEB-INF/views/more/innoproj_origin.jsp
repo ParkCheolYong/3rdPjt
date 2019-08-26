@@ -372,7 +372,7 @@
 </head>
 
 <body>
-<%@include file="/common/login_header.jspf"%>
+<%@include file="/common/header.jspf"%>
    <div class="frame">
       <div class="header">
          <div id="topbar">

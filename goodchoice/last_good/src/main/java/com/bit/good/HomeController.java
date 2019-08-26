@@ -40,6 +40,11 @@ public class HomeController {
 		
 		return "main";
 	}
+	@RequestMapping("/main")
+	public String main() {
+		return "main";
+	}
+	
 	@RequestMapping("/faq")
 	public String faq(Model model) {
 		IFaqDao dao=sqlSession.getMapper(IFaqDao.class);
