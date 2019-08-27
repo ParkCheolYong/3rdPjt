@@ -55,7 +55,7 @@ $('.faq_list .list .link').each(function(){
 </script>
 </head>
 <body>
-	<%@include file="/common/header.jsp"%>
+	<%@include file="/common/header.jspf"%>
 
 
 	<div id="content" class="sub_wrap more_wrap">
@@ -63,12 +63,12 @@ $('.faq_list .list .link').each(function(){
 		<!-- Nav -->
 		<nav>
 			<ul>
-				<li><a href="/more/notice">공지사항</a></li>
-				<li><a href="/more/event">이벤트</a></li>
-				<li><a href="/more/project">혁신 프로젝트</a></li>
-				<li><a href="/more/faq" class="active">자주 묻는 질문</a></li>
-				<li><a href="/more/inquiry">1:1 문의</a></li>
-				<li><a href="/more/terms">약관 및 정책</a></li>
+				<li><a href="notice">공지사항</a></li>
+				<li><a href="event">이벤트</a></li>
+				<li><a href="innoproj">혁신 프로젝트</a></li>
+				<li><a href="faq" class="active">자주 묻는 질문</a></li>
+				<li><a href="inquiry">1:1 문의</a></li>
+				<li><a href="terms">약관 및 정책</a></li>
 			</ul>
 		</nav>
 		<div class="align_rt">
@@ -163,6 +163,6 @@ $('.faq_list .list .link').each(function(){
 
 	</div>
 
-	<%@include file="/common/footer.jsp"%>
+	<%@include file="/common/footer.jspf"%>
 </body>
 </html>

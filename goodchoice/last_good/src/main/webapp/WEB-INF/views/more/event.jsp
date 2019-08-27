@@ -17,18 +17,18 @@
 </script>
 </head>
 <body>
-	<%@include file="/common/header.jsp"%>
+	<%@include file="/common/header.jspf"%>
 	<div id="content" class="sub_wrap more_wrap">
 
 		<!-- Nav -->
 		<nav>
 			<ul>
-				<li><a href="#">공지사항</a></li>
-				<li><a href="#" class="active">이벤트</a></li>
-				<li><a href="#">혁신 프로젝트</a></li>
-				<li><a href="#">자주 묻는 질문</a></li>
-				<li><a href="#">1:1 문의</a></li>
-				<li><a href="#">약관 및 정책</a></li>
+				<li><a href="notice">공지사항</a></li>
+				<li><a href="event" class="active">이벤트</a></li>
+				<li><a href="project">혁신 프로젝트</a></li>
+				<li><a href="faq">자주 묻는 질문</a></li>
+				<li><a href="inquiry">1:1 문의</a></li>
+				<li><a href="terms">약관 및 정책</a></li>
 			</ul>
 		</nav>
 		<div class="align_rt">
@@ -79,6 +79,6 @@
 		</div>
 
 	</div>
-	<%@include file="/common/footer.jsp"%>
+	<%@include file="/common/footer.jspf"%>
 </body>
 </html>

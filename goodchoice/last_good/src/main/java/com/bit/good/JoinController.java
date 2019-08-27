@@ -1,19 +1,33 @@
 package com.bit.good;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.bit.good.dao.JoinDao;
 
 @Controller
 public class JoinController {
-
-
+	
+	private static final Logger logger = LoggerFactory.getLogger(JoinController.class);
+	
+	@Autowired
+	private SqlSession sqlSession;
 	
 	public static String email; 
 	final int key = (int) (Math.random() * 100) + 1;
@@ -72,4 +86,24 @@ public class JoinController {
 		}
 		return re;
 	}
+	@RequestMapping(value = "/joinResult", method = RequestMethod.POST)
+	public String join(HttpServletRequest request) {
+		JoinDao dao=sqlSession.getMapper(JoinDao.class);
+		dao.join(request.getParameter("email"), request.getParameter("pw"), request.getParameter("nick"));
+		
+		return "redirect:login";
+	}
+	
+	@RequestMapping(value ="/emailCheck",method = RequestMethod.POST)
+	public void emailCheck(@RequestParam("email")String email,HttpServletResponse response,Model model) throws Exception {
+		PrintWriter out=response.getWriter();
+		JoinDao dao=sqlSession.getMapper(JoinDao.class);
+		if(dao.emailCheck(email)==1) {
+			out.print(false);
+		}else {
+			out.print(true);
+		}
+		
+	}
+	
 }

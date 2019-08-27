@@ -185,22 +185,22 @@
 }
         .ico_email::after, .ico_email.inp_focus::after, .ico_email.inp_error::after {
     top: 15px;
-    left: 15px;
-}
-        .ico_pw::after, .ico_pw.inp_focus::after, .ico_pw.inp_error::after {
-    top: 15px;
     left: 16px;
 }
-        .ico_pw::after {
+   .ico_pw::after {
     display: inline-block;
     content: '';
     position: absolute;
-    top: 11px;
-    left: 11px;
+    top: 15px;
+    left: 16px;
     width: 18px;
     height: 15px;
     background: url('//image.goodchoice.kr/images/web_v3/ico_inp_pw.png') 50% 0 no-repeat;
     background-size: 14px auto;
+}
+.ico_pw::after, .ico_pw.inp_focus::after, .ico_pw.inp_error::after {
+    top: 15px;
+    left: 16px;
 }
         .inp_type_1 {
     height: 48px;

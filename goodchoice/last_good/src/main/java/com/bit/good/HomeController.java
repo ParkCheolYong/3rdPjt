@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.bit.good.dao.Edao;
 import com.bit.good.dao.IFaqDao;
 import com.bit.good.dao.NoticeDao;
+import com.bit.good.dao.Idao;
+import com.bit.good.dao.MypageDao;
+import com.bit.good.dao.PwChangeDao;
 
 @Controller
 public class HomeController {
@@ -26,8 +29,6 @@ public class HomeController {
 	
 	@Autowired
 	private SqlSession sqlSession;
-	
-
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -42,6 +43,11 @@ public class HomeController {
 		
 		return "main";
 	}
+	@RequestMapping("/main")
+	public String main() {
+		return "main";
+	}
+	
 	@RequestMapping("/faq")
 	public String faq(Model model) {
 		IFaqDao dao=sqlSession.getMapper(IFaqDao.class);
@@ -137,4 +143,75 @@ public class HomeController {
 		return "redirect:notice";
 	}
 	
+
+	// innoproject
+	@RequestMapping("/innoproj")
+	public String list2(Model model) {
+		
+		Idao dao2=sqlSession.getMapper(Idao.class);
+		model.addAttribute("list", dao2.listDao2());
+		
+		return "more/innoproj";
+	}
+	
+	@RequestMapping("innoprojAdd")
+	public String innoprojAdd() {
+		
+		return "more/innoprojAdd";
+	}
+
+	@RequestMapping(value = "/write2",method = RequestMethod.POST)
+	public String write2(HttpServletRequest request, Model model) {
+		
+		Idao dao2 =sqlSession.getMapper(Idao.class);
+		dao2.writeDao2(request.getParameter("sub"), request.getParameter("sub2"), request.getParameter("content"), request.getParameter("tag"));
+				
+		return "redirect:innoproj";
+	}
+	
+	@RequestMapping("/delete2")
+	public String delete2(HttpServletRequest request, Model model) {
+		Idao dao2 =sqlSession.getMapper(Idao.class);
+		dao2.deleteDao2(Integer.parseInt(request.getParameter("no")));
+		return "redirect:innoproj";
+	}
+	
+	@RequestMapping("/innoprojDetail")
+	public String detailDao2(HttpServletRequest request,Model model, int no) {
+		Idao dao2=sqlSession.getMapper(Idao.class);
+		dao2.detailDao2(Integer.parseInt(request.getParameter("no")));
+		model.addAttribute("detail", dao2.detailDao2(no));
+		
+		
+		return "more/innoprojDetail";
+	}
+	
+	
+	// MYPAGE 
+	@RequestMapping("/mypage")
+	public String mypage(Model model) {
+		
+		MypageDao dao=sqlSession.getMapper(MypageDao.class);
+		model.addAttribute("list", dao.mypageList());
+		
+		return "my/mypage";
+	}
+	
+	// PW CHAGE 
+	@RequestMapping("/pwchange")
+	public String pwchange(Model model) {
+				
+		PwChangeDao dao=sqlSession.getMapper(PwChangeDao.class);
+		model.addAttribute("list", dao.pwchangeList());
+				
+		return "my/pwchange";
+	}
+	
+	// 
+	@RequestMapping("deletepro")
+	public String deletepro() {
+		
+		return "my/deletepro";
+	}
+
 }

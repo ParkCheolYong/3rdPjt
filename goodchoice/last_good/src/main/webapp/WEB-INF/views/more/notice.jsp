@@ -13,6 +13,7 @@
 </head>
 <body>
 	<%@include file="/common/header.jspf"%>
+
 	<!-- Sub Top -->
 	<div class="sub_top_wrap">
 		<div class="sub_top bg_kong_3">
@@ -20,7 +21,7 @@
 		</div>
 	</div>
 	<!-- //Sub Top -->
-	
+
    <div id="content" class="sub_wrap more_wrap">
 
       <!-- Nav -->
@@ -108,7 +109,7 @@ $(function(){
 
       </div>  
     </div>
-		
+
 	<%@include file="/common/footer.jspf"%>
 </body>
 </html>

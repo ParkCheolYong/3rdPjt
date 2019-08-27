@@ -1,6 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
+<style type="text/css">
+.over_pic {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    border-radius: 100%;
+}
+.list_04 li:nth-child(2) {
+   border-line: solid 1px lightgray;   
+}
+.menubar .list_04 {
+    top: 30px;
+    left: -90px;
+    width: 213px;
+}
+</style>
 <script src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
        $(document).ready(function() {
@@ -58,7 +78,7 @@
                         		
                             }
                         });
-                        $('.menubar').hide();
+                        $('.menubar').hide();	
                         $('.mainContent').show();
                         $('.mainContent').css('display','block');
                     });
@@ -77,7 +97,7 @@
                         $('.mainContent').css('display','none');
                     });
                 });
-        
+
         
     
     </script>
@@ -94,7 +114,7 @@
 					<ul>
 						<li><a href="#">오션뷰</a></li>
 						<li><a href="#">파티룸</a></li>
-						<li><a href="#">야외수영장</ a></li>
+						<li><a href="#">야외수영장</a></li>
 						<li><a href="#">속초</a></li>
 						<li><a href="#">애견동반펜션</a></li>
 						<li><a href="#">여수</a></li>
@@ -106,7 +126,7 @@
 				</div>
 			</form>
 			<h1 id="logo">
-				<a id="aLogo" href="#/" title="여기어때">요기어때</a>
+				<a id="aLogo" href="main" title="요기어때">요기어때</a>
 			</h1>
 			<button type="button" id="search">검색</button>
 			<ul class="menubar">
@@ -117,13 +137,34 @@
 					<ul class="list_03">
 						<li><a href="notice">공지사항</a></li>
 						<li><a href="event">이벤트</a></li>
-						<li><a href="#">혁신 프로젝트</a></li>
+						<li><a href="innoproj">혁신 프로젝트</a></li>
 						<li><a href="faq">자주 묻는 질문</a></li>
 						<li><a href="#">1:1 문의</a></li>
 						<li><a href="#">약관 및 정책</a></li>
 					</ul>
 				</li>
-				<li><a href="login"><span>로그인</span></a></li>
+				<c:choose>
+					<c:when test="${empty sessionScope.nick}">
+						<li><a href="login"><span>로그인</span></a></li>
+					</c:when>
+					<c:otherwise>
+						<li class="over pic">
+							<a href="#"><span>
+								<img class="over_pic" src="imgs/login_icon.png" alt="login_icon">
+							</span></a>
+							<ul class="list_04">
+								<li><b>${sessionScope.nick}</b></li>
+								<li><a href="mypage">내정보</a></li>
+								<li><a href="#">포인트</a></li>
+								<li><a href="#">쿠폰함</a></li>
+								<li><a href="#">예약내역</a></li>
+								<li><a href="#">최근 본 숙소</a></li>
+								<li><button type="button" class="pop_logout_open" onclick="location.href='logout'">로그아웃</button></li>
+							</ul>		
+						</li>
+					</c:otherwise>
+				</c:choose>
+				
 			</ul>
 		</div>
 	</div> <!-- //topbar end -->
