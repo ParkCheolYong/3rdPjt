@@ -76,5 +76,9 @@
    .news_list li a:after{display:inline-block;content:'';position:absolute;top:50%;right:0;width:9px;height:13px;margin-top:-4px;background:#fff url('//image.goodchoice.kr/images/web_v3/ico_arr_gt_3.png') 0 0 no-repeat;background-size:9px auto}
    .news_list li a span{font-size:16px;color:rgba(0,0,0,0.38)}
    .more_wrap .paging{border-top:none;margin-top:0}
+   
+   .hiddenContent em{font-style: italic;}
+   .hiddenContent ol>li{list-style-type: decimal; list-style-position:inside;}
+   .hiddenContent ul>li{list-style-type: disc; display: list-item;text-align: -webkit-match-parent;list-style-position:inside;}
 }
        
