@@ -50,7 +50,7 @@
             <div class="tab_each">
                <ul id="notices" class="show_list open_list">
                <c:forEach items="${list }" var="dto">
-               		<li><a id="notive_tab" class="list_que" >
+               		<li class="noticeLi"><a id="notive_tab" class="list_que" >
                         <p>${dto.sub } </p>
 	                        <span>
 	                        <fmt:formatDate value="${dto.nalja}" pattern="yyyy-MM-dd"/>
@@ -60,8 +60,9 @@
 	                        </span>
                         </a>
                     <div class="hiddenContent">${dto.content }
-                    <br>
+                    <p style="text-align:right;">
                     <a style="height: 25px; width: 35px; background-color: lightgray; border: 0px;border-radius: 5px; color: white;" href="noticeDelete?idx=${dto.idx}">삭제</a>
+                    </p>
                     </div>
                		</li>
                </c:forEach>
@@ -81,16 +82,16 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 
-function new_flag(){
-	if('dto.newIco' == 1 ) {
+function new_flag(){ //3일 이내에 작성된 글이면 newIcon 출력, 아니면 미출력
+	if('dto.newIco' == 1 ) {//3일이내
 		$('.ico_new').show();
-		} else { 
+		} else { //3일 초과
 		$('.ico_new').hide();
 	}
 }
 
 
-$(function(){
+$(function(){ //a tag인 list_que 클래스명에 오픈이 붙으면 다음 div 출력 아니면 미출력
 	$('.open_list li .list_que').each(function(){	
 		$(this).click(function(){
 			if ($(this).hasClass('open')){
