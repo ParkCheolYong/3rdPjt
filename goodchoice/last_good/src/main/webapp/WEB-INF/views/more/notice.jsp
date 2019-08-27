@@ -6,8 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/notice.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/notice.css">
 <title>Insert title here</title>
 
 </head>
@@ -54,14 +54,14 @@
                         <p>${dto.sub } </p>
 	                        <span>
 	                        <fmt:formatDate value="${dto.nalja}" pattern="yyyy-MM-dd"/>
-	                      	<c:if test="${dto.newIco eq '1'}">
+	                      	<c:if test="${dto.newIco eq '1'}">   <!-- //3일 이내에 작성된 글이면 newIcon 출력, 아니면 미출력 -->
 	                        <i class="ico_new">NEW</i>
 							</c:if>
 	                        </span>
                         </a>
                     <div class="hiddenContent">${dto.content }
                     <p style="text-align:right;">
-                    <a style="height: 25px; width: 35px; background-color: lightgray; border: 0px;border-radius: 5px; color: white;" href="noticeDelete?idx=${dto.idx}">삭제</a>
+                    <a style="background-color: lightgray; border: 0px;border-radius: 5px; color: white;" href="noticeDelete?idx=${dto.idx}">삭제</a>
                     </p>
                     </div>
                		</li>
@@ -81,15 +81,6 @@
 <!-- 스크립트 -->  
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
-
-function new_flag(){ //3일 이내에 작성된 글이면 newIcon 출력, 아니면 미출력
-	if('dto.newIco' == 1 ) {//3일이내
-		$('.ico_new').show();
-		} else { //3일 초과
-		$('.ico_new').hide();
-	}
-}
-
 
 $(function(){ //a tag인 list_que 클래스명에 오픈이 붙으면 다음 div 출력 아니면 미출력
 	$('.open_list li .list_que').each(function(){	
