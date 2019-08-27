@@ -110,18 +110,31 @@ public class HomeController {
 		dao.deleteDao(Integer.parseInt(request.getParameter("no")));
 		return "redirect:event";
 	}
+	
 	@RequestMapping("/notice")
 	public String notice(Model model) {
-
 		NoticeDao dao=sqlSession.getMapper(NoticeDao.class);
 		model.addAttribute("list",dao.listDao());
-
 		return "more/notice"; //페이지로 이동
 	}
+	
 	@RequestMapping("/noticeAdd")
 	public String noticeAdd() {
 
 		return "more/noticeAdd"; //페이지로 이동
+	}
+	@RequestMapping(value = "/noticeWrite",method = RequestMethod.POST)
+	public String noticeWrite(HttpServletRequest request, Model model) {
+		NoticeDao dao =sqlSession.getMapper(NoticeDao.class);
+		dao.noticeWriteDao(request.getParameter("id"), request.getParameter("sub"), request.getParameter("content"));
+		
+		return "redirect:notice";
+	}
+	@RequestMapping("/noticeDelete")
+	public String noticeDelete(HttpServletRequest request, Model model) {
+		NoticeDao dao =sqlSession.getMapper(NoticeDao.class);
+		dao.deleteDao(Integer.parseInt(request.getParameter("idx")));
+		return "redirect:notice";
 	}
 	
 }

@@ -1,9 +1,9 @@
 @charset "UTF-8";
-<!--
+
 #content {
     overflow: hidden;
 }
--->
+
 .more_wrap {
     padding-top: 54px;
     background: #fff;
@@ -37,7 +37,7 @@
     width: 724px;
     margin-right: 31px;
 }
-.link::after {
+.list_que::after {/*link*/
     content: "";
     position: absolute;
     top: 50%;

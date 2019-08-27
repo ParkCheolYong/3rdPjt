@@ -8,6 +8,14 @@ public class NoticeDto {
 	private String sub;
 	private String content;
 	private Date nalja;
+	private int newIco;
+	
+	public int getNewIco() {
+		return newIco;
+	}
+	public void setNewIco(int newIco) {
+		this.newIco = newIco;
+	}
 	//getter, setter, 기본생성자, 매개변수가 있는 생성자, toString()
 	public int getIdx() {
 		return idx;
@@ -42,16 +50,18 @@ public class NoticeDto {
 	
 	public NoticeDto() {}
 	
-	public NoticeDto(String id, String sub, String content) {
+	public NoticeDto(String id, String sub, String content, int newIco) {
 		super();
 		this.id=id;
 		this.sub=sub;
 		this.content=content;
+		this.newIco=newIco;
 	}
 	@Override
 	public String toString() {
 		return "NoticeDto [idx=" + idx + ", id=" + id + ", sub=" + sub + ", content=" + content + ", nalja=" + nalja
-				+ "]";
+				+ ", newIco=" + newIco + "]";
 	}
+	
 	
 }

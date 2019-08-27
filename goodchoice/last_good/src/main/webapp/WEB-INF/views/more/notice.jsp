@@ -7,10 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/notice.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 <title>Insert title here</title>
+
 </head>
 <body>
-	<%@include file="/common/header.jsp"%>
+	<%@include file="/common/header.jspf"%>
 	<!-- Sub Top -->
 	<div class="sub_top_wrap">
 		<div class="sub_top bg_kong_3">
@@ -39,7 +41,7 @@
 
             <!-- Tab -->
             <div class="tab">
-               <span class="tab_btn active">서비스 공지사항 <i class="ico_new">NEW</i></span>
+               <span class="tab_btn active">서비스 공지사항</span>
                <!-- <span class="tab_btn">여기어때 언론보도 <i class="ico_new">NEW</i></span> -->
             </div>
 
@@ -48,13 +50,18 @@
                <ul id="notices" class="show_list open_list">
                <c:forEach items="${list }" var="dto">
                		<li><a id="notive_tab" class="list_que" >
-                        <p>${dto.sub }</p>
+                        <p>${dto.sub } </p>
 	                        <span>
 	                        <fmt:formatDate value="${dto.nalja}" pattern="yyyy-MM-dd"/>
-	                        <i class="ico_new" v-if="row.new_icon_show == 'Y'">NEW</i>
+	                      	<c:if test="${dto.newIco eq '1'}">
+	                        <i class="ico_new">NEW</i>
+							</c:if>
 	                        </span>
                         </a>
-                    <div class="hiddenContent">${dto.content }</div>
+                    <div class="hiddenContent">${dto.content }
+                    <br>
+                    <a style="height: 25px; width: 35px; background-color: lightgray; border: 0px;border-radius: 5px; color: white;" href="noticeDelete?idx=${dto.idx}">삭제</a>
+                    </div>
                		</li>
                </c:forEach>
                </ul>
@@ -62,12 +69,25 @@
                     <div id="notice_pagination">
                         <!-- <my-pagination></my-pagination>-->
                     </div>
+               <br>
+				<div style="text-align: right">
+					<button style="background-color: #F7323F; border: 0px; border-radius: 5px;  width: 60px; height: 35px; font-weight: bold;"><a style="color: white;" href="noticeAdd">글쓰기</a></button>
+				</div>
             </div>
         </div>
          <!-- //Notice -->
 <!-- 스크립트 -->  
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
+
+function new_flag(){
+	if('dto.newIco' == 1 ) {
+		$('.ico_new').show();
+		} else { 
+		$('.ico_new').hide();
+	}
+}
+
 
 $(function(){
 	$('.open_list li .list_que').each(function(){	
@@ -83,12 +103,12 @@ $(function(){
 			}
 		});
 		});
-	});
+});
     </script>
 
       </div>  
     </div>
 		
-	<%@include file="/common/footer.jsp"%>
+	<%@include file="/common/footer.jspf"%>
 </body>
 </html>

@@ -10,8 +10,8 @@ import com.bit.good.dto.NoticeDto;
 
 public interface NoticeDao {
 	public List<NoticeDto> listDao();
-	public void noticeWriteDao(NoticeDto vo);
+	public void noticeWriteDao(String id, String sub, String content);
 	public NoticeDto viewDao(String sub);
-	public void deleteDao(int num);
+	public void deleteDao(int idx);
 	public void updateNotice(NoticeDto dto);
 }
