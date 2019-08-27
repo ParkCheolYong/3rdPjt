@@ -373,50 +373,9 @@
 </head>
 
 <body>
+	<%@include file="/common/header.jspf"%>
    <div class="frame">
       <div class="header">
-         <div id="topbar">
-            <div id="topCenter">
-               <form class="srch">
-                  <button type="submit" id="search2" style="right: 1139px;">검색</button>
-                  <input type="text" id="keyword" placeholder="지역, 숙소명" autocomplete="off">
-                  <button type="button" id="searchClose" style="right: 400px;">취소</button>
-                  <div class="srch_bar">
-                     <strong style="margin-left: 45px;">추천 검색어</strong>
-                     <ul>
-                        <li><a href="#">오션뷰</a></li>
-                        <li><a href="#">파티룸</a></li>
-                        <li><a href="#">야외수영장</a></li>
-                        <li><a href="#">속초</a></li>
-                        <li><a href="#">애견동반펜션</a></li>
-                        <li><a href="#">여수</a></li>
-                        <li><a href="#">제주도</a></li>
-                        <li><a href="#">안면도</a></li>
-                        <li><a href="#">남해</a></li>
-                        <li><a href="#">부산</a></li>
-                     </ul>
-                  </div>
-               </form>
-               <h1 id="logo"><a id="aLogo" href="#/" title="여기어때">요기어때</a></h1>
-               <button type="button" id="search" style="right: 396px;">검색</button>
-               <ul class="menubar">
-                  <li><a href="#">내주변</a></li>
-                  <li><a href="#">예약내역</a></li>
-                  <li class="over">
-                     <button type="button"><span>더보기</span></button>
-                     <ul class="list_03">
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="event">이벤트</a></li>
-                        <li><a href="innoproj">혁신 프로젝트</a></li>
-                        <li><a href="faq">자주 묻는 질문</a></li>
-                        <li><a href="#">1:1 문의</a></li>
-                        <li><a href="#">약관 및 정책</a></li>
-                     </ul>
-                  </li>
-                  <li><a href="#"><span>로그인</span></a></li>
-               </ul>
-            </div>
-         </div>
          <div class="top-background">
             <p>더보기</p>
          </div>
@@ -456,7 +415,6 @@
          </div>
       </div>
       <div class="footer">
-
       </div>
    </div>
 </body>

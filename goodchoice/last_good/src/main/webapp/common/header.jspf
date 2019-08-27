@@ -154,7 +154,7 @@
 							</span></a>
 							<ul class="list_04">
 								<li><b>${sessionScope.nick}</b></li>
-								<li><a href="#">내정보</a></li>
+								<li><a href="mypage">내정보</a></li>
 								<li><a href="#">포인트</a></li>
 								<li><a href="#">쿠폰함</a></li>
 								<li><a href="#">예약내역</a></li>
