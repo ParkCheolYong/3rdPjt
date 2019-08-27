@@ -259,7 +259,7 @@ button span {
 	color: #e61c51;
 }
 
-.pwChange {
+#delete {
 	position: absolute;
 	margin: -230px 0px 0px 250px;
 	width: 700px;
@@ -284,13 +284,13 @@ button span {
 	margin-left: 8px;
 }
 
-/*비밀번호 변경*/
+/*비밀번호*/
 .confirm {
 	margin-right: 5%;
 	width: 144px;
 	height: 50px;
 	border-radius: 4px;
-	font-size: 15px;
+	font-size: 16px;
 	color: white;
 	text-align: center;
 	box-sizing: border-box;
@@ -328,37 +328,10 @@ input::placeholder {
 	padding-left: 5px;
 }
 
-.myInfoEdit {
-	margin-top: 30px;
-	margin-bottom: 40px;
-	font-size: 17px;
-	text-decoration-line: underline;
-}
-
 .line {
 	border-bottom: solid 1px #ebebeb;
 	margin-top: -100px;
 	margin-bottom: 20px;
 	padding-top: 40px;
 	padding-bottom: 70px;
-}
-
-/*비밀번호 유효성 검사*/
-.redText {
-	display: block;
-	font-size: 14px;
-	color: #f30f4c;
-	margin-left: 12px;
-}
-
-.greenText {
-	display: block;
-	font-size: 14px;
-	color: green;
-	margin-left: 10px;
-}
-
-span {
-	margin-top: 5px;
-	margin-bottom: -23px;
 }

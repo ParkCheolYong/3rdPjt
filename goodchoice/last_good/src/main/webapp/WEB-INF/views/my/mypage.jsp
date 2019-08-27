@@ -514,7 +514,7 @@
 					<li class="nav-item"><a href="#" class="nav-link">쿠폰함</a></li>
 					<li class="nav-item"><a href="#" class="nav-link">예약 내역</a></li>
 					<li class="nav-item"><a href="#" class="nav-link">최근 본 숙소</a></li>
-					<li class="nav-item"><a href="#" class="nav-link"> <font
+					<li class="nav-item"><a href="mypage" class="nav-link"> <font
 							color="#e61c51"><b>내 정보 관리</b></font>
 					</a></li>
 				</ul>
@@ -527,7 +527,7 @@
 							<img src="imgs/login_icon.png" width="128px;" height="128px;"
 								alt="">
 						</div>
-						<p>aitchjay@naver.com</p>
+						<p>${sessionScope.email}</p>
 						<br>
 						<div class="btns">
 							<div class="text">닉네임 ${sessionScope.nick}</div>
@@ -607,7 +607,7 @@
 											<input type="checkbox" class="checkbox">
 											주의사항 모두 동의합니다.
 										</div>
-									<button class="btn_red_fill" onclick="location.href='delete'">회원탈퇴</button>
+									<button class="btn_red_fill" onclick="location.href='deletepage'">회원탈퇴</button>
 								</div>
 							</div>
 							<!--팝업 영역 끝 -->

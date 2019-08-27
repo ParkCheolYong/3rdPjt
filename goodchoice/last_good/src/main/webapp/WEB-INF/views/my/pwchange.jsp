@@ -9,8 +9,116 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/pwchange.css">
 	<style type="text/css">
+	
+	/*레이어 팝업*/
+	
+	.btn_red_fill {
+    width: 100%;
+    height: 56px;
+    margin-top: 16px;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    vertical-align: top;
+    background: linear-gradient(to bottom, #ff0055 0%,#e62243 100%);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	max-height: 800px;
+}
+
+#btn_open {
+	background-color: white;
+	border: 0px;
+	width: 100px;
+	font-size: 17px;
+	text-decoration: underline;
+}
+
+#btn_close {
+	background-color: white;
+	border: 0px;
+	font-size: 17px;
+	margin-top: 14px;
+	margin-right: 14px;
+	display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: url(//image.goodchoice.kr/images/web_v3/ico_close.png) 50% 50% no-repeat;
+    background-size: 24px auto;
+    text-indent: -9999px;
+}
+
+.Pstyle {
+	opacity: 1.0;
+	display: none;
+	position: relative;
+	width: 336px;
+	height: 470px;
+	border: 5px solid #fff;
+	padding: 20px;
+	background-color: #fff;
+}
+
+.dot_text li {
+	margin-bottom: 7px;
+	margin-left: -40px;
+    font-size: 16px;
+    padding-left: 16px;
+    background: url(//image.goodchoice.kr/images/web_v3/ico_bul.png) 0 0 no-repeat;
+    background-size: 14px auto;
+    line-height: 24px;
+    color: rgba(0,0,0,0.8);
+}
+
+.checkbox1 {
+	margin-top: 50px;
+}
+
+.checkbox1 {
+	width: 20px;
+    height: 20px;
+    border: none;
+    background: url(imgs/ico_chk.png) 0 0 no-repeat;
+    background-size: 20px auto;
+    cursor: pointer;
+}
+
+.Pstyle strong {
+	font-size: 24px;
+    font-weight: bold;
+}
+
+.cont strong {
+    display: block;
+    margin-bottom: 21px;
+    padding-top: 5px;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 100;
+    color: #e62243;
+    
+}
+
+.cont b {
+	margin-top: 10px;
+    font-weight: bold;
+}
+
+
+
 	</style>
-	<script src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -221,8 +329,25 @@
 	
 	
 	</script>
-</head>
 
+<!-- 회원탈퇴 팝업창 -->
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/bPopup/0.11.0/jquery.bpopup.js"></script>
+<script>
+	$(function() {
+		$("#btn_open").click(function() { //레이어 팝업 열기 버튼 클릭 시
+			$('#popup').bPopup(); //  
+		});
+
+		$("#btn_close").click(function() { //닫기
+			$('#popup').bPopup().close();
+		});
+	});
+</script>
+
+</head>
 <body>
 	<div class="frame">
 		<div class="header">
@@ -279,7 +404,7 @@
 					<li class="nav-item"><a href="#" class="nav-link">쿠폰함</a></li>
 					<li class="nav-item"><a href="#" class="nav-link">예약 내역</a></li>
 					<li class="nav-item"><a href="#" class="nav-link">최근 본 숙소</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">
+					<li class="nav-item"><a href="mypage" class="nav-link">
 							<font color="#e61c51"><b>내 정보 관리</b></font>
 						</a></li>
 				</ul>
@@ -294,13 +419,15 @@
 						<br>
 						<div class="text">새로운 비밀번호</div>
 						<div class="pw_input">
-							<input type="password" id="newPw" placeholder="비밀번호(최소 6자 이상)"><span id="newPwSpan"></span>
-						</div><br>
+							<input type="password" id="newPw" placeholder="비밀번호(최소 6자 이상)"></div>
+							<span id="newPwSpan"></span>	
+						<br>
 	
 						<div class="text">새로운 확인</div>
 						<div class="pw_input">
-							<input type="password" id="confirmNewPw" placeholder="변경할 비밀번호를 재입력해 주세요."><span id="confirmNewPwSpan"></span>
-						</div>
+							<input type="password" id="confirmNewPw" placeholder="변경할 비밀번호를 재입력해 주세요."></div>
+							<span id="confirmNewPwSpan"></span>
+						<br>
 						<div class="myInfoEdit"><a href="mypage">
 								<font color="#000000">내 정보 수정 ></font>
 							</a></div>
@@ -309,7 +436,36 @@
 						
 						<div class="line"></div>
 	
-						여기어때를 이용하고 싶지 않으신가요?　<a href="#" style="color: black; text-decoration: underline; padding-bottom: 200px;">회원탈퇴</a>
+						<div class="deleteAcc">
+
+							여기어때를 이용하고 싶지 않으신가요? <input type="button" id="btn_open"
+								value="회원탈퇴" />
+
+							<!--팝업 영역 시작 -->
+							<div id="popup" class="Pstyle">
+								<strong><center>회원탈퇴</center></strong><br>
+								<input type="button" id="btn_close" value="닫 기">
+								<div class="cont">
+									<font size="4"><b>주의사항</b></font>
+									<strong>회원탈퇴 전 반드시 확인해주세요.</strong>
+									<ul class="dot_text">
+										<li>회원탈퇴 시 계정 정보는 복구가 불가하며 1일 이후 재가입 가능합니다.</li>
+										<li>현재 보유 중인 포인트, 마일리지, 쿠폰은 모두 소멸되며 복구할 수 없습니다.</li>
+										<li>탈퇴 후, 기존 가입 휴대기기로 재가입 시 첫 혜택을 받을 수 없습니다. (신규 회원 쿠폰, 첫
+											리뷰 작성 1000포인트 등)</li>
+									</ul>
+										<div class="checkbox1">
+										<p>
+											<input type="checkbox" class="checkbox2">
+											주의사항 모두 동의합니다.
+										<p>
+										</div>
+									<button class="btn_red_fill" onclick="location.href='deletepage'">회원탈퇴</button>
+								</div>
+							</div>
+							<!--팝업 영역 끝 -->
+						</div>
+						
 					</div>
 				</form>
 			</div>

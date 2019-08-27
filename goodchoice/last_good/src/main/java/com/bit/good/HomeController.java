@@ -178,7 +178,12 @@ public class HomeController {
 					
 			return "my/pwchange";
 		}
-		 
-	
+		
+		// È¸¿ø Å»Åğ ÆäÀÌÁö
+		@RequestMapping("deletepro")
+		public String deletepro() {
+			
+			return "my/deletepro";
+		}
 	
 }

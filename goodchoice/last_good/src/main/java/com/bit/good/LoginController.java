@@ -1,7 +1,6 @@
 package com.bit.good;
 
-import java.sql.SQLException;
-import java.util.Map;
+
 
 import javax.servlet.http.HttpSession;
 
@@ -38,6 +37,7 @@ public class LoginController {
 			return "login/login";
 		}else {
 			session.setAttribute("nick", dto.getNick());
+			session.setAttribute("email", dto.getEmail());
 			return "main";
 		}
 		
