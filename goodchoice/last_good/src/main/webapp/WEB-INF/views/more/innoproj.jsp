@@ -9,300 +9,86 @@
    <title>Document</title>
    <style type="text/css">
    
-      #topbar {
-         position: fixed;
-         top: 0;
-         left: 0;
-         right: 0;
-         height: 72px;
-         transition: 0.4s;
-         background-color: #f7323f;
-         z-index: 220;
-
-      }
-
-      a {
-         text-decoration: none;
-      }
-
-      #topCenter {
-         position: relative;
-         width: 1024px;
-         height: 64px;
-         background: none;
-         margin: 0 auto;
-      }
-
-      ul,
-      ol,
-      li {
-         list-style: none;
-
-      }
-
-      #logo {
-         position: absolute;
-         top: 26px;
-         left: 31px;
-         width: 96px;
-         height: 20px;
-         margin: 0;
-         background: url(imgs/h1_logo_pc_w.png) 0 0 no-repeat;
-         background-size: 96px auto;
-      }
-
-      #aLogo {
-         display: block;
-         text-indent: -9999px;
-         text-decoration: none;
-      }
-
-      #search {
-         position: absolute;
-         border: none;
-         text-indent: -9999px;
-         top: 22px;
-         z-index: 10;
-         width: 30px;
-         height: 30px;
-         background: url(imgs/ico_srch_2.png) 50% 50% no-repeat;
-         background-size: 24px auto;
-
-      }
-
-      #searchClose {
-         position: absolute;
-         border: none;
-         text-indent: -9999px;
-         top: 22px;
-         right: 206px;
-         z-index: 10;
-         width: 30px;
-         height: 30px;
-         background: url(imgs/ico_close_2.png) 50% 50% no-repeat;
-         background-size: 24px auto;
-
-
-      }
-
-      button {
-         padding: 0;
-         cursor: pointer;
-         box-sizing: border-box;
-         margin: 0em;
-         font: 400 13.3333px Arial;
-         word-spacing: normal;
-         text-transform: none;
-         text-indent: 0px;
-         text-shadow: none;
-         display: inline-block;
-         text-align: center;
-         align-items: flex-start;
-         text-rendering: auto;
-      }
-
-      .menubar {
-         display: inline-block;
-         position: absolute;
-         top: 7px;
-         right: 31px;
-         width: 1600px;
-         text-align: right;
-         list-style: none;
-
-      }
-
-      .menubar li {
-         display: inline-block;
-         position: relative;
-         min-width: 53px;
-         min-height: 35px;
-         margin-left: 30px;
-         vertical-align: top;
-      }
-
-      .menubar li a {
-         display: inline-block;
-         font-size: 18px;
-         color: #ffffff;
-         letter-spacing: 0;
-      }
-
-      .menubar li button {
-         border: none;
-         padding: 0;
-         background: none;
-         font-size: 18px;
-         line-height: ;
-         color: #ffffff;
-         letter-spacing: 0;
-      }
-
-      button span {
-         position: relative;
-      }
-
-      .menubar li ul {
-         display: none;
-         position: absolute;
-         border-radius: 5px;
-         padding: 10px;
-         /*이부분수정함*/
-         background: #fff;
-         text-align: left;
-         box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
-      }
-
-      .menubar li:hover ul {
-         display: block;
-         /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
-         font-size: 14px;
-         line-height: 1;
-         min-width: auto;
-         min-height: auto;
-         margin: 0 0 14px 0;
-         vertical-align: top;
-      }
-
-      .menubar li:hover ul a {
-         color: #000000;
-
-      }
-
-      .list_03 {
-         top: 30px;
-         left: -65px;
-         width: 184px;
-      }
-
-      .mainContent {
-         height: 2000px;
-         width: auto;
-         background-color: rgba(0, 0, 0, 0.5);
-         margin: 0px auto;
-         padding: 0px auto;
-         border: 0px;
-         left: 0;
-         right: 0;
-         position: absolute;
-         z-index: 30
-      }
-
-      .srch_bar {
-         position: absolute;
-         top: 72px;
-         left: 300px;
-         width: 60%;
-         height: 280px;
-         background-color: #ffffff;
-         border: 1px;
-         border-bottom-right-radius: 10px;
-         border-bottom-left-radius: 10px;
-
-      }
-
-      .srch_bar ul li {
-         margin-left: 10px;
-         margin-bottom: 3px;
-      }
-
-      .srch_bar li a {
-         color: green;
-      }
-
-      #keyword {
-         position: absolute;
-         left: 340px;
-         top: 22px;
-         width: 700px;
-         height: 25px;
-         font-size: 16px;
-         background-color: transparent;
-         border: none;
-      }
-
-      #search2 {
-         position: absolute;
-         border: none;
-         text-indent: -9999px;
-         top: 22px;
-         right: 596px;
-         z-index: 310;
-         width: 30px;
-         height: 30px;
-         background: url(imgs/ico_srch_2.png) 50% 50% no-repeat;
-         background-size: 24px auto;
-
-      }
-
-      .top-background {
-         position: absolute;
-         width: 100%;
-         height: 205px;
-         background-color: #F7323F;
-         margin: 0px 0px 0px -8px;
-      }
-
-      .top-background p {
-         position: absolute;
-         margin: 82px 0px 0px 310px;
-         font-size: 37px;
-         color: white;
-      }
-
-      .nav {
-         position: absolute;
-         width: 150px;
-         color: #646464;
-         margin: 240px 0px 0px 290px;         
-      }
-
-      .nav-list {
-         list-style: none;
-         margin: 0;
-         padding: 10px 0;
-      }
-
-      .nav-item {
-         margin: 12px 0;
-      }
-
-      .nav-link {
-         display: block;
-         text-decoration: none;
-         padding: 4px 10px;
-         color: #646464;
-         font-size: 18px;
-      }
-      
-      .nav-list li:nth-child(3) {
-         color: #e61c51;
-      }
-
-      .content {
-         position: absolute;
-         margin: 250px 0px 0px 550px;
-      }
-      
-      .bbs {
-         width: 730px;
-         height: 850px;
-         margin-top: 10px;
-         line-height: 1.6em;
-      }
-      
-      .bbs td{
-         border-bottom: 1px solid #e6e6e6;
-         height: 50px;
-      }
-      
-      .bbs td a{
-         text-decoration: none;
-         color: white;
-         margin-left: 8px;
-      }
-      
-      
+	.top-background {
+		position: absolute;
+		width: 100%;
+		height: 205px;
+		background-color: #F7323F;
+		margin: 0px 0px 0px 0px;
+	}
+	
+	.top-background p {
+		position: absolute;
+		margin: 82px 0px 0px 310px;
+		font-size: 37px;
+		color: white;
+	}
+	
+	.nav {
+		position: absolute;
+		width: 150px;
+		color: #646464;
+		margin: 240px 0px 0px 290px;
+	}
+	
+	.nav-list {
+		list-style: none;
+		margin: 0;
+		padding: 10px 0;
+	}
+	
+	.nav-item {
+		margin: 12px 0;
+	}
+	
+	.nav-link {
+		display: block;
+		text-decoration: none;
+		padding: 4px 10px;
+		color: #646464;
+		font-size: 18px;
+	}
+	
+	.nav-list li:nth-child(3) {
+		color: #e61c51;
+	}
+	   
+   .bbs {
+		width: 730px;
+		height: 850px;
+		margin-top: 0px;
+		line-height: 1.6em;
+	}
+	
+	.bbs td {
+		border-bottom: 1px solid #e6e6e6;
+		height: 50px;
+	}
+	
+	.bbs td a {
+		text-decoration: none;
+		color: white;
+		margin-left: 8px;
+	}
+	
+   .innoContent {
+   		margin-left: 550px;
+   }
+   
+   .cont-list {
+		list-style: none;
+		padding: 10px 0;
+   
+   }
+   
+   .cont-item {
+		margin-top: 250px;
+   }
+   
+   .write {
+   
+   }
+   
    </style>
    <script src="js/jquery-1.12.4.min.js"></script>
    <script type="text/javascript">
@@ -374,48 +160,45 @@
 
 <body>
 	<%@include file="/common/header.jspf"%>
-   <div class="frame">
-      <div class="header">
+
          <div class="top-background">
-            <p>더보기</p>
+            <br><p>더보기</p>
          </div>
-      </div>
-      <div class="container">
-         <div class="nav">
-            <ul class="nav-list">
-               <li class="nav-item"><a href="#" class="nav-link">공지사항</a></li>
-               <li class="nav-item"><a href="event" class="nav-link">이벤트</a></li>
-               <li class="nav-item"><a href="innoproj" class="nav-link"><font color="#e61c51"><b>혁신 프로젝트</b></font></a></li>
-               <li class="nav-item"><a href="faq" class="nav-link">자주 묻는 질문</a></li>
-               <li class="nav-item"><a href="#" class="nav-link">1:1 문의</a></li>
-               <li class="nav-item"><a href="#" class="nav-link">약관 및 정책</a></li>
-            </ul>
-            <div class="mainContent">
-            </div>
+         <div class="container">
+	         <div class="nav">
+	            <ul class="nav-list">
+	               <li class="nav-item"><a href="#" class="nav-link">공지사항</a></li>
+	               <li class="nav-item"><a href="event" class="nav-link">이벤트</a></li>
+	               <li class="nav-item"><a href="innoproj" class="nav-link"><font color="#e61c51"><b>혁신 프로젝트</b></font></a></li>
+	               <li class="nav-item"><a href="faq" class="nav-link">자주 묻는 질문</a></li>
+	               <li class="nav-item"><a href="#" class="nav-link">1:1 문의</a></li>
+	               <li class="nav-item"><a href="#" class="nav-link">약관 및 정책</a></li>
+	            </ul>
+	         </div>
+	         <div class="innoContent">
+	         	<ul class="cont-list">
+	         		<li class="cont-item"><font size="4em"><b>혁신 프로젝트 란?</b></font><br>
+	         		<font size="3.5em" style="line-height:2em; color:#6f6f6f;">건전한 예약 문화를 조성하기 위해 여기어때가 시행하는 인식개선 캠페인 입니다.</font></li>
+	         	</ul>
+	            <table class="bbs">
+	               <c:forEach items="${list}" var="dto">
+	               <tr>
+	                  <td style="background-image: url('imgs/circlebutton.PNG');
+	         					background-repeat: no-repeat;
+	         					background-position: 0% 50%;
+	         					width: 60px;
+	         					text-align: center;
+	         					font-size: 12pt;
+	         					padding-right: 15px;"><a href="innoprojDetail?no=${dto.no }"><b>${dto.no }탄</b></a></td>
+	                  <td><a href="innoprojDetail?no=${dto.no }"><font color="#272727" size="4">${dto.sub }</font></a><a href="innoprojDetail?no=${dto.no }"><span style="background-color:#ebebeb"><font color="#666666">${dto.tag }</font></span><br><font color="#666666">${dto.sub2 }</font></a></td>
+	               </tr>               
+	               </c:forEach>
+	            </table>
+	            <div style="margin-top: 20px; margin-left: 650px;">
+					<button style="background-color: #e51048; border: 0px; border-radius: 5px;  width: 60px; height: 35px; font-weight: bold;"><a style="color: white;" href="innoprojAdd">등록</a></button>
+				</div>
+	         </div>
          </div>
-         <div class="content">
-            <b><font color="#272727" size="4">혁신 프로젝트 란?</font></b><br>
-            <font color="#646464">건전한 예약 문화를 조성하기 위해 여기어때가 시행하는 인식개선 캠페인 입니다.</font>
-            <table class="bbs">
-               
-               <c:forEach items="${list}" var="dto">
-               <tr>
-                  <td style="background-image: url('imgs/circlebutton.PNG');
-         					background-repeat: no-repeat;
-         					background-position: 0% 50%;
-         					width: 45px;
-         					text-align: center;
-         					font-size: 12pt;
-         					padding-right: 15px;"><a href="innoprojDetail?no=${dto.no }"><b>${dto.no }탄</b></a></td>
-                  <td><font color="#272727" size="4">${dto.sub }</font>　<span style="background-color:#ebebeb"><font color="#666666">${dto.tag }</font></span><br><font color="#666666">${dto.sub2 }</font></td>
-               </tr>               
-               </c:forEach>
-            </table>
-            <a href="innoprojAdd">등록</a>  
-         </div>
-      </div>
-      <div class="footer">
-      </div>
-   </div>
+		<%@include file="/common/footer.jspf"%>
 </body>
 </html>

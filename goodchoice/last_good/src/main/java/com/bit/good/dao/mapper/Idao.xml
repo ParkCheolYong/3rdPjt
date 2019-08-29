@@ -16,4 +16,16 @@
 	<delete id="deleteDao2">
 		DELETE FROM INNOPROJ WHERE NO = #{param1}
 	</delete>
+	<select id="prev" resultType="com.bit.good.dto.InnoprojDto">
+		 SELECT *
+			FROM(
+			 SELECT NO,
+				SUB,
+				LAG(NO) OVER (ORDER BY NO) PREV_NO,
+				LAG(SUB) OVER (ORDER BY NO) PREV_SUB
+			 FROM INNOPROJ
+			 ORDER BY NO
+			)
+			WHERE NO = '#{param1}'
+	</select>
 </mapper>
