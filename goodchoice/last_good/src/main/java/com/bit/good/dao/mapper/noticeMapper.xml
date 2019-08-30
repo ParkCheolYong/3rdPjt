@@ -10,6 +10,9 @@
 	<select id="detailDao" resultType="com.bit.good.dto.NoticeDto">
 		SELECT * FROM notice WHERE idx = #{idx}
 	</select>
+	<select id="getTotalCount" resultType="com.bit.good.dto.Paging">
+		select count(*) as totalCount from notice
+	</select>
 	<insert id="noticeWriteDao">
 		insert into notice (idx, id, sub, content) values (notice_seq.nextval, #{param1}, #{param2}, #{param3})
 	</insert>

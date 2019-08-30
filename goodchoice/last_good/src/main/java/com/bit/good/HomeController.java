@@ -21,6 +21,7 @@ import com.bit.good.dao.NoticeDao;
 import com.bit.good.dao.Idao;
 import com.bit.good.dao.MypageDao;
 import com.bit.good.dao.PwChangeDao;
+import com.bit.good.dto.Paging;
 
 @Controller
 public class HomeController {
@@ -118,9 +119,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/notice")
-	public String notice(Model model) {
+	public String notice(Model model, HttpServletRequest request) {
 		NoticeDao dao=sqlSession.getMapper(NoticeDao.class);
+
 		model.addAttribute("list",dao.listDao());
+		model.addAttribute("totalCount",dao.getTotalCount());
+
 		return "more/notice"; //페이지로 이동
 	}
 	
