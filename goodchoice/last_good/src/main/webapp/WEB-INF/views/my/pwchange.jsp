@@ -26,13 +26,11 @@
     vertical-align: top;
     background: linear-gradient(to bottom, #ff0055 0%,#e62243 100%);
 }
-
 body {
 	margin: 0;
 	padding: 0;
 	max-height: 800px;
 }
-
 #btn_open {
 	background-color: white;
 	border: 0px;
@@ -40,7 +38,6 @@ body {
 	font-size: 17px;
 	text-decoration: underline;
 }
-
 #btn_close {
 	background-color: white;
 	border: 0px;
@@ -58,7 +55,6 @@ body {
     background-size: 24px auto;
     text-indent: -9999px;
 }
-
 .Pstyle {
 	opacity: 1.0;
 	display: none;
@@ -69,7 +65,6 @@ body {
 	padding: 20px;
 	background-color: #fff;
 }
-
 .dot_text li {
 	margin-bottom: 7px;
 	margin-left: -40px;
@@ -80,11 +75,9 @@ body {
     line-height: 24px;
     color: rgba(0,0,0,0.8);
 }
-
 .checkbox1 {
 	margin-top: 50px;
 }
-
 .checkbox1 {
 	width: 20px;
     height: 20px;
@@ -93,12 +86,10 @@ body {
     background-size: 20px auto;
     cursor: pointer;
 }
-
 .Pstyle strong {
 	font-size: 24px;
     font-weight: bold;
 }
-
 .cont strong {
     display: block;
     margin-bottom: 21px;
@@ -109,14 +100,10 @@ body {
     color: #e62243;
     
 }
-
 .cont b {
 	margin-top: 10px;
     font-weight: bold;
 }
-
-
-
 	</style>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -133,8 +120,6 @@ body {
 					$('#search2').css('background', 'url(imgs/ico_srch.png) 50% 50% no-repeat').css('background-size', '24px auto');
 					$('.list_03 li a').css('color', '#000000');
 					$('#searchClose').css('background', 'url(imgs/ico_close.png) 50% 50% no-repeat').css('background-size', '24px auto');
-
-
 				} else {
 					$("#topbar").css("background", "#f7323f");
 					$(".menubar li a").css("color", "#ffffff");
@@ -144,20 +129,15 @@ body {
 					$('#search2').css('background', 'url(imgs/ico_srch_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
 					$('.list_03 li a').css('color', '#000000');
 					$('#searchClose').css('background', 'url(imgs/ico_close_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
-
 				}
 			})
 		});
-
 		$(document).ready(function() {
-
 			var srch_bar = $('.srch');
 			srch_bar.hide();
 			$('.mainContent').hide();
 		});
-
 		$(document).ready(function() {
-
 			var search = $('#search');
 			var search_close = $('#searchClose');
 			var srch_bar = $('.srch');
@@ -186,24 +166,17 @@ body {
 		});
 		
 		/* ------ 새로운 비밀번호 유효성 검사 ------ */
-
 		$(document).ready(function() {
 			var idFuncArray = ["isNewPwForSpan", "spaceCheck"];
 			spanValidation($("#newPwSpan"), $("#newPw"), idFuncArray, "6~15자 영문, 숫자, 특수문자를 입력해 주세요.", "사용 가능한 형식의 이름입니다.");
 		});
-
 		function spanValidation(spanObj, inputObj, validFuncArray, redMsg, greenMsg, marginLeftPx) {
 			spanObj.css("margin-left", marginLeftPx);
-
 			var confirmCheck = false; 
-
 			spanObj.hide();
-
 			inputObj.bind('focusin keyup', function() { 
 				var inputValue = inputObj.val();
-
 				var funcResult = true; 
-
 				for (i = 0; i < validFuncArray.length; i++) {
 					var funcName = validFuncArray[i]; 
 					var funcObj = window[funcName];
@@ -212,29 +185,22 @@ body {
 						break;
 					}
 				}
-
 				if (!funcResult) {
 					spanObj.show();
 					spanObj.removeClass('greenText'); 
 					spanObj.addClass('redText'); 
-
 					spanObj.text("");
 					spanObj.append(redMsg); 
-
 					confirmCheck = false;
 				} else { 
 					spanObj.show();
 					spanObj.removeClass('redText');
 					spanObj.addClass('greenText');
-
 					spanObj.text("");
 					spanObj.append(greenMsg);
-
 					confirmCheck = true;
 				}
-
 			});
-
 			inputObj.focusout(function() {
 				var inputValue = inputObj.val();
 				if (confirmCheck || inputValue == "") { 
@@ -242,7 +208,6 @@ body {
 				}
 			});
 		}
-
 		// 6~15자 영문, 숫자, 특수문자만 입력받도록 검증
 		function isNewPwForSpan(str) {
 			var check = /^(?=.*[0-9]+)[a-zA-Z][a-zA-Z0-9]{6,15}/;
@@ -260,19 +225,13 @@ body {
 			var idFuncArray = ["spaceCheck"];
 			spanValidation($("#prePwSpan"), $("#prePw"), idFuncArray, "기존 비밀번호를 입력해 주세요.");
 		});
-
 		function spanValidation(spanObj, inputObj, validFuncArray, redMsg, greenMsg, marginLeftPx) {
 			spanObj.css("margin-left", marginLeftPx);
-
 			var confirmCheck = false; 
-
 			spanObj.hide();
-
 			inputObj.bind('focusin keyup', function() { 
 				var inputValue = inputObj.val();
-
 				var funcResult = true; 
-
 				for (i = 0; i < validFuncArray.length; i++) {
 					var funcName = validFuncArray[i]; 
 					var funcObj = window[funcName];
@@ -281,29 +240,22 @@ body {
 						break;
 					}
 				}
-
 				if (!funcResult) {
 					spanObj.show();
 					spanObj.removeClass('greenText'); 
 					spanObj.addClass('redText'); 
-
 					spanObj.text("");
 					spanObj.append(redMsg); 
-
 					confirmCheck = false;
 				} else { 
 					spanObj.show();
 					spanObj.removeClass('redText');
 					spanObj.addClass('greenText');
-
 					spanObj.text("");
 					spanObj.append(greenMsg);
-
 					confirmCheck = true;
 				}
-
 			});
-
 			inputObj.focusout(function() {
 				var inputValue = inputObj.val();
 				if (confirmCheck || inputValue == "") { 
@@ -312,11 +264,9 @@ body {
 			});
 		}
 		
-
 		// 공백 허용하지 않도록 검증 -- 공통이므로 한 번만 입력해도 된다
 		function spaceCheck(inputVal) {
 			var invalid = " ";
-
 			if (inputVal.indexOf(invalid) > -1) {
 				return false;
 			} else if (inputVal.length < 1) {
@@ -340,7 +290,6 @@ body {
 		$("#btn_open").click(function() { //레이어 팝업 열기 버튼 클릭 시
 			$('#popup').bPopup(); //  
 		});
-
 		$("#btn_close").click(function() { //닫기
 			$('#popup').bPopup().close();
 		});

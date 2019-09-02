@@ -13,23 +13,32 @@
 </style>
 <script src="js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
+	var page = "${page}";
+	var pagingStart = (parseInt((page-1) / 5) * 5) + 1;
+	
+	window.onload = function(){
+		$("#pagination").append("<a href=/good/event?page="+pagingStart+">"+pagingStart+"</a>");
+		$("#pagination").append("<a href=/good/event?page="+(pagingStart+1)+">"+(pagingStart+1)+"</a>");
+		$("#pagination").append("<a href=/good/event?page="+(pagingStart+2)+">"+(pagingStart+2)+"</a>");
+		$("#pagination").append("<a href=/good/event?page="+(pagingStart+3)+">"+(pagingStart+3)+"</a>");
+		$("#pagination").append("<a href=/good/event?page="+(pagingStart+4)+">"+(pagingStart+4)+"</a>");
+	}
 	
 </script>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 </head>
 <body>
-	<%@include file="/common/login_header.jspf"%>
+	<%@include file="/common/header.jspf"%>
 	<div id="content" class="sub_wrap more_wrap">
 
 		<!-- Nav -->
 		<nav>
 			<ul>
-				<li><a href="#">공지사항</a></li>
-				<li><a href="#" class="active">이벤트</a></li>
-				<li><a href="#">혁신 프로젝트</a></li>
-				<li><a href="#">자주 묻는 질문</a></li>
-				<li><a href="#">1:1 문의</a></li>
-				<li><a href="#">약관 및 정책</a></li>
+				<li><a href="notice">공지사항</a></li>
+				<li><a href="event" class="active">이벤트</a></li>
+				<li><a href="project">혁신 프로젝트</a></li>
+				<li><a href="faq">자주 묻는 질문</a></li>
+				<li><a href="inquiry">1:1 문의</a></li>
+				<li><a href="terms">약관 및 정책</a></li>
 			</ul>
 		</nav>
 		<div class="align_rt">
@@ -43,35 +52,24 @@
 				
 				<c:forEach items="${list}" var="dto">
 					<li>
-							<b>${dto.sub }</b>
-							<span>기간: ${dto.startdate } ~	${dto.enddate }</span>
-							<a href="detail?no=${dto.no }">
-							<img src="${dto.thumbnail }">
+							<b>${dto.SUB }</b>
+							<span>기간: ${dto.STARTDATE } ~	${dto.ENDDATE }</span>
+							<a href="detail?no=${dto.NO }">
+							<img src="${dto.THUMBNAIL }">
 							</a>
-							<a href="delete?no=${dto.no}">X</a>
+							<a href="delete?no=${dto.NO}">X</a>
 					</li>
 					
 				</c:forEach>
-				
-					<li>
-						<!----> <b>전국민 숙박 할인대전 2탄</b>
-						 <span>기간: 2019.07.23 ~	2019.08.12</span>
-						  <a href="/more/eventView/718?page=0">
-						  <img src="//image.goodchoice.kr/event/mainbanner/06d8016c47593a1a47df141405cd1b43.png"/>
-						</a>
-					</li>
-					
+									
 				</ul>
 				<div id="pagination">
-					<div class="paging">
-						<!---->
-						<button class="on">1</button>
-						<button>2</button>
-						<button>3</button>
-						<button>4</button>
-						<button>5</button>
-						<button class="next">다음</button>
-					</div>
+<!-- 					<a href="/good/event?page=1">1</a> -->
+<!-- 					<a href="/good/event?page=2">2</a> -->
+<!-- 					<a href="/good/event?page=3">3</a> -->
+<!-- 					<a href="/good/event?page=4">4</a> -->
+<!-- 					<a href="/good/event?page=5">5</a> -->
+<!-- 					<a href="#">다음</a> -->
 				</div>
 					<a href="eventAdd">등록</a>
 			</div>
@@ -80,6 +78,9 @@
 		</div>
 
 	</div>
-	<%@include file="/common/footer.jsp"%>
+	<%@include file="/common/footer.jspf"%>
 </body>
 </html>
+<script>
+
+</script>

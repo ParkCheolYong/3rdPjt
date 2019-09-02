@@ -2,9 +2,41 @@ package com.bit.good.dto;
 
 public class InnoprojDto {
 
-	private int no;
-	private String sub, sub2, content, tag;
+	private int no, prev_no, next_no;
+	private String sub, sub2, content, tag, prev_sub, next_sub;
 	
+	public int getPrev_no() {
+		return prev_no;
+	}
+
+	public void setPrev_no(int prev_no) {
+		this.prev_no = prev_no;
+	}
+
+	public int getNext_no() {
+		return next_no;
+	}
+
+	public void setNext_no(int next_no) {
+		this.next_no = next_no;
+	}
+
+	public String getPrev_sub() {
+		return prev_sub;
+	}
+
+	public void setPrev_sub(String prev_sub) {
+		this.prev_sub = prev_sub;
+	}
+
+	public String getNext_sub() {
+		return next_sub;
+	}
+
+	public void setNext_sub(String next_sub) {
+		this.next_sub = next_sub;
+	}
+
 	public InnoprojDto() {
 		// TODO Auto-generated constructor stub
 	}

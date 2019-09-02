@@ -1,5 +1,4 @@
-@charset "EUC-KR";
-
+@charset "UTF-8";
 #topbar {
 	position: fixed;
 	top: 0;
@@ -130,7 +129,7 @@ button span {
 	position: absolute;
 	border-radius: 5px;
 	padding: 10px;
-	/*ÀÌºÎºĞ¼öÁ¤ÇÔ*/
+	/*ì´ë¶€ë¶„ìˆ˜ì •í•¨*/
 	background: #fff;
 	text-align: left;
 	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
@@ -138,7 +137,7 @@ button span {
 
 .menubar li:hover ul {
 	display: block;
-	/* ¸¶¿ì½º Ä¿¼­ ¿Ã¸®¸é ¼­ºê¸Ş´º º¸ÀÌ°Ô ÇÏ±â */
+	/* ë§ˆìš°ìŠ¤ ì»¤ì„œ ì˜¬ë¦¬ë©´ ì„œë¸Œë©”ë‰´ ë³´ì´ê²Œ í•˜ê¸° */
 	font-size: 14px;
 	line-height: 1;
 	min-width: auto;
@@ -263,7 +262,7 @@ button span {
 	position: absolute;
 	margin: -50px 0px 0px 250px;
 	width: 700px;
-	font-family: "³ª´®°íµñ";
+	font-family: "ë‚˜ëˆ”ê³ ë”•";
 }
 
 .bbs {
@@ -284,7 +283,7 @@ button span {
 	margin-left: 8px;
 }
 
-/*³» Á¤º¸ ¼öÁ¤*/
+/*ë‚´ ì •ë³´ ìˆ˜ì •*/
 .nickCancelBtn, .nameCancelBtn, .phoneCancelBtn, .phoneEditButton,
 	.nameEditButton, .nickEditButton {
 	margin-right: 5%;
@@ -384,7 +383,7 @@ input::placeholder {
 	padding-left: 5px;
 }
 
-/*À¯È¿¼º Ã¼Å©*/
+/*ìœ íš¨ì„± ì²´í¬*/
 .redText {
 	display: block;
 	font-size: 14px;
@@ -413,7 +412,7 @@ span {
 }
 
 
-/*·¹ÀÌ¾î ÆË¾÷*/
+/*ë ˆì´ì–´ íŒì—…*/
 
 .btn_red_fill {
     width: 100%;

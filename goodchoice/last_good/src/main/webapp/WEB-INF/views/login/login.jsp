@@ -11,7 +11,94 @@
 <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login.css">
 <style type="text/css">
+.inp_error {
+    margin-bottom: 30px;
+    border: 1px solid rgb(230,28,81);
+}
+label.error {
+    top: 54px;
+    left: 0;
+    font-size: 15px;
+    display: block;
+    position: absolute;
+    line-height: 1;
+    color: rgb(230,28,81);
+}
+.ico_email.inp_error::after {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 14px;
+    background: url('//image.goodchoice.kr/images/web_v3/ico_inp_mail.png') 0 -28px no-repeat;
+    background-size: 18px auto;
+}
+.ico_pw.inp_error:after {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 15px;
+    background: url(//image.goodchoice.kr/images/web_v3/ico_inp_pw.png) 50% -30px no-repeat;
+    background-size: 14px auto;
+}
+    
+
+
 </style>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/additional-methods.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/messages_ko.min.js"></script>
+<script type="text/javascript">
+ $(function(){
+        $("form").validate({
+            //규칙
+            rules: {
+                email: {
+                    required : true,
+                    email : true          			
+                },
+                pw: {
+                    required : true,
+                    minlength : 6
+                }               
+            },
+            //규칙체크 실패시 출력될 메시지
+            messages : {
+                email: {
+                    required : "이메일 주소를 확인해 주세요",
+                    email : "유효하지 않은 E-Mail주소입니다."
+                },
+                pw: {
+                    required : "6~15자 영문,숫자,특수문자를 입력해주세요.",
+                    minlength : "최소 {0}자 이상 입력해 주세요"
+                }  
+            },
+             submitHandler: function (frm){
+                frm.submit();   //유효성 검사를 통과시 전송
+            },
+            success: function(e){
+                //
+            },
+            highlight: function (element, errorClass) {
+                $(element).parent().addClass('inp_error');
+            },
+            unhighlight: function (element, errorClass) {
+                $(element).parent().removeClass('inp_error');
+            }
+        });
+})
+
+/*  window.onkeyup=(function() {
+	if($('#email-error').hasClass('error')){
+		$('input').parent().addClass('inp_error');
+	}else{
+		$('input').parent().removeClass('inp_error');
+		}
+	 }); 
+ */
+</script>
 </head>
 <body>
 	<div class="layer_fix layer_unfix pop_login pop_mem_reserve">
@@ -52,6 +139,7 @@
     });
     FB.AppEvents.logPageView();
   };
+
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -82,15 +170,16 @@ var naverLogin = new naver.LoginWithNaverId(
    /* 설정정보를 초기화하고 연동을 준비 */
    naverLogin.init();
    
+
+
 </script>
+
             <p class="space_or"><span>또는</span></p>
             <div class="inp_type_1 ico_email form-errors"><!-- focus / err -->
-                <input type="email" name="email" placeholder="이메일 주소" required class="required" value=""
-                       data-msg-required="이메일 주소를 입력해 주세요."/>
+                <input type="email" name="email" id="email" placeholder="이메일 주소"/>
             </div>
             <div class="inp_type_1 ico_pw form-errors">
-                <input type="password" name="pw" placeholder="비밀번호" required class="required"
-                       data-msg-required="비밀번호를 입력해 주세요."/>
+                <input type="password" name="pw" id="pw" placeholder="비밀번호"/>
             </div>
             <button class="btn_link gra_left_right_red" type="submit"><span>로그인</span></button>
                             <div class="link_half">

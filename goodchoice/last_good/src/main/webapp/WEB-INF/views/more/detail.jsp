@@ -17,7 +17,7 @@
 </script>
 </head>
 <body>
-	<%@include file="/common/header.jsp"%>
+	<%@include file="/common/header.jspf"%>
 	<div id="content" class="sub_wrap more_wrap">
 
 		<!-- Nav -->
@@ -38,7 +38,7 @@
 
 				<div class="mobile_top">이벤트</div>
 				<textarea rows="" cols=""></textarea>
-				<img alt="" src="${detail.bodyimage }">
+				<img alt="" src="${detail.BODYIMAGE }">
 					<a href="event">목록보기</a>
 			</div>
 			<!-- //Event -->
@@ -46,6 +46,6 @@
 		</div>
 
 	</div>
-	<%@include file="/common/footer.jsp"%>
+	<%@include file="/common/footer.jspf"%>
 </body>
 </html>

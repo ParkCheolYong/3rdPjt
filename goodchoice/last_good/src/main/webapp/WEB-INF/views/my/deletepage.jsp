@@ -25,8 +25,6 @@
 					$('#search2').css('background', 'url(imgs/ico_srch.png) 50% 50% no-repeat').css('background-size', '24px auto');
 					$('.list_03 li a').css('color', '#000000');
 					$('#searchClose').css('background', 'url(imgs/ico_close.png) 50% 50% no-repeat').css('background-size', '24px auto');
-
-
 				} else {
 					$("#topbar").css("background", "#f7323f");
 					$(".menubar li a").css("color", "#ffffff");
@@ -36,20 +34,15 @@
 					$('#search2').css('background', 'url(imgs/ico_srch_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
 					$('.list_03 li a').css('color', '#000000');
 					$('#searchClose').css('background', 'url(imgs/ico_close_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
-
 				}
 			})
 		});
-
 		$(document).ready(function() {
-
 			var srch_bar = $('.srch');
 			srch_bar.hide();
 			$('.mainContent').hide();
 		});
-
 		$(document).ready(function() {
-
 			var search = $('#search');
 			var search_close = $('#searchClose');
 			var srch_bar = $('.srch');

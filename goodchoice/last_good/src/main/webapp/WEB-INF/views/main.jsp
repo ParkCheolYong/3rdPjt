@@ -8,12 +8,15 @@
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/swiper.min.css">
 <style type="text/css">
+
+
 /*
 #news {
    position: absolute;
    margin: 650px 0px 0px 300px;
    font-size: 12px;
 }*/
+
 #second-menu {
 padding:32px 0 29px 41px;background:rgb(253,253,253);
    position: relative;
@@ -28,6 +31,7 @@ padding:32px 0 29px 41px;background:rgb(253,253,253);
 #second-menu .table td{
    float:left;width:109px;
 }
+
 #second-menu .table a{
    text-decoration: none;
    color: #646464;
@@ -69,12 +73,15 @@ padding:32px 0 29px 41px;background:rgb(253,253,253);
    border: 1px solid rgba(0, 0, 0, 0.08);
    box-sizing: border-box
 }
+
 .recommend li:last-child {
    display: block;
 }
+
 .recommend li:nth-child(even) {
    margin-left: 16px
 }
+
 .recommend li a {
    display: block;
    height: 162px;
@@ -83,6 +90,7 @@ padding:32px 0 29px 41px;background:rgb(253,253,253);
    color: rgba(0, 0, 0, 0.56);
    box-sizing: border-box
 }
+
 .recommend li img {
    position: absolute;
    top: 0;
@@ -90,6 +98,7 @@ padding:32px 0 29px 41px;background:rgb(253,253,253);
    width: 162px;
    height: 162px
 }
+
 .recommend li strong {
    display: block;
    padding: 38px 0 14px 0;
@@ -98,6 +107,7 @@ padding:32px 0 29px 41px;background:rgb(253,253,253);
    font-weight: normal;
    color: rgb(0, 121, 107)
 }
+
 .appDown {
    display: block;
    overflow: hidden;
@@ -110,30 +120,38 @@ padding:32px 0 29px 41px;background:rgb(253,253,253);
    background-size: cover;
    text-align: center
 }
+
 .appDown p {
    margin: 103px 0 27px 0;
    font-size: 28px;
    color: rgba(0, 0, 0, 0.87)
 }
+
 .appDown div a {
    display: inline-block;
    width: 168px;
    height: 52px;
    margin: 0 4px;
 }
+
 .appDown div a img {
    width: 168px;
    height: auto
 }
+
 .appDown div button {
    display: none
 }
+
 .event_main {
    width: 962px;
    height: 173px;
    margin: 0 auto;
 }
+
+
 <!-- Swiper CSS start -->
+
 .swiper-container {
     width: 963px;
     height: 173px;
@@ -146,12 +164,14 @@ padding:32px 0 29px 41px;background:rgb(253,253,253);
    border: 0;
    box-sizing: border-box;
 }
+
 .swiper-wrapper {
    position: relative;
    width: 100%;
    height: 100%;
    box-sizing: content-box;
 }
+
 .swiper-slide {
         text-align: center;
         font-size: 18px;
@@ -176,11 +196,11 @@ padding:32px 0 29px 41px;background:rgb(253,253,253);
 
 <!-- Swiper CSS end -->
 
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
+
 </head>
 
 <body>
-   <%@include file="/common/login_header.jspf"%>
+   <%@include file="/common/header.jspf"%>
 
    <div class="mainContent"></div>
    <div id="top-background"></div>

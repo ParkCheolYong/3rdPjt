@@ -12,6 +12,5 @@
 	</insert>
 	<delete id="deleteDao">
 		DELETE FROM FAQ WHERE NUM = #{param1}
-		
 	</delete>
 </mapper>

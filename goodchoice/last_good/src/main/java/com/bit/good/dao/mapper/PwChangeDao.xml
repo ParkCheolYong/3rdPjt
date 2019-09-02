@@ -5,7 +5,4 @@
 
 <mapper namespace="com.bit.good.dao.PwChangeDao">
 	
-	<select id="pwchangeList" resultType="com.bit.good.dto.PwchangeDto">
-		SELECT * FROM MYPAGE ORDER BY NO DESC
-	</select>
 </mapper>

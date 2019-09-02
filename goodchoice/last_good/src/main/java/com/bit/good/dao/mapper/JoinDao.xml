@@ -8,5 +8,8 @@
 	<insert id="join">
 		INSERT INTO USERLIST (EMAIL,PW,NICK) VALUES (#{param1}, #{param2}, #{param3})
 	</insert>
+	<select id="emailCheck" resultType="Integer" parameterType="String">
+		SELECT COUNT(*) FROM USERLIST WHERE EMAIL = #{param1}
+	</select>
 	
 </mapper>

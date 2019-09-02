@@ -60,12 +60,21 @@ function changeNickname(){
 <script type="text/javascript">
  $(function(){
         $("form").validate({
-
             //규칙
             rules: {
                 email: {
                     required : true,
-                    email : true
+                    email : true,
+                    remote:{
+						url : "emailCheck",
+						type : "post",
+						 data : {
+			                    email : function() {
+			                        return $("#email").val();
+			                    }
+        				}
+                    } 
+            			
                 },
                 pw: {
                     required : true,
@@ -81,7 +90,8 @@ function changeNickname(){
             messages : {
                 email: {
                     required : "이메일 주소를 확인해 주세요",
-                    email : "유효하지 않은 E-Mail주소입니다."
+                    email : "유효하지 않은 E-Mail주소입니다.",
+                    remote : "이미 존재하는 E-Mail주소 입니다."    
                 },
                 pw: {
                     required : "6~15자 영문,숫자,특수문자를 입력해주세요.",
@@ -92,7 +102,7 @@ function changeNickname(){
                     equalTo : "비밀번호가 일치하지 않습니다."
                 }
             },
-            submitHandler: function (frm){
+             submitHandler: function (frm){
                 frm.submit();   //유효성 검사를 통과시 전송
             },
             success: function(e){
