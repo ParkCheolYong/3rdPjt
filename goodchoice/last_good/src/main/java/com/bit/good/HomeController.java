@@ -96,9 +96,6 @@ public class HomeController {
 		sqlSession.selectList("selectEventList", param);
 		
 		model.addAttribute("page", page);
-
-		/////////////////////
-		
 		model.addAttribute("total", dao.selectEventCount());
 		
 		
@@ -183,14 +180,20 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/innoprojDetail")
+
 	public String detailDao2(HttpServletRequest request,Model model, int no, String sub) {
+
+
+
 		Idao dao2=sqlSession.getMapper(Idao.class);
 		dao2.detailDao2(Integer.parseInt(request.getParameter("no")));
 		model.addAttribute("detail", dao2.detailDao2(no));
 		
 		Idao dao3=sqlSession.getMapper(Idao.class);
+
 		dao3.prev(Integer.parseInt(request.getParameter("no")), request.getParameter("sub"));
 		model.addAttribute("prev", dao3.prev(no, sub));
+
 		
 		return "more/innoprojDetail";
 	}

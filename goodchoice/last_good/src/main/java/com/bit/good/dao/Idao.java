@@ -13,4 +13,5 @@ public interface Idao {
 	public InnoprojDto detailDao2(int no);
 	public void deleteDao2(int no);
 	public InnoprojDto prev(int no, String sub);
+
 }

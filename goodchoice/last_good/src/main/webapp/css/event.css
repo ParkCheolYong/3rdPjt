@@ -1,44 +1,53 @@
 @charset "EUC-KR";
+
 #content {
-    overflow: hidden;
+	overflow: hidden;
 }
+
 .more_wrap {
-    padding-top: 100px;
-    background: #fff;
+	padding-top: 100px;
+	background: #fff;
 }
+
 .sub_wrap {
-    min-height: 390px;
+	min-height: 390px;
 }
 
 .sub_wrap nav {
-    display: block;
-    float: left;
-    width: 238px;
-    padding-left: 31px;
-    
-}
-ul, ol, li {
-    list-style: none;
-}.sub_wrap nav ul li {
-    margin-bottom: 26px;
+	display: block;
+	float: left;
+	width: 238px;
+	padding-left: 310px;
 }
 
 ul, ol, li {
-    list-style: none;
-}.sub_wrap nav ul li a {
-    display: block;
-    font-size: 18px;
-    color: rgba(0,0,0,0.56);
+	list-style: none;
+}
+
+.sub_wrap nav ul li {
+	margin-bottom: 26px;
+}
+
+ul, ol, li {
+	list-style: none;
+}
+
+.sub_wrap nav ul li a {
+	display: block;
+	font-size: 18px;
+	color: rgba(0, 0, 0, 0.56);
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
+
 .sub_wrap {
-    width: 1024px !important;
-    margin: 0 auto 0 auto;
-    padding-bottom: 50px;
+	width: 1024px !important;
+	margin: 0 auto 0 auto;
+	padding-bottom: 50px;
 }
+
 .sub_wrap .align_rt {
 	float: right;
 	width: 724px;
@@ -53,25 +62,15 @@ a {
 	border-top: none;
 }
 
-.event_list {
-	border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
 ul, ol, li {
 	list-style: none;
 }
 
 .event_list li {
-	margin: 0 0 40px 0;
-	padding: 0 0 47px 0;
-	border-bottom: none;
-}
-
-.event_list li {
-	position: relative; <!--
+	position: relative;
 	margin: 0 16px;
 	padding: 23px 0;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.08); -->
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 	line-height: normal;
 }
 
@@ -96,10 +95,6 @@ ul, ol, li {
 .event_list li a {
 	display: block;
 	position: relative;
-}
-
-.event_list li a img {
-	width: 100%;
 }
 
 .event_list li a img {

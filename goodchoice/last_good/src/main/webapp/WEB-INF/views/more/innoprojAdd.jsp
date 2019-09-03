@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-   <meta charset="UTF-8">
-   <title>Document</title>
+<meta charset="UTF-8">
+<title>글쓰기</title>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/event.css">
    <style type="text/css">
    
 	.top-background {
@@ -24,53 +25,14 @@
 		color: white;
 	}
 	
-	.nav {
-		position: absolute;
-		width: 150px;
-		color: #646464;
-		margin: 240px 0px 0px 290px;
+	.sub_wrap nav {
+		margin-top: 150px;
 	}
 	
-	.nav-list {
-		list-style: none;
-		margin: 0;
-		padding: 10px 0;
+	.event {
+		margin-top: 150px;
 	}
 	
-	.nav-item {
-		margin: 12px 0;
-	}
-	
-	.nav-link {
-		display: block;
-		text-decoration: none;
-		padding: 4px 10px;
-		color: #646464;
-		font-size: 18px;
-	}
-	
-	.nav-list li:nth-child(3) {
-		color: #e61c51;
-	}
-	   
-   .bbs {
-		width: 730px;
-		height: 500px;
-		margin-top: 0px;
-		line-height: 1.6em;
-	}
-	
-	.bbs td a {
-		text-decoration: none;
-		color: white;
-		margin-left: 8px;
-	}
-	
-   .innoContent {
-   		padding-top: 200px;
-   		margin-left: 550px;
-   }
-   
    .buttonList {
    		background-color: #e51048;
    		border: 0px;
@@ -100,96 +62,38 @@
    		margin-left: 7px;
    }
    
-   
+	.bbs{
+		margin-top: 150px;
+	}
    </style>
-   <script src="//cdn.ckeditor.com/4.12.1/basic/ckeditor.js"></script>
-   <script src="js/jquery-1.12.4.min.js"></script>
-   <script type="text/javascript">
-      $(document).ready(function() {
-         $(window).scroll(function() {
-            var scroll = $(window).scrollTop();
-            if (scroll > 30) {
-               $("#topbar").css("background", "#ffffff");
-               $(".menubar li a").css("color", "#000000");
-               $(".menubar li button").css("color", "#000000");
-               $('#logo').css('background', 'url(imgs/h1_logo_pc.png) 0 0 no-repeat');
-               $('#search').css('background', 'url(imgs/ico_srch.png) 50% 50% no-repeat').css('background-size', '24px auto');
-               $('#search2').css('background', 'url(imgs/ico_srch.png) 50% 50% no-repeat').css('background-size', '24px auto');
-               $('.list_03 li a').css('color', '#000000');
-               $('#searchClose').css('background', 'url(imgs/ico_close.png) 50% 50% no-repeat').css('background-size', '24px auto');
-
-
-            } else {
-               $("#topbar").css("background", "#f7323f");
-               $(".menubar li a").css("color", "#ffffff");
-               $(".menubar li button").css("color", "#ffffff");
-               $('#logo').css('background', 'url(imgs/h1_logo_pc_w.png) 0 0 no-repeat');
-               $('#search').css('background', 'url(imgs/ico_srch_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
-               $('#search2').css('background', 'url(imgs/ico_srch_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
-               $('.list_03 li a').css('color', '#000000');
-               $('#searchClose').css('background', 'url(imgs/ico_close_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
-
-            }
-         })
-      });
-
-      $(document).ready(function() {
-
-         var srch_bar = $('.srch');
-         srch_bar.hide();
-         $('.mainContent').hide();
-      });
-      $(document).ready(function() {
-
-         var search = $('#search');
-         var search_close = $('#searchClose');
-         var srch_bar = $('.srch');
-         search.click(function() {
-            srch_bar.slideDown();
-            search.animate({
-               left: 400
-            }, {
-               complete: function() {
-                  search.hide();
-               }
-            });
-            $('.menubar').hide();
-            $('.mainContent').show();
-         });
-         search_close.click(function() {
-            var offset = search.offset();
-            search.animate({
-               left: 1047
-            });
-            srch_bar.css('display', 'none');
-            $('.menubar').show();
-            search.show();
-            $('.mainContent').hide();
-         });
-      });
-
-   </script>
+<script src="//cdn.ckeditor.com/4.12.1/basic/ckeditor.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
 </head>
-
 <body>
 	<%@include file="/common/header.jspf"%>
-
-         <div class="top-background">
+		
+		<div class="top-background">
             <br><p>더보기</p>
          </div>
-         <div class="container">
-	         <div class="nav">
-	            <ul class="nav-list">
-	               <li class="nav-item"><a href="#" class="nav-link">공지사항</a></li>
-	               <li class="nav-item"><a href="event" class="nav-link">이벤트</a></li>
-	               <li class="nav-item"><a href="innoproj" class="nav-link"><font color="#e61c51"><b>혁신 프로젝트</b></font></a></li>
-	               <li class="nav-item"><a href="faq" class="nav-link">자주 묻는 질문</a></li>
-	               <li class="nav-item"><a href="#" class="nav-link">1:1 문의</a></li>
-	               <li class="nav-item"><a href="#" class="nav-link">약관 및 정책</a></li>
-	            </ul>
-	         </div>
-	         <div class="innoContent">
-	            <table class="bbs">
+	
+	
+	<div id="content" class="sub_wrap more_wrap">
+
+		<!-- Nav -->
+		<nav>
+			<ul>
+				<li><a href="#">공지사항</a></li>
+				<li><a href="event" class="active">이벤트</a></li>
+				<li><a href="innoproj"><font color="#e61c51"><b>혁신 프로젝트</b></font></a></li>
+				<li><a href="faq">자주 묻는 질문</a></li>
+				<li><a href="#">1:1 문의</a></li>
+				<li><a href="#">약관 및 정책</a></li>
+			</ul>
+		</nav>
+		<div class="align_rt">
+
+			<!-- Event -->
+			  <table class="bbs">
 	               <tr>
 	                  <td>
 						<form action="write2" method="post">
@@ -199,7 +103,7 @@
 							</div>
 							<div>
 								<label for="sub2">제목2:</label> <input type="text" name="sub2"
-									id="sub2" style="width: 550px; height: 20px;"" />
+									id="sub2" style="width: 550px; height: 20px;" />
 							</div>
 							태그:
 							<select name="tag" id="tag" style="width:140px; height:25px;">
@@ -223,10 +127,13 @@
 	               </tr>               
 	            </table>
 	            <div style="margin-top: 30px; margin-left: 280px;">
-					<button class="buttonList"><a style="color: white;" href="innoproj">목록보기</a></button>
+					<button class="buttonList"><a href="innoproj" style="color: white;">목록보기</a></button>
 				</div>
-	         </div>
-         </div>
-		<%@include file="/common/footer.jspf"%>
+			<!-- //Event -->
+
+		</div>
+
+	</div>
+	<%@include file="/common/footer.jspf"%>
 </body>
 </html>
