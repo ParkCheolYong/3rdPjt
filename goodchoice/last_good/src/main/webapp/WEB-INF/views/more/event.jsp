@@ -16,15 +16,15 @@
 	var page = "${page}"; // 페이지
 	var total_count = "${total.total}"; // 전체 게시글 갯수
 	var totalPaging = parseInt((parseInt(total_count)+9)/10); // 전체 페이지 갯수
-	var pagingStart = (parseInt((page-1) / 5) * 5) + 1;	// 
-	var lastPaging = (parseInt(parseInt(totalPaging+4) / 5)); // 현재 페이지 블록
-	var pagingPrev = pagingStart - 5
-	var pagingNext = pagingStart + 5
-	var pagingEnd = parseInt(totalPaging % 5); // 나머지
-	
+	var pagingStart = (parseInt((page-1) / 5) * 5) + 1;
+	var lastPaging = (parseInt(parseInt(totalPaging+4) / 5)); // 전체 페이지 블록 갯수
+	var pagingPrev = pagingStart - 5; // 이전 블록
+	var pagingNext = pagingStart + 5; // 다음 블록
+	var pagingEnd = parseInt(totalPaging % 5); // 나머지 페이지 숫자
+	var paingBlock = parseInt((parseInt(page-1)/5)+1); // 현재 페이지 블록
 	 
 	window.onload = function(){
-		//alert(pagingEnd);
+	//	alert(paingBlock);
 		
 		function pagingAppend() {
 			
@@ -42,19 +42,20 @@
 					  $("#pagination").append("<a href=/good/event?page="+(pagingStart+i)+">"+(pagingStart+i)+"</a>");
 						}
 					} else if(totalPaging >= 5 ){
-				pagingAppend();
-				$("#pagination").append("<a href=/good/event?page="+pagingNext+">"+'다음'+"</a>");
-				}
-			}else if(lastPaging == pagingEnd){
+						pagingAppend();
+						$("#pagination").append("<a href=/good/event?page="+pagingNext+">"+'다음'+"</a>");
+					}
+			}else if(lastPaging == paingBlock){
 					$("#pagination").append("<a href=/good/event?page="+pagingPrev+">"+'이전'+"</a>");
 				for(var i=0; i<pagingEnd; i++){
 					$("#pagination").append("<a href=/good/event?page="+(pagingStart+i)+">"+(pagingStart+i)+"</a>");
 					}
 			}else {
-				$("#pagination").append("<a href=/good/event?page="+pagingPrev+">"+'이전'+"</a>");
-				pagingAppend();
-				$("#pagination").append("<a href=/good/event?page="+pagingNext+">"+'다음'+"</a>");
-				} 
+					$("#pagination").append("<a href=/good/event?page="+pagingPrev+">"+'이전'+"</a>");
+					pagingAppend();
+					$("#pagination").append("<a href=/good/event?page="+pagingNext+">"+'다음'+"</a>");
+				}
+		
 	}
 </script>
 </head>
@@ -96,12 +97,6 @@
 				
 				</ul>
 				<div id="pagination">
-<!-- 					<a href="/good/event?page=1">1</a> -->
-<!-- 					<a href="/good/event?page=2">2</a> -->
-<!-- 					<a href="/good/event?page=3">3</a> -->
-<!-- 					<a href="/good/event?page=4">4</a> -->
-<!-- 					<a href="/good/event?page=5">5</a> -->
-<!-- 					<a href="#">다음</a> -->
 				</div>
 					<br>
 					<a href="eventAdd">등록</a>
