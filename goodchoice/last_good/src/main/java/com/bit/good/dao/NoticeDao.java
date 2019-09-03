@@ -12,5 +12,5 @@ public interface NoticeDao {
 	public NoticeDto viewDao(String sub);
 	public void deleteDao(int idx);
 	public void updateNotice(NoticeDto dto);
-	public List<Paging> getTotalCount();
+	public Paging getTotalCount();
 }

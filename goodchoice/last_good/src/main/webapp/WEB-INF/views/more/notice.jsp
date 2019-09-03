@@ -67,17 +67,23 @@
                		</li>
                </c:forEach>
                </ul>
-               <c:forEach items="${totalCount }" var="cnt">
-					<div id="page">totalCount= ${cnt.totalCount }</div>
-					<p>pageSize= ${cnt.pageSize }</p>
-					<p>firstPageNo= ${cnt.firstPageNo }</p>
-					<p>prevPageNo= ${cnt.prevPageNo }</p>
-					<p>startPageNo= ${cnt.startPageNo }</p>
-					<p>pageNo= ${cnt.pageNo }</p>
-					<p>endPageNo= ${cnt.endPageNo }</p>
-					<p>nextPageNo= ${cnt.nextPageNo }</p>
-					<p>finalPageNo= ${cnt.finalPageNo }</p>
-					</c:forEach>
+              <c:if test="${paging.totalCount >= '1' }">
+					<div id="page">totalCount= ${paging.totalCount }</div>
+					<p>pageSize= ${paging.pageSize }</p>
+					<p>firstPageNo= ${paging.firstPageNo }</p>
+					<p>prevPageNo= ${paging.prevPageNo }</p>
+					<p>startPageNo= ${paging.startPageNo }</p>
+					<p>pageNo= ${paging.pageNo }</p>
+					<p>endPageNo= ${paging.endPageNo }</p>
+					<p>nextPageNo= ${paging.nextPageNo }</p>
+					<p>finalPageNo= ${paging.finalPageNo }</p>
+					<div class="paging">
+					<c:if test="${paging.pageNo >= '6' }">
+					<button class="prev" onclick="changePage(start_page - 1)">이전</button>
+					</c:if>
+					</div>
+				</c:if>
+					
                     <div id="notice_pagination">
                         <!-- <my-pagination></my-pagination>-->
                         <!-- //https://hsol.tistory.com/894 참고할것 -->

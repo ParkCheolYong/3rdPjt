@@ -122,8 +122,8 @@ public class HomeController {
 	public String notice(Model model, HttpServletRequest request) {
 		NoticeDao dao=sqlSession.getMapper(NoticeDao.class);
 
+		model.addAttribute("paging",dao.getTotalCount());
 		model.addAttribute("list",dao.listDao());
-		model.addAttribute("totalCount",dao.getTotalCount());
 
 		return "more/notice"; //페이지로 이동
 	}
