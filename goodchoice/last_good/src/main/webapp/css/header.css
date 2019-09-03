@@ -64,6 +64,7 @@ label{cursor:pointer}
    background-size: 24px auto;
    right: 396px;
 }
+
 #searchClose {
    position: absolute;
    border: none;
@@ -76,6 +77,7 @@ label{cursor:pointer}
    background: url(https://lh3.googleusercontent.com/QzHFiRfPpCnjMTtyayToibfqL2yua1UpK0avuDodigx-qEfB1X1AmhP-7Y8E6C4uiaEZLwX482l4ZWBYSql__bu3JqUiVFy76ARbb_YsI3mXknpJnJ0VdLJgT4VPw3WzSwjPe4JEtD68BjGpMA66wXy5Sux7mv4Bv4UMmTOBAq1wDG0eQMJVxsVGi5XJdWevX1J-U28IzM3Eyh5NzWWMXyrKoADSkojOdmggP3UQ2UeHmFD143UHiBBdCeDd9_bwVseDwPf4EdI4OGa5vWp1c7euYeR_r43qSE8MmimN-Am0l4aBdDZZe0x0amB0slFKHnrmUyZrnTS_J8jWRwJq-vU-4MBB8-IkBEt-W3uxEV0suLbP0zg3fqpoZq1yAOQCZJTAlfKnKmtv69TLIakhoTBC5FTCZBctGr6Qd3EElrGedl89IFfaE2Qa5c3l5QA99LRCFloujbwDgGwcuktTyLcR7xymEGhUvWPk0RS1azww2WawZMdXBVCAYlH7gZHdIRie9J1MiQzTd8HeScH3ErCAAFVLSRYS9lpLga766ZW9HXdtlnk2xtvQ0fjj6VY_ADs4ElEkMZG3bpax8Ghtu8yIjunl5FS0MRtDSLyco_joyDxap46avIurwefHX7lx3khdxWI9CNprrq9C5Pl0ht8=s72-no) 50% 50% no-repeat;
    background-size: 24px auto;
 }
+
 button {
    padding: 0;
    cursor: pointer;
@@ -90,6 +92,7 @@ button {
    align-items: flex-start;
    text-rendering: auto;
 }
+
 .menubar .list_03 {
    top: 30px;
    left: -65px;

@@ -30,7 +30,6 @@ public class HomeController {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -43,6 +42,7 @@ public class HomeController {
 		
 		return "main";
 	}
+	
 	@RequestMapping("/main")
 	public String main() {
 		return "main";
@@ -54,11 +54,13 @@ public class HomeController {
 		model.addAttribute("list",dao.listDao());
 		return "more/faq";
 	}
+	
 	@RequestMapping("faqAdd")
 	public String faqAdd() {
 		
 		return "more/faqAdd";
 	}
+	
 	@RequestMapping(value = "/faqWrite",method = RequestMethod.POST)
 	public String faqWrite(HttpServletRequest request, Model model) {
 		IFaqDao dao =sqlSession.getMapper(IFaqDao.class);
@@ -67,6 +69,7 @@ public class HomeController {
 		
 		return "redirect:faq";
 	}
+	
 	@RequestMapping("/faqDelete")
 	public String faqDelete(HttpServletRequest request, Model model) {
 		IFaqDao dao =sqlSession.getMapper(IFaqDao.class);
@@ -95,17 +98,14 @@ public class HomeController {
 		Edao dao =sqlSession.getMapper(Edao.class);
 		dao.writeDao(request.getParameter("sub"), request.getParameter("startdate"), request.getParameter("enddate"), request.getParameter("thumbnail"), request.getParameter("bodyimage"));
 		
-		
 		return "redirect:event";
 	}
-
 	
 	@RequestMapping("/detail")
 	public String detailDao(HttpServletRequest request,Model model, int no) {
 		Edao dao=sqlSession.getMapper(Edao.class);
 		dao.detailDao(Integer.parseInt(request.getParameter("no")));
 		model.addAttribute("detail", dao.detailDao(no));
-		
 		
 		return "more/detail";
 	}
@@ -142,7 +142,6 @@ public class HomeController {
 		dao.deleteDao(Integer.parseInt(request.getParameter("idx")));
 		return "redirect:notice";
 	}
-	
 
 	// innoproject
 	@RequestMapping("/innoproj")
@@ -182,11 +181,13 @@ public class HomeController {
 		dao2.detailDao2(Integer.parseInt(request.getParameter("no")));
 		model.addAttribute("detail", dao2.detailDao2(no));
 		
+		Idao dao3=sqlSession.getMapper(Idao.class);
+		dao3.prev(Integer.parseInt(request.getParameter("no")));
+		model.addAttribute("prev", dao3.prev(no));
 		
 		return "more/innoprojDetail";
 	}
-	
-	
+
 	// MYPAGE 
 	@RequestMapping("/mypage")
 	public String mypage(Model model) {
@@ -196,8 +197,9 @@ public class HomeController {
 		
 		return "my/mypage";
 	}
-	
+
 	// PW CHAGE 
+	// PW CHAGE - DELETE
 	@RequestMapping("/pwchange")
 	public String pwchange(Model model) {
 				
@@ -206,8 +208,8 @@ public class HomeController {
 				
 		return "my/pwchange";
 	}
-	
-	// 
+
+	// DELETE
 	@RequestMapping("deletepro")
 	public String deletepro() {
 		
