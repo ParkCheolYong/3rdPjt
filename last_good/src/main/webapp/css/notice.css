@@ -1,0 +1,80 @@
+@charset "UTF-8";
+<!--
+#content {
+    overflow: hidden;
+}
+-->
+.more_wrap {
+    padding-top: 54px;
+    background: #fff;
+}.sub_wrap {
+    min-height: 390px;
+}.sub_wrap {
+    width: 1024px !important;
+    margin: 0 auto 0 auto;
+    padding-bottom: 50px;
+}.sub_wrap nav {
+    display: block;
+    float: left;
+    width: 238px;
+    padding-left: 31px;
+}
+
+.sub_wrap nav ul li {
+    margin-bottom: 26px;
+}
+.sub_wrap nav ul li a{display:block;font-size:18px;color:rgba(0,0,0,0.56)}
+.sub_wrap nav ul li a.active{font-size:18px;font-weight:bold;color:rgb(230,28,81)}
+.wrap.show, footer.show {
+    visibility: visible;
+}.sub_wrap nav ul li a {
+    display: block;
+    font-size: 18px;
+    color: rgba(0,0,0,0.56);
+}
+.sub_wrap .align_rt {
+    float: right;
+    width: 724px;
+    margin-right: 31px;
+}
+.link::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    margin-top: -4px;
+    background: #fff url('//image.goodchoice.kr/images/web_v3/ico_arr_3.png') 0 0 no-repeat;
+        background-size: auto;
+    background-size: 12px auto;
+}
+ .more_wrap{padding-top:54px;background:#fff}
+   .mobile_top{display:none}
+   .mobile_top{height:auto;font-size:18px;line-height:normal;text-align:left}
+   .tab{height:auto;border-bottom:1px solid rgba(0,0,0,0.2)}
+   .tab span.tab_btn{display:inline-block;float:none;position:relative;width:auto;height:40px;margin-right:22px;font-size:18px;line-height:normal;color:rgba(0,0,0,0.56);text-align:left;cursor:pointer}
+   .tab .active,.tab span.active{color:#000;font-weight:bold;color:rgb(242,17,76)}
+   .tab .active:after{bottom:-1px}
+   .show_list{margin-bottom:0;padding:0 0}
+    
+   .show_list li:last-child{padding-bottom:0;border-bottom:1px solid rgba(0,0,0,0.08)}
+   .show_list li .list_que{display:block;position:relative;height:auto;margin-bottom: 0;padding:38px 24px 35px 0;border-radius:0;background: #fff;font-size:18px;line-height:normal;cursor:pointer}
+   .show_list li .list_que:after{display:inline-block;content:'';position:absolute;top:50%;right:0;width:14px;height:9px;margin-top:-5px;background:#fff url('//image.goodchoice.kr/images/web_v3/ico_arr_3.png') 0 0 no-repeat;background-size:14px auto}
+   .show_list li .open:after{background-position:0 -9px}
+   .show_list li .list_que p{padding-bottom:7px;overflow:visible;white-space:normal;text-overflow:initial;line-height:normal;word-wrap:break-word}
+   .show_list li .list_que span{font-size:16px;color:rgba(0,0,0,0.38)}
+   .show_list li .list_que i{display:inline-block;position:relative;top:4px;right:auto;width:14px;height:14px;margin:0}
+   .show_list li .list_ans{display:none;margin-bottom:0;padding:35px 32px 73px 32px;border-radius:0;background:#fafafa;font-size:16px;line-height:26px}
+   .show_list li .list_ans table{width:100% !important;}
+   .ico_new{display:inline-block;position:absolute;top:-1px;right:-13px;width:12px;height:12px;margin:0 0 0 0;background:#fff url('//image.goodchoice.kr/images/web_v3/ico_new.png') 0 0 no-repeat;background-size:12px auto;text-indent:-9999px;vertical-align:top}
+   .show_list li .list_ans div{padding:0;background:none}
+   .show_list li .list_ans div.ans{margin-top:65px;padding-left:44px;background:url('//image.goodchoice.kr/images/web_v3/ico_reply.png') 11px -2px no-repeat;background-size:24px auto}
+   .news_list li a{height:auto;padding:38px 24px 35px 0;font-size:18px}
+   .news_list li a p{padding-bottom:7px}
+   .news_list li a:after{display:inline-block;content:'';position:absolute;top:50%;right:0;width:9px;height:13px;margin-top:-4px;background:#fff url('//image.goodchoice.kr/images/web_v3/ico_arr_gt_3.png') 0 0 no-repeat;background-size:9px auto}
+   .news_list li a span{font-size:16px;color:rgba(0,0,0,0.38)}
+   .more_wrap .paging{border-top:none;margin-top:0}
+}
+       

@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+.layer_fix.fix_disable {
+	overflow: auto;
+	position: relative;
+}
+
+.layer_fix {
+	display: block;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 400;
+	width: 100%;
+	min-width: 320px;
+	height: 100%;
+	background: #fff;
+	font-size: 15px;
+	line-height: 26px;
+	color: rgba(0, 0, 0, 0.87);
+}
+
+.layer_fix section {
+	width: 336px;
+	margin: 100px auto 0 auto;
+}
+
+form, h1, div, b, span {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+.fix_title {
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 300;
+	width: 100%;
+	height: 44px;
+	font-size: 18px;
+	line-height: 44px;
+	text-align: center;
+	background: #fff;
+	border-bottom: none;
+	position: relative;
+	display: block !important;
+	margin-bottom: 16px;
+}
+
+.fix_title h1.page_head {
+	text-align: center;
+}
+
+.fix_title h1.page_head a {
+	display: inline-block;
+	width: 112px;
+	height: 44px;
+	background:
+		url(https://lh3.googleusercontent.com/TCRpAto4DFAjw12aSvazmE71RK235cckzBVJKbIF6vfRpe_U2bkNrQKj1VZoseoGY3i_5-DH7I0wxDQzn3qMsLuT-ZOU5gD6EykWGTS0PtLVpm5Qbk-x2uR252uSW2SnIpJuFzDumufJ6valXkyN27EwUUCRpiOuvXVwE4EOUdGFRvCAvY8FRtAuA_ZLyH7e9bYDIhh_9WlE8mqbzrhzOnNS5FGpGOJhOwbBMEoXAwxxr1U2WEEZxUCvADNixmToRj9MOmzq-GdbpJsqP6s1NCujNU_cX95gQ8Q5v-f2RJQ4Wk5GpNoL3XmXIeNoYGmozqlZbx2b35Q7bpK5vtUNiPqas1Ld5dQ_F246Vwiysmd1biVL9EtRSvfoLbsUFRK_QQEyoIHE1a6a8fduchVkEe4Zy-PWGsPZsGeKeXzFCHP5Qtia1hRuBqnvWscBESurcMDq-vkfwRpbGqvzZ46Cc9rs7ladp6b0e6Gy0NxwYPNfNMtr7R0U_hZB170Lsse3R934vt99uwDuGWyhf347oRKJpjhEsrniywdS7TBZqbIzkmS1AvBOmXmWTRasG806uz59QzotO6R6O0uP2lJksTn5a_a-nADN6VCjE7qbieWauGfiHRpndHPRsyoN2QQTcxDa-3H8V_9iKyL_nNT_QkU=w96-h21-no)
+		50% 50% no-repeat;
+	background-size: 112px 23px;
+	text-indent: -9999px;
+	text-decoration: none;
+}
+
+.layer_fix .sub_title {
+	display: block;
+	margin: 30px 0 10px 0;
+	font-size: 18px;
+	text-align: center;
+}
+
+.join b {
+	display: block;
+	margin-bottom: 9px;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.56);
+}
+
+.join>div {
+	margin-bottom: 38px;
+}
+
+.inp_type_2 {
+	position: relative;
+	height: 48px;
+	/*margin-bottom: 38px;*/
+	padding: 0 16px;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 6px;
+	box-sizing: border-box;
+}
+
+.inp_error {
+	border: 1px solid rgb(230, 28, 81) !important;
+}
+
+.inp_type_2 input::placeholder {
+	font-size: 18px;
+	color: rgba(0, 0, 0, 0.24);
+}
+
+.inp_type_2 input {
+	position: relative;
+	top: 13px;
+	width: 100%;
+	height: 20px;
+	padding: 0;
+	border: none;
+	font-size: 18px;
+	vertical-align: top;
+}
+
+.join .btn-add .btn_etc {
+	position: absolute;
+	top: 0;
+	right: -100px;
+	width: 93px;
+	height: 48px;
+	border-radius: 6px;
+	background: #ebebeb;
+	font-size: 14px;
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.56);
+}
+
+.pop_login button {
+	border: none;
+}
+
+button {
+	padding: 0;
+	cursor: pointer;
+}
+
+.join .btn-add {
+	margin-right: 100px;
+}
+
+.join .txt_agree {
+	padding-top: 46px;
+	margin: 20px 0 32px 0;
+	font-size: 16px;
+	line-height: 1.6;
+	color: rgba(0, 0, 0, 0.56);
+	text-align: center;
+}
+
+.txt_agree a {
+	color: rgba(0, 0, 0, 0.87);
+	text-decoration: underline;
+}
+
+.join .gra_left_right_red {
+	margin-bottom: 50px;
+}
+
+.layer_fix .btn_link {
+	height: 56px;
+	font-size: 16px;
+	line-height: 56px;
+	display: block;
+	width: 100%;
+	margin-top: 16px;
+	border-radius: 6px;
+	color: #fff;
+	text-align: center;
+	border: none;
+}
+
+.gra_left_right_red {
+	background: linear-gradient(to right, rgba(255, 0, 85, 1) 1%,
+		rgba(230, 34, 67, 1) 100%);
+}
+
+button span {
+	position: relative;
+}
+

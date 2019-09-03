@@ -1,0 +1,276 @@
+@charset "UTF-8";
+      .layer_fix {
+    font-size: 15px;
+    line-height: 26px;
+    color: rgba(0,0,0,0.87);
+    }
+    .layer_fix {
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 400;
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+    background: #fff;
+    }  
+        
+    .layer_fix section {
+    width: 336px;
+    margin: 100px auto 0 auto;
+    }
+        
+    .layer_fix .fix_title {
+    display: block !important;
+    margin-bottom: 16px;
+    }   
+    .layer_fix .fix_title {
+    position: relative;
+    background: #fff;
+    border-bottom: none;
+    }
+    .fix_title {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 300;
+    width: 100%;
+    height: 44px;
+    font-size: 18px;
+    line-height: 44px;
+    text-align: center;
+    }
+    .layer_fix .fix_title .logo {
+    display: inline-block;
+    width: 112px;
+    height: 44px;
+    background: url(https://lh3.googleusercontent.com/TCRpAto4DFAjw12aSvazmE71RK235cckzBVJKbIF6vfRpe_U2bkNrQKj1VZoseoGY3i_5-DH7I0wxDQzn3qMsLuT-ZOU5gD6EykWGTS0PtLVpm5Qbk-x2uR252uSW2SnIpJuFzDumufJ6valXkyN27EwUUCRpiOuvXVwE4EOUdGFRvCAvY8FRtAuA_ZLyH7e9bYDIhh_9WlE8mqbzrhzOnNS5FGpGOJhOwbBMEoXAwxxr1U2WEEZxUCvADNixmToRj9MOmzq-GdbpJsqP6s1NCujNU_cX95gQ8Q5v-f2RJQ4Wk5GpNoL3XmXIeNoYGmozqlZbx2b35Q7bpK5vtUNiPqas1Ld5dQ_F246Vwiysmd1biVL9EtRSvfoLbsUFRK_QQEyoIHE1a6a8fduchVkEe4Zy-PWGsPZsGeKeXzFCHP5Qtia1hRuBqnvWscBESurcMDq-vkfwRpbGqvzZ46Cc9rs7ladp6b0e6Gy0NxwYPNfNMtr7R0U_hZB170Lsse3R934vt99uwDuGWyhf347oRKJpjhEsrniywdS7TBZqbIzkmS1AvBOmXmWTRasG806uz59QzotO6R6O0uP2lJksTn5a_a-nADN6VCjE7qbieWauGfiHRpndHPRsyoN2QQTcxDa-3H8V_9iKyL_nNT_QkU=w96-h21-no) 50% 50% no-repeat;
+    background-size: 112px 23px;
+    text-indent: -9999px;
+    }    
+    .layer_fix .fix_title strong {
+    font-size: 24px;
+    font-weight: bold;
+    }
+    .layer_fix .fix_title .logo a {
+    display: block;
+    text-indent: -9999px;
+    }
+    a {
+    text-decoration: none;
+    }
+    .layer_fix .btn_start {
+    height: 56px;
+    font-size: 16px;
+    line-height: 56px;
+}
+        .layer_fix .btn_start {
+    display: block;
+    position: relative;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    text-align: center;
+}
+        .pop_login .btn_start {
+    width: 100%;
+}
+        .layer_fix .btn_kakao {
+    background: rgb(252,229,30);
+    color: rgb(59,29,20);
+}
+   .pop_login button {
+    border: none;
+}  
+        button {
+    padding: 0;
+    cursor: pointer;
+}
+        .layer_fix .btn_start span {
+    display: inline-block;
+}
+        button span {
+    position: relative;
+}
+        .icon-ic_login_kakaotalk::before {
+    content: "\e904";
+}
+        .layer_fix .btn_start span i {
+    top: 1px;
+    padding-right: 7px;
+    font-size: 26px;
+}
+     .layer_fix .btn_start span i {
+    display: inline-block;
+    position: relative;
+}  
+    .layer_fix .btn_start i {
+    width: 32px;
+    height: 56px;
+    line-height: 54px;
+    vertical-align: top;
+}
+        [class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+        .layer_fix .btn_fb {
+    background: rgb(59,87,158);
+    color: #fff;
+}
+   .icon-ic_facebook::before {
+    content: "\e905";
+} 
+        .layer_fix .btn_naver {
+    background: rgb(40,209,17);
+    color: #fff;
+}
+        .icon-ic_login_naver::before {
+    content: "\e903";
+}
+        .space_or::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,0.08);
+}
+.space_or {
+    position: relative;
+    height: 56px;
+    margin-bottom: 8px;
+}
+        .space_or span {
+    width: 60px;
+    height: 56px;
+    margin: 0 0 0 -25px;
+    font-size: 16px;
+    line-height: 56px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 10;
+    background: #fff;
+    font-size: 14px;
+    color: rgba(0,0,0,0.38);
+    text-align: center;
+}
+        .ico_email::after, .ico_email.inp_focus::after, .ico_email.inp_error::after {
+    top: 15px;
+    left: 15px;
+}
+        .ico_email::after {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 11px;
+    width: 18px;
+    height: 14px;
+    background: url('//image.goodchoice.kr/images/web_v3/ico_inp_mail.png') 0 0 no-repeat;
+    background-size: 18px auto;
+}
+        .inp_type_1 input::placeholder {
+    font-size: 18px;
+    color: rgba(0,0,0,0.38);
+}
+        .ico_email::after, .ico_email.inp_focus::after, .ico_email.inp_error::after {
+    top: 15px;
+    left: 16px;
+}
+   .ico_pw::after {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    width: 18px;
+    height: 15px;
+    background: url('//image.goodchoice.kr/images/web_v3/ico_inp_pw.png') 50% 0 no-repeat;
+    background-size: 14px auto;
+}
+.ico_pw::after, .ico_pw.inp_focus::after, .ico_pw.inp_error::after {
+    top: 15px;
+    left: 16px;
+}
+        .inp_type_1 {
+    height: 48px;
+    padding: 0 16px 0 46px;
+}
+        .inp_type_1 {
+    position: relative;
+    margin-bottom: 8px;
+    border: 1px solid rgba(0,0,0,0.26);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+        .inp_type_1 input {
+    position: relative;
+    top: 11px;
+    width: 100%;
+    height: 24px;
+    font-size: 18px;
+    padding: 0;
+    border: none;
+    vertical-align: top;
+}
+   .layer_fix .btn_link {
+    height: 56px;
+    font-size: 16px;
+    line-height: 56px;
+}   
+   .layer_fix .btn_link {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: none;
+}     
+        .gra_left_right_red {
+    background: linear-gradient(to right, rgba(255,0,85,1) 1%,rgba(230,34,67,1) 100%);
+}
+     
+  .pop_login .link_half::after {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 23px;
+    left: 50%;
+    width: 1px;
+    height: 11px;
+    background: rgba(0,0,0,0.08);
+}   
+        .pop_login .link_half {
+    overflow: hidden;
+    position: relative;
+    height: 56px;
+    margin-top: 9px;
+}
+        .pop_login .link_half div {
+    height: 56px;
+}
+        .pop_login .link_half div {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+        .pop_login .link_half div button, .pop_login .link_half div a {
+    height: 56px;
+    font-size: 16px;
+    line-height: 56px;
+    color: rgba(0,0,0,0.87);
+    vertical-align: top;
+}

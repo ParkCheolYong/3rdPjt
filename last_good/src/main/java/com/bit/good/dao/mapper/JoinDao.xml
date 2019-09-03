@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bit.good.dao.JoinDao">
+	
+	<insert id="join">
+		INSERT INTO USERLIST (EMAIL,PW,NICK) VALUES (#{param1}, #{param2}, #{param3})
+	</insert>
+	<select id="emailCheck" resultType="Integer" parameterType="String">
+		SELECT COUNT(*) FROM USERLIST WHERE EMAIL = #{param1}
+	</select>
+	
+</mapper>
