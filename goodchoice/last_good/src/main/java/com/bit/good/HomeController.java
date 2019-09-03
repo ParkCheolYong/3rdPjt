@@ -84,25 +84,27 @@ public class HomeController {
 	public String list(Model model, HttpServletRequest request) {
 		
 		Edao dao=sqlSession.getMapper(Edao.class);
-		// model.addAttribute("list", dao.listDao());
+		// model.addAttribute("list", dao.listDao());		
 		
 		HashMap<String,Object> param = new HashMap<String,Object>();
-		
 		String page = request.getParameter("page");
 		
-		if(page == null) page = "1";
-		
-		
+		if(page == null) page = "1";	// 페이지가 null일 경우 1페이지로 보냄
 		param.put("page", page);
 		
 		model.addAttribute("list", sqlSession.selectList("selectEventList", param));
 		sqlSession.selectList("selectEventList", param);
 		
 		model.addAttribute("page", page);
+
+		/////////////////////
+		
+		model.addAttribute("total", dao.selectEventCount());
 		
 		
 		return "more/event";
 	}
+	
 	
 	@RequestMapping("eventAdd")
 	public String eventAdd() {

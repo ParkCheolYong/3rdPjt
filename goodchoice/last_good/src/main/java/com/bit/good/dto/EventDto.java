@@ -2,12 +2,20 @@ package com.bit.good.dto;
 
 public class EventDto {
 
-	private int no;
+	private int no, total;
 	private String sub,startdate,enddate,thumbnail,bodyimage;
 	public EventDto() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
 	public int getNo() {
 		return no;
 	}

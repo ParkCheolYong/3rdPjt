@@ -28,4 +28,7 @@
 		) B
 		WHERE PAGE = nvl(#{page}, 1)
 	</select>
+	<select id="selectEventCount" resultType="com.bit.good.dto.EventDto">
+		SELECT COUNT(*) AS TOTAL FROM EVENT
+	</select>
 </mapper>
