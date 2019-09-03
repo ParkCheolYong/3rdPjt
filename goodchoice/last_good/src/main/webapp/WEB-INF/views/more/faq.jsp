@@ -57,6 +57,7 @@ $('.faq_list .list .link').each(function(){
 <body>
 	<%@include file="/common/header.jspf"%>
 
+
 	<div id="content" class="sub_wrap more_wrap">
 
 		<!-- Nav -->

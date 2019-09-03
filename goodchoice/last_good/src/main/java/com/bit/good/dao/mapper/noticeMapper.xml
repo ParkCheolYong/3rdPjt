@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bit.good.dao.NoticeDao">
+	<select id="listDao" resultType="com.bit.good.dto.NoticeDto">
+		<![CDATA[select idx, id, sub, content, nalja, (CASE WHEN sysdate <= (nalja + INTERVAL '3' DAY) THEN 1 ELSE 0 END) AS newIco from notice ORDER BY IDX DESC]]>
+	</select>
+	<select id="detailDao" resultType="com.bit.good.dto.NoticeDto">
+		SELECT * FROM notice WHERE idx = #{idx}
+	</select>
+	<insert id="noticeWriteDao">
+		insert into notice (idx, id, sub, content) values (notice_seq.nextval, #{param1}, #{param2}, #{param3})
+	</insert>
+	<delete id="deleteDao">
+		DELETE FROM notice WHERE idx = #{param1}
+	</delete>
+</mapper>

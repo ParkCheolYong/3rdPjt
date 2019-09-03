@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bit.good.dao.Edao;
 import com.bit.good.dao.IFaqDao;
+import com.bit.good.dao.NoticeDao;
 import com.bit.good.dao.Idao;
 import com.bit.good.dao.MypageDao;
 import com.bit.good.dao.PwChangeDao;
@@ -132,13 +133,33 @@ public class HomeController {
 		dao.deleteDao(Integer.parseInt(request.getParameter("no")));
 		return "redirect:event";
 	}
-	@RequestMapping("notice")
-	public String notice() {
-		return "more/notice";
+	
+	@RequestMapping("/notice")
+	public String notice(Model model) {
+		NoticeDao dao=sqlSession.getMapper(NoticeDao.class);
+		model.addAttribute("list",dao.listDao());
+		return "more/notice"; //페이지로 이동
 	}
 	
-	
-	
+	@RequestMapping("/noticeAdd")
+	public String noticeAdd() {
+
+		return "more/noticeAdd"; //페이지로 이동
+	}
+	@RequestMapping(value = "/noticeWrite",method = RequestMethod.POST)
+	public String noticeWrite(HttpServletRequest request, Model model) {
+		NoticeDao dao =sqlSession.getMapper(NoticeDao.class);
+		dao.noticeWriteDao(request.getParameter("id"), request.getParameter("sub"), request.getParameter("content"));
+		
+		return "redirect:notice";
+	}
+	@RequestMapping("/noticeDelete")
+	public String noticeDelete(HttpServletRequest request, Model model) {
+		NoticeDao dao =sqlSession.getMapper(NoticeDao.class);
+		dao.deleteDao(Integer.parseInt(request.getParameter("idx")));
+		return "redirect:notice";
+	}
+
 	// innoproject
 	@RequestMapping("/innoproj")
 	public String list2(Model model) {
@@ -183,10 +204,7 @@ public class HomeController {
 		
 		return "more/innoprojDetail";
 	}
-	
-	//////////////////////////////
-	
-		
+
 	// MYPAGE 
 	@RequestMapping("/mypage")
 	public String mypage(Model model) {
@@ -196,7 +214,8 @@ public class HomeController {
 		
 		return "my/mypage";
 	}
-	
+
+	// PW CHAGE 
 	// PW CHAGE - DELETE
 	@RequestMapping("/pwchange")
 	public String pwchange(Model model) {
@@ -206,7 +225,7 @@ public class HomeController {
 				
 		return "my/pwchange";
 	}
-	
+
 	// DELETE
 	@RequestMapping("deletepro")
 	public String deletepro() {

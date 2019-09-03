@@ -79,7 +79,9 @@
 				<c:forEach items="${list}" var="dto">
 					<li>
 							<b>${dto.SUB }</b>
+
 							<span>기간: ${dto.STARTDATE } ~	${dto.ENDDATE }</span>
+
 							<a href="detail?no=${dto.NO }">
 							<img src="${dto.THUMBNAIL }">
 							</a>
