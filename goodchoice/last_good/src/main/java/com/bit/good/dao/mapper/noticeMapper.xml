@@ -5,8 +5,19 @@
 
 <mapper namespace="com.bit.good.dao.NoticeDao">
 	<select id="listDao" resultType="com.bit.good.dto.NoticeDto">
-		<![CDATA[select idx, id, sub, content, nalja, (CASE WHEN sysdate <= (nalja + INTERVAL '3' DAY) THEN 1 ELSE 0 END) AS newIco from notice ORDER BY IDX DESC]]>
+		<![CDATA[SELECT B.* FROM (
+	SELECT
+	CEIL(ROWNUM/8) PAGE
+	, COUNT(*) OVER() AS TOTALCOUNT
+	,(CASE WHEN sysdate <= (nalja + INTERVAL '3' DAY) THEN 1 ELSE 0 END) AS newIco 
+	, A.* FROM (
+		SELECT * FROM NOTICE
+		ORDER BY IDX DESC
+		) A
+	) B
+	WHERE PAGE = nvl(#{page}, 1)]]>
 	</select>
+	<!-- 기존 query문 : select idx, id, sub, content, nalja, (CASE WHEN sysdate <= (nalja + INTERVAL '3' DAY) THEN 1 ELSE 0 END) AS newIco from notice ORDER BY IDX DESC -->
 	<select id="detailDao" resultType="com.bit.good.dto.NoticeDto">
 		SELECT * FROM notice WHERE idx = #{idx}
 	</select>

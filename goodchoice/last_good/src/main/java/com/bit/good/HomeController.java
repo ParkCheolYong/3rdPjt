@@ -81,14 +81,14 @@ public class HomeController {
 	
 	@RequestMapping("/event")
 	public String list(Model model, HttpServletRequest request) {
-		
+		//TODO : EVENT
 		Edao dao=sqlSession.getMapper(Edao.class);
 		// model.addAttribute("list", dao.listDao());		
 		
 		HashMap<String,Object> param = new HashMap<String,Object>();
 		String page = request.getParameter("page");
 		
-		if(page == null) page = "1";	// í˜ì´ì§€ê°€ nullì¼ ê²½ìš° 1í˜ì´ì§€ë¡œ ë³´ëƒ„
+		if(page == null) page = "1";	//
 		param.put("page", page);
 		
 		model.addAttribute("list", sqlSession.selectList("selectEventList", param));
@@ -137,10 +137,23 @@ public class HomeController {
 	
 	@RequestMapping("/notice")
 	public String notice(Model model, HttpServletRequest request) {
+		//TODO : Notice
 		NoticeDao dao=sqlSession.getMapper(NoticeDao.class);
-
+		
+		
+		HashMap<String,Object> param = new HashMap<String,Object>();
+		String page = request.getParameter("page");
+		
+		if(page == null) page = "1";	//
+		param.put("page", page);
+		
+		model.addAttribute("list", sqlSession.selectList("com.bit.good.dao.NoticeDao.listDao", param));
+		sqlSession.selectList("com.bit.good.dao.NoticeDao.listDao", param);
+		
 		model.addAttribute("paging",dao.getTotalCount());
-		model.addAttribute("list",dao.listDao());
+		model.addAttribute("page", page);
+		
+//		model.addAttribute("list",dao.listDao());
 
 		return "more/notice"; //ÆäÀÌÁö·Î ÀÌµ¿
 	}
