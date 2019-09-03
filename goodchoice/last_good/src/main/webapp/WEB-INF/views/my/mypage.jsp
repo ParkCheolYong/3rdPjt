@@ -4,112 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>MyPage</title>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/mypage.css">
-<style type="text/css">
-</style>
-<script src="js/jquery-1.12.4.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
+
+
 <script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
-						$(window)
-								.scroll(
-										function() {
-											var scroll = $(window).scrollTop();
-											if (scroll > 30) {
-												$("#topbar").css("background",
-														"#ffffff");
-												$(".menubar li a").css("color",
-														"#000000");
-												$(".menubar li button").css(
-														"color", "#000000");
-												$('#logo')
-														.css('background',
-																'url(imgs/h1_logo_pc.png) 0 0 no-repeat');
-												$('#search')
-														.css('background',
-																'url(imgs/ico_srch.png) 50% 50% no-repeat')
-														.css('background-size',
-																'24px auto');
-												$('#search2')
-														.css('background',
-																'url(imgs/ico_srch.png) 50% 50% no-repeat')
-														.css('background-size',
-																'24px auto');
-												$('.list_03 li a').css('color',
-														'#000000');
-												$('#searchClose')
-														.css('background',
-																'url(imgs/ico_close.png) 50% 50% no-repeat')
-														.css('background-size',
-																'24px auto');
-											} else {
-												$("#topbar").css("background",
-														"#f7323f");
-												$(".menubar li a").css("color",
-														"#ffffff");
-												$(".menubar li button").css(
-														"color", "#ffffff");
-												$('#logo')
-														.css('background',
-																'url(imgs/h1_logo_pc_w.png) 0 0 no-repeat');
-												$('#search')
-														.css('background',
-																'url(imgs/ico_srch_2.png) 50% 50% no-repeat')
-														.css('background-size',
-																'24px auto');
-												$('#search2')
-														.css('background',
-																'url(imgs/ico_srch_2.png) 50% 50% no-repeat')
-														.css('background-size',
-																'24px auto');
-												$('.list_03 li a').css('color',
-														'#000000');
-												$('#searchClose')
-														.css('background',
-																'url(imgs/ico_close_2.png) 50% 50% no-repeat')
-														.css('background-size',
-																'24px auto');
-											}
-										})
-					});
-	$(document).ready(function() {
-		var srch_bar = $('.srch');
-		srch_bar.hide();
-		$('.mainContent').hide();
-	});
-	$(document).ready(function() {
-		var search = $('#search');
-		var search_close = $('#searchClose');
-		var srch_bar = $('.srch');
-		search.click(function() {
-			srch_bar.slideDown();
-			search.animate({
-				left : 400
-			}, {
-				complete : function() {
-					search.hide();
-				}
-			});
-			$('.menubar').hide();
-			$('.mainContent').show();
-		});
-		search_close.click(function() {
-			var offset = search.offset();
-			search.animate({
-				left : 1047
-			});
-			srch_bar.css('display', 'none');
-			$('.menubar').show();
-			search.show();
-			$('.mainContent').hide();
-		});
-	});
+
 	/*닉네임 수정 토글*/
 	$(function() {
 		$(".nickEditButton").on("click", function() {
@@ -331,8 +234,6 @@
 		}
 	}
 </script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script>
 	var keylist = new Array("사우디", "파이널", "강남", "구로", "일본", "중국", "한국", "남대문",
 			"안양", "남양주", "오돌토돌한", "찝찝한", "황톳길", "다정한", "시큰둥한", "이탈리아", "싯멀건",
@@ -359,26 +260,13 @@
 		temp += keylist2[key2];
 		document.getElementById("nickname").value = temp;
 	}
-	$(function() {
-		$("#btn_open").click(function() { //레이어 팝업 열기 버튼 클릭 시
-			$('#popup').bPopup(); //  
-		});
-		$("#btn_close").click(function() { //닫기
-			$('#popup').bPopup().close();
-		});
-	});
+
+
 </script>
 
-
-<!-- 회원탈퇴 팝업창 -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bPopup/0.11.0/jquery.bpopup.js"></script>
-
-
-
 </head>
-<body>
 <%@include file="/common/header.jspf"%>
+<body>
 	<div class="frame">
 		<div class="header">
 			<div class="top-background">
@@ -467,11 +355,26 @@
 
 							여기어때를 이용하고 싶지 않으신가요? <input type="button" id="btn_open"
 								value="회원탈퇴" />
+								
+								
+								<script src="https://cdnjs.cloudflare.com/ajax/libs/bPopup/0.11.0/jquery.bpopup.js"></script>
+<script type="text/javascript">
+<!-- 회원탈퇴 팝업창 -->
+$(function() {
+	$('#btn_open').click(function() { //레이어 팝업 열기 버튼 클릭 시
+		$('#popup').bPopup(); //  
+	});
+	$('#btn_close1').click(function() { //닫기
+		$('#popup').bPopup().close();
+	});
+});
+</script>
+
 
 							<!--팝업 영역 시작 -->
 							<div id="popup" class="Pstyle">
 								<strong><center>회원탈퇴</center></strong><br> <input
-									type="button" id="btn_close" value="닫 기">
+									type="button" id="btn_close1" value="닫 기">
 								<div class="cont">
 									<font size="4"><b>주의사항</b></font>
 									<strong>회원탈퇴 전 반드시 확인해주세요.</strong>
@@ -499,4 +402,5 @@
 	<!-- 풋터 부분 수정하기 -->
 
 </body>
+
 </html>
