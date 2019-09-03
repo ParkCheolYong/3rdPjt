@@ -9,7 +9,14 @@ public class NoticeDto {
 	private String content;
 	private Date nalja;
 	private int newIco;
+	private int totalCount;
 	
+	public int getTotalCount() {
+		return totalCount;
+	}
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
+	}
 	public int getNewIco() {
 		return newIco;
 	}

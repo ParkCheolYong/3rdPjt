@@ -67,9 +67,26 @@
                		</li>
                </c:forEach>
                </ul>
-
+              <c:if test="${paging.totalCount >= '1' }">
+					<div id="page">totalCount= ${paging.totalCount }</div>
+					<p>pageSize= ${paging.pageSize }</p>
+					<p>firstPageNo= ${paging.firstPageNo }</p>
+					<p>prevPageNo= ${paging.prevPageNo }</p>
+					<p>startPageNo= ${paging.startPageNo }</p>
+					<p>pageNo= ${paging.pageNo }</p>
+					<p>endPageNo= ${paging.endPageNo }</p>
+					<p>nextPageNo= ${paging.nextPageNo }</p>
+					<p>finalPageNo= ${paging.finalPageNo }</p>
+					<div class="paging">
+					<c:if test="${paging.pageNo >= '6' }">
+					<button class="prev" onclick="changePage(start_page - 1)">이전</button>
+					</c:if>
+					</div>
+				</c:if>
+					
                     <div id="notice_pagination">
                         <!-- <my-pagination></my-pagination>-->
+                        <!-- //https://hsol.tistory.com/894 참고할것 -->
                     </div>
                <br>
 				<div style="text-align: right">
@@ -97,6 +114,111 @@ $(function(){ //a tag인 list_que 클래스명에 오픈이 붙으면 다음 div
 		});
 		});
 });
+
+
+function get_no_total_pagination(settings, notices, el, scroll) {
+    if (settings === undefined || Object.keys(settings).length == 0)
+        return false;
+
+    if (scroll === undefined)
+        scroll = true;
+
+    var per_page = 5;
+    var total_page = xReturnNumber(settings.total_page);
+    var cur_page = xReturnNumber(settings.page);
+
+    if (cur_page == 0)
+        cur_page = 1;
+
+    var templete =
+        '<div class="paging">' +
+        '<button v-if="start_page > 1" class="prev" v-on:click="changePage(start_page - 1)">이전</button>' +
+
+        '<template v-for="item in items" v-if="total_page > 1">' +
+        '<button v-if="cur_page != item" v-on:click="changePage(item)">{{item}}</button>' +
+        '<button v-else class="on" v-on:click="changePage(item)">{{item}}</button>' +
+        '</template>' +
+
+        '<button v-if="total_page > end_page" class="next" v-on:click="changePage(end_page + 1)">다음</button>' +
+        '</div>';
+
+
+    // 등록
+    Vue.component('my-pagination', {
+        template: templete,
+        data: function () {
+            var start_page = ((Math.floor((cur_page - 1 ) / per_page)) * per_page ) + 1;
+            var end_page = start_page + per_page - 1;
+            var items = [];
+
+            if (end_page >= total_page) end_page = total_page;
+            if (total_page > 1) {
+                for (var k = start_page; k <= end_page; k++) {
+                    items.push(k);
+                }
+            }
+
+            return {
+                per_page: per_page,
+                cur_page: cur_page,
+                total_page: total_page,
+                start_page: start_page,
+                end_page: end_page,
+                items: items
+            }
+        },
+        methods: {
+            changePage: function (cur_page) {
+                window.location.hash = cur_page;
+
+                var start_page = ((Math.floor((cur_page - 1) / per_page)) * per_page ) + 1;
+                var end_page = start_page + per_page - 1;
+                var items = [];
+				var scroll_ul_top = $('#content').offset().top;
+
+				if ($('body').hasClass('mobile')){  // 페이징 타겟 엘리먼트 위치
+					// Mobile
+					var scroll_ul_top_val = scroll_ul_top;
+				}
+				else{
+					// Pc
+					var scroll_ul_top_val = scroll_ul_top - 72;
+				}
+
+                if (end_page >= total_page) end_page = total_page;
+                if (total_page > 1) {
+                    for (var k = start_page; k <= end_page; k++) {
+                        items.push(k);
+                    }
+                }
+
+                settings['page'] = cur_page;
+
+                notices.searchTerm(settings);
+
+                this.cur_page = cur_page;
+                this.start_page = start_page;
+                this.end_page = end_page;
+                this.items = items;
+
+                $('.open_list li a').removeClass('open');
+                $('.open_list div').hide();
+
+                if (scroll) {
+                    $('html, body').animate({
+                        scrollTop: scroll_ul_top_val
+                    }, 250);
+                }
+            }
+        }
+    })
+
+	if (el !== undefined) {
+        new Vue({
+            el: el
+        })
+	}
+}
     </script>
 
       </div>  

@@ -1,12 +1,10 @@
 package com.bit.good.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Select;
 
-import com.bit.good.dto.FaqDto;
 import com.bit.good.dto.NoticeDto;
+import com.bit.good.dto.Paging;
 
 public interface NoticeDao {
 	public List<NoticeDto> listDao();
@@ -14,4 +12,5 @@ public interface NoticeDao {
 	public NoticeDto viewDao(String sub);
 	public void deleteDao(int idx);
 	public void updateNotice(NoticeDto dto);
+	public Paging getTotalCount();
 }
