@@ -81,13 +81,48 @@
    		font-size: 12pt;
    }
    
-   .prevNext {
+   .prev {
    		width: 724px;
-   		height: 79px;
-  		border-top: 1px solid #ebebeb;
+   		height: 80px;
+   		border-top: 1px solid #ebebeb;
   		border-bottom: 1px solid #ebebeb;
   		margin-top: 60px;
+  		padding-top: 30px;
+  		background: url(imgs/innoproj/ico_arr_up.png) 7.2% 50% no-repeat;
+    	background-size: 18px auto;
    }
+   
+   
+   .next span,
+   .prev span {
+   		margin-right: 60px;
+   		font-size: 16px;
+   		font-family: "Apple SD Gothic Neo","맑은 고딕","Malgun Gothic",sans-serif;
+   		font-color: #F21114C;
+   		font-weight: bold;
+   }
+   
+	.txt:link {text-decoration:none; color:#F21114C;}
+	.txt:visited {text-decoration:none; color:#f2114c;}
+   
+   .txt2 {
+      	font-size: 16px;
+   		font-family: "Apple SD Gothic Neo","맑은 고딕","Malgun Gothic",sans-serif;
+   		font-color: #272727;
+   }
+   
+   	.txt2:link {text-decoration:none; color:#272727;}
+	.txt2:visited {text-decoration:none; color:#272727;}
+  
+   .next{
+   		width: 724px;
+   		height: 80px;
+  		border-bottom: 1px solid #ebebeb;
+  		padding-top: 30px;
+  		background: url(imgs/innoproj/ico_arr_down.png) 7.3% 50% no-repeat;
+    	background-size: 18px auto;
+   }
+   
    
    </style>
    <script src="js/jquery-1.12.4.min.js"></script>
@@ -104,8 +139,6 @@
                $('#search2').css('background', 'url(imgs/ico_srch.png) 50% 50% no-repeat').css('background-size', '24px auto');
                $('.list_03 li a').css('color', '#000000');
                $('#searchClose').css('background', 'url(imgs/ico_close.png) 50% 50% no-repeat').css('background-size', '24px auto');
-
-
             } else {
                $("#topbar").css("background", "#f7323f");
                $(".menubar li a").css("color", "#ffffff");
@@ -115,19 +148,15 @@
                $('#search2').css('background', 'url(imgs/ico_srch_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
                $('.list_03 li a').css('color', '#000000');
                $('#searchClose').css('background', 'url(imgs/ico_close_2.png) 50% 50% no-repeat').css('background-size', '24px auto');
-
             }
          })
       });
-
       $(document).ready(function() {
-
          var srch_bar = $('.srch');
          srch_bar.hide();
          $('.mainContent').hide();
       });
       $(document).ready(function() {
-
          var search = $('#search');
          var search_close = $('#searchClose');
          var srch_bar = $('.srch');
@@ -154,7 +183,6 @@
             $('.mainContent').hide();
          });
       });
-
    </script>
 </head>
 
@@ -181,8 +209,11 @@
 	                  <td>${detail.content }</td>
 	               </tr>               
 	            </table>
-	            <div class="prevNext">
-	           		${prev }
+	            <div class="prev">
+	           		<span><a href="innoprojDetail?no=${prev.prev_no }" class="txt">이전글</a></span><a href="innoprojDetail?no=${prev.prev_no }" class="txt2">${prev.prev_sub }</a><br><br>
+	           	</div>
+	           	<div class="next">	
+	           		<span><a href="innoprojDetail?no=${prev.next_no }" class="txt">다음글</a></span><a href="innoprojDetail?no=${prev.next_no }" class="txt2">${prev.next_sub }</a>
 	            </div>
 	            <div style="margin-top: 30px; margin-left: 280px;">
 					<button class="buttonList"><a style="color: white;" href="innoproj">목록보기</a></button>

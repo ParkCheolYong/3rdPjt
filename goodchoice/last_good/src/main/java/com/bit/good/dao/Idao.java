@@ -12,5 +12,5 @@ public interface Idao {
 	public void writeDao2(String sub,String sub2,String content,String tag);
 	public InnoprojDto detailDao2(int no);
 	public void deleteDao2(int no);
-	public InnoprojDto prev(int no);
+	public InnoprojDto prev(int no, String sub);
 }

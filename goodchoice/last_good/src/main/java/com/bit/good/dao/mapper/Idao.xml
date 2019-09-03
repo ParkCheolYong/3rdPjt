@@ -17,15 +17,17 @@
 		DELETE FROM INNOPROJ WHERE NO = #{param1}
 	</delete>
 	<select id="prev" resultType="com.bit.good.dto.InnoprojDto">
-		 SELECT *
+		 	SELECT *
 			FROM(
-			 SELECT NO,
-				SUB,
-				LAG(NO) OVER (ORDER BY NO) PREV_NO,
-				LAG(SUB) OVER (ORDER BY NO) PREV_SUB
+			 SELECT no,
+				sub,
+				LAG(no) OVER (ORDER BY no) PREV_NO,
+				LAG(sub) OVER (ORDER BY no) PREV_SUB,
+				LEAD(no) OVER(ORDER BY no) NEXT_NO,
+				LEAD(sub) OVER(ORDER BY no) NEXT_SUB
 			 FROM INNOPROJ
-			 ORDER BY NO
+			 ORDER BY no
 			)
-			WHERE NO = '#{param1}'
+			WHERE NO = #{param1}
 	</select>
 </mapper>

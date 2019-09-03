@@ -2,6 +2,7 @@ package com.bit.good;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -78,10 +79,26 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/event")
-	public String list(Model model) {
+	public String list(Model model, HttpServletRequest request) {
 		
 		Edao dao=sqlSession.getMapper(Edao.class);
-		model.addAttribute("list", dao.listDao());
+		// model.addAttribute("list", dao.listDao());		
+		
+		HashMap<String,Object> param = new HashMap<String,Object>();
+		String page = request.getParameter("page");
+		
+		if(page == null) page = "1";	// 페이지가 null일 경우 1페이지로 보냄
+		param.put("page", page);
+		
+		model.addAttribute("list", sqlSession.selectList("selectEventList", param));
+		sqlSession.selectList("selectEventList", param);
+		
+		model.addAttribute("page", page);
+
+		/////////////////////
+		
+		model.addAttribute("total", dao.selectEventCount());
+		
 		
 		return "more/event";
 	}
@@ -176,14 +193,14 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/innoprojDetail")
-	public String detailDao2(HttpServletRequest request,Model model, int no) {
+	public String detailDao2(HttpServletRequest request,Model model, int no, String sub) {
 		Idao dao2=sqlSession.getMapper(Idao.class);
 		dao2.detailDao2(Integer.parseInt(request.getParameter("no")));
 		model.addAttribute("detail", dao2.detailDao2(no));
 		
 		Idao dao3=sqlSession.getMapper(Idao.class);
-		dao3.prev(Integer.parseInt(request.getParameter("no")));
-		model.addAttribute("prev", dao3.prev(no));
+		dao3.prev(Integer.parseInt(request.getParameter("no")), request.getParameter("sub"));
+		model.addAttribute("prev", dao3.prev(no, sub));
 		
 		return "more/innoprojDetail";
 	}
