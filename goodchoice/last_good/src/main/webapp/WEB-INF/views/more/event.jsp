@@ -9,7 +9,6 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/event.css">
 <style type="text/css">
-
 </style>
 <script src="js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
@@ -109,6 +108,3 @@
 	<%@include file="/common/footer.jspf"%>
 </body>
 </html>
-<script>
-
-</script>

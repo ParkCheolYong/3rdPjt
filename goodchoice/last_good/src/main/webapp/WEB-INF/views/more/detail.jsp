@@ -38,7 +38,7 @@
 
 				<div class="mobile_top">이벤트</div>
 				<textarea rows="" cols=""></textarea>
-				<img alt="" src="${detail.BODYIMAGE }">
+				<img alt="" src="${detail.bodyimage }">
 					<a href="event">목록보기</a>
 			</div>
 			<!-- //Event -->
