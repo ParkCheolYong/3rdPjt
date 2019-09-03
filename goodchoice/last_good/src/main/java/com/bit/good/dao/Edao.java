@@ -11,6 +11,6 @@ public interface Edao {
 	public void writeDao(String sub,String startdate,String enddate,String thumbnail,String bodyimage);
 	public EventDto detailDao(int no);
 	public void deleteDao(int no);
-	
+	public EventDto selectEventCount();
 	
 }
