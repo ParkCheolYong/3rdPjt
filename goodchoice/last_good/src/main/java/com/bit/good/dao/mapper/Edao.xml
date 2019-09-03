@@ -16,4 +16,19 @@
 	<delete id="deleteDao">
 		DELETE FROM EVENT WHERE NO = #{param1}
 	</delete>
+	<select id="selectEventList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		SELECT B.* FROM (
+		SELECT
+		CEIL(ROWNUM/10) PAGE
+		, COUNT(*) OVER() AS TOTAL_COUNT
+		, A.* FROM (
+		SELECT * FROM EVENT
+		ORDER BY NO 
+		) A
+		) B
+		WHERE PAGE = nvl(#{page}, 1)
+	</select>
+	<select id="selectEventCount" resultType="com.bit.good.dto.EventDto">
+		SELECT COUNT(*) AS TOTAL FROM EVENT
+	</select>
 </mapper>
