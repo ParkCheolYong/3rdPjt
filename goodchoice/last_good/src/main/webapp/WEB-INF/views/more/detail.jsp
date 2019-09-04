@@ -9,30 +9,6 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/event.css">
    <style type="text/css">
-   
-	.top-background {
-		position: absolute;
-		width: 100%;
-		height: 205px;
-		background-color: #F7323F;
-		margin: 0px 0px 0px 0px;
-	}
-	
-	.top-background p {
-		position: absolute;
-		margin: 82px 0px 0px 310px;
-		font-size: 37px;
-		color: white;
-	}
-	
-	.sub_wrap nav {
-		margin-top: 150px;
-	}
-	
-	.event {
-		margin-top: 150px;
-	}
-	
    </style>
 <script src="js/jquery-1.12.4.min.js"></script>
 </head>

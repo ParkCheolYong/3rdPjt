@@ -9,26 +9,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/event.css">
    <style type="text/css">
-   
-	.top-background {
-		position: absolute;
-		width: 100%;
-		height: 205px;
-		background-color: #F7323F;
-		margin: 0px 0px 0px 0px;
-	}
-	
-	.top-background p {
-		position: absolute;
-		margin: 82px 0px 0px 310px;
-		font-size: 37px;
-		color: white;
-	}
-	
-	.sub_wrap nav {
-		margin-top: 150px;
-	}
-	
+
    .bbs {
 		width: 730px;
 		height: 850px;
@@ -103,7 +84,7 @@
 	               </c:forEach>
 	            </table>
 	            <div style="margin-top: 20px; margin-left: 650px;">
-					<button style="background-color: #e51048; border: 0px; border-radius: 5px;  width: 60px; height: 35px; font-weight: bold;"><a style="color: white;" href="innoprojAdd">등록</a></button>
+					<button style="background-color: #e51048; border: 0px; border-radius: 5px;  width: 60px; height: 35px; font-weight: bold;"><a style="color: white;" href="innoprojAdd">글쓰기</a></button>
 				</div>
 	         </div>
 			<!-- InnoProj end -->

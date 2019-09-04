@@ -9,35 +9,19 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/faq.css">
 <style type="text/css">
-.faq_list .list li .ans.on {
-	margin-bottom: 0;
-	padding: 35px 32px;
-	border-radius: 0;
-	background: rgba(0, 0, 0, 0.08);
-	font-size: 16px;
-	line-height: 26px
-}
-
-.faq_list .list li .ans {
-	overflow: hidden;
-	word-wrap: break-word;
-	word-break: break-all;
-}
-
-.faq_list .list li .ans.on {
-	height: auto;
-	opacity: 1;
-}
 </style>
 <script src="//cdn.ckeditor.com/4.12.1/basic/ckeditor.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
-
 </script>
 </head>
 <body>
 	<%@include file="/common/header.jspf"%>
+
+		<div class="top-background">
+            <br><p>더보기</p>
+         </div>
 
 	<div id="content" class="sub_wrap more_wrap">
 
@@ -46,7 +30,7 @@
 			<ul>
 				<li><a href="notice">공지사항</a></li>
 				<li><a href="event">이벤트</a></li>
-				<li><a href="project">혁신 프로젝트</a></li>
+				<li><a href="innoproj">혁신 프로젝트</a></li>
 				<li><a href="faq" class="active">자주 묻는 질문</a></li>
 				<li><a href="inquiry">1:1 문의</a></li>
 				<li><a href="terms">약관 및 정책</a></li>

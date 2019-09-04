@@ -10,29 +10,36 @@
 	href="${pageContext.request.contextPath}/css/event.css">
    <style type="text/css">
    
-	.top-background {
-		position: absolute;
-		width: 100%;
-		height: 205px;
-		background-color: #F7323F;
-		margin: 0px 0px 0px 0px;
+	#pagination {
+		margin-top: 20px;	
+		text-align: center;
 	}
 	
-	.top-background p {
-		position: absolute;
-		margin: 82px 0px 0px 310px;
-		font-size: 37px;
-		color: white;
+	a:link {
+		text-decoration:none; color:#646464;
+	}
+		
+	a:visited {
+		text-decoration:none; color:#646464;
 	}
 	
-	.sub_wrap nav {
-		margin-top: 150px;
+	#pagination button {
+	    width: 32px;
+	    height: 32px;
+	    box-sizing: inherit;
+	    align-items: center;
+	    border-radius: 3px;
+	    border: none;
+	    box-shadow: none;
+	    background: none;
+	    font-size: 13px;
+	    line-height: 1.5;
+	    text-align: center;
 	}
 	
-	.event {
-		margin-top: 150px;
-	}
 	
+
+
    </style>
 <script src="js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
@@ -51,34 +58,33 @@
 		
 		function pagingAppend() {
 			
-			$("#pagination").append("<a href=/good/event?page="+pagingStart+">"+pagingStart+"</a>");
-			$("#pagination").append("<a href=/good/event?page="+(pagingStart+1)+">"+(pagingStart+1)+"</a>");
-			$("#pagination").append("<a href=/good/event?page="+(pagingStart+2)+">"+(pagingStart+2)+"</a>");
-			$("#pagination").append("<a href=/good/event?page="+(pagingStart+3)+">"+(pagingStart+3)+"</a>");
-			$("#pagination").append("<a href=/good/event?page="+(pagingStart+4)+">"+(pagingStart+4)+"</a>");
+			$("#pagination").append("<button><a href=/good/event?page="+pagingStart+">"+pagingStart+"</a></button>");
+			$("#pagination").append("<button><a href=/good/event?page="+(pagingStart+1)+">"+(pagingStart+1)+"</a></button>");
+			$("#pagination").append("<button><a href=/good/event?page="+(pagingStart+2)+">"+(pagingStart+2)+"</a></button>");
+			$("#pagination").append("<button><a href=/good/event?page="+(pagingStart+3)+">"+(pagingStart+3)+"</a></button>");
+			$("#pagination").append("<button><a href=/good/event?page="+(pagingStart+4)+">"+(pagingStart+4)+"</a></button>");
 			
 			}
 		
 		if(pagingStart == 1) {
 				if(totalPaging < 5) {
 					for(var i=0; i<pagingEnd; i++){
-					  $("#pagination").append("<a href=/good/event?page="+(pagingStart+i)+">"+(pagingStart+i)+"</a>");
+					  $("#pagination").append("<button><a href=/good/event?page="+(pagingStart+i)+">"+(pagingStart+i)+"</a></button>");
 						}
 					} else if(totalPaging >= 5 ){
 						pagingAppend();
-						$("#pagination").append("<a href=/good/event?page="+pagingNext+">"+'다음'+"</a>");
+						$("#pagination").append("<button><a href=/good/event?page="+pagingNext+">"+'다음'+"</a></button>");
 					}
 			}else if(lastPaging == paingBlock){
-					$("#pagination").append("<a href=/good/event?page="+pagingPrev+">"+'이전'+"</a>");
+					$("#pagination").append("<button><a href=/good/event?page="+pagingPrev+">"+'이전'+"</a></button>");
 				for(var i=0; i<pagingEnd; i++){
-					$("#pagination").append("<a href=/good/event?page="+(pagingStart+i)+">"+(pagingStart+i)+"</a>");
+					$("#pagination").append("<button><a href=/good/event?page="+(pagingStart+i)+">"+(pagingStart+i)+"</a></button>");
 					}
 			}else {
-					$("#pagination").append("<a href=/good/event?page="+pagingPrev+">"+'이전'+"</a>");
+					$("#pagination").append("<button><a href=/good/event?page="+pagingPrev+">"+'이전'+"</a></button>");
 					pagingAppend();
-					$("#pagination").append("<a href=/good/event?page="+pagingNext+">"+'다음'+"</a>");
+					$("#pagination").append("<button><a href=/good/event?page="+pagingNext+">"+'다음'+"</a></button>");
 				}
-		
 	}
 </script>
 </head>
@@ -123,9 +129,11 @@
 				
 				</ul>
 				<div id="pagination">
+					
 				</div>
-					<br>
-					<a href="eventAdd">등록</a>
+				<div style="margin-top: 20px; margin-left: 630px;">
+					<button style="background-color: #e51048; border: 0px; border-radius: 5px;  width: 60px; height: 35px; font-weight: bold;"><a style="color: white;" href="eventAdd">글쓰기</a></button>
+				</div>
 			</div>
 			<!-- //Event -->
 

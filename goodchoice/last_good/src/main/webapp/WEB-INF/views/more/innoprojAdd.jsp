@@ -9,54 +9,26 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/event.css">
    <style type="text/css">
-   
-	.top-background {
-		position: absolute;
-		width: 100%;
-		height: 205px;
-		background-color: #F7323F;
-		margin: 0px 0px 0px 0px;
-	}
-	
-	.top-background p {
-		position: absolute;
-		margin: 82px 0px 0px 310px;
-		font-size: 37px;
-		color: white;
-	}
-	
-	.sub_wrap nav {
-		margin-top: 150px;
-	}
-	
-	.event {
-		margin-top: 150px;
-	}
-	
-   .buttonList {
-   		background-color: #e51048;
-   		border: 0px;
-   		border-radius: 5px;
-   		width: 152px;
-   		height: 53px;
-   		font-weight: bold;
-   		font-size: 12pt;
-   }
-   
-   
+ 
    .button_write {
    		margin-top: 10px;
    		margin-left: 660px;
    }
    
-   #tag,
+
    #sub2,
    #sub {
    		margin-bottom: 10px;
-   		font-size: 16px;
+   		font-size: 18px;
    		font-family: "Apple SD Gothic Neo","맑은 고딕","Malgun Gothic",sans-serif;
    }
-   
+
+	#tag {
+		margin-bottom: 10px;
+   		font-size: 14px;
+   		font-family: "Apple SD Gothic Neo","맑은 고딕","Malgun Gothic",sans-serif;
+	}
+      
    #sub,
    #tag {
    		margin-left: 7px;
@@ -98,14 +70,14 @@
 	                  <td>
 						<form action="write2" method="post">
 							<div>
-								<label for="sub">제목:</label> <input type="text" name="sub"
+								<b>제목:</b> <input type="text" name="sub"
 									id="sub" style="width: 550px; height: 20px;" />
 							</div>
 							<div>
-								<label for="sub2">제목2:</label> <input type="text" name="sub2"
+								<b>제목2:</b> <input type="text" name="sub2"
 									id="sub2" style="width: 550px; height: 20px;" />
 							</div>
-							태그:
+							<b>태그:</b>
 							<select name="tag" id="tag" style="width:140px; height:25px;">
 								<option selected>태그선택</option>
 								<option value="#숙박어플최초">#숙박어플최초</option>
@@ -126,9 +98,6 @@
 					</td>
 	               </tr>               
 	            </table>
-	            <div style="margin-top: 30px; margin-left: 280px;">
-					<button class="buttonList"><a href="innoproj" style="color: white;">목록보기</a></button>
-				</div>
 			<!-- //Event -->
 
 		</div>

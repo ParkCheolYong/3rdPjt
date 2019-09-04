@@ -9,49 +9,6 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/faq.css">
 <style type="text/css">
-	.faq_list .list li .ans.on {
-		margin-bottom: 0;
-		padding: 35px 32px;
-		border-radius: 0;
-		background: rgba(0, 0, 0, 0.08);
-		font-size: 16px;
-		line-height: 26px
-	}
-	
-	.faq_list .list li .ans {
-		overflow: hidden;
-		word-wrap: break-word;
-		word-break: break-all;
-	}
-	
-	.faq_list .list li .ans.on {
-		height: auto;
-		opacity: 1;
-	}
-
-	.top-background {
-		position: absolute;
-		width: 100%;
-		height: 205px;
-		background-color: #F7323F;
-		margin: -50px 0px 0px 0px;
-	}
-	
-	.top-background p {
-		position: absolute;
-		margin: 82px 0px 0px 310px;
-		font-size: 37px;
-		color: white;
-	}
-	
-	.sub_wrap nav {
-		margin-top: 150px;
-	}
-	
-	.event {
-		margin-top: 150px;
-	}
-	
 </style>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
@@ -85,6 +42,7 @@ $('.faq_list .list .link').each(function(){
 		<div class="top-background">
             <br><p>더보기</p>
          </div>
+         
 	<div id="content" class="sub_wrap more_wrap">
 
 		<!-- Nav -->
@@ -102,8 +60,6 @@ $('.faq_list .list .link').each(function(){
 
 			<!-- Faq -->
 			<div class="faq">
-
-
 
 				<!-- 상단 탭 버튼 -->
 				<div class="top_link">
