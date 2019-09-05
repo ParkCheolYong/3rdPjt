@@ -38,6 +38,7 @@ public class LoginController {
 			return "login/login";
 		}else {
 			session.setAttribute("nick", dto.getNick());
+			session.setAttribute("email", dto.getEmail());
 			return "main";
 		}
 

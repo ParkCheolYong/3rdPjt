@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>È¸¿ø »èÁ¦ Ã³¸®</title>
+    <title>delete pro</title>
 </head>
 <body>
  

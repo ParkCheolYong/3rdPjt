@@ -6,6 +6,6 @@
 <mapper namespace="com.bit.good.dao.MypageDao">
 	
 	<select id="mypageList" resultType="com.bit.good.dto.MypageDto">
-		SELECT * FROM MYPAGE ORDER BY NO DESC
+		SELECT * FROM USERLIST
 	</select>
 </mapper>

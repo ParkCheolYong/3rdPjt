@@ -99,16 +99,32 @@
 	<div id="content" class="sub_wrap more_wrap">
 
 		<!-- Nav -->
-		<nav>
-			<ul>
-				<li><a href="#">공지사항</a></li>
-				<li><a href="event" class="active"><font color="#e61c51"><b>이벤트</b></font></a></li>
-				<li><a href="innoproj">혁신 프로젝트</a></li>
-				<li><a href="faq">자주 묻는 질문</a></li>
-				<li><a href="inquiry">1:1 문의</a></li>
-				<li><a href="#">약관 및 정책</a></li>
-			</ul>
-		</nav>
+		<c:choose>
+			<c:when test="${empty sessionScope.nick}">
+				<nav>
+					<ul>
+						<li><a href="#">공지사항</a></li>
+						<li><a href="event"><font color="#e61c51"><b>이벤트</b></font></a></li>
+						<li><a href="innoproj">혁신 프로젝트</a></li>
+						<li><a href="faq">자주 묻는 질문</a></li>
+						<li><a href="login">1:1 문의</a></li>
+						<li><a href="#">약관 및 정책</a></li>
+					</ul>
+				</nav>
+			</c:when>
+			<c:otherwise>
+				<nav>
+					<ul>
+						<li><a href="#">공지사항</a></li>
+						<li><a href="event"><font color="#e61c51"><b>이벤트</b></font></a></li>
+						<li><a href="innoproj">혁신 프로젝트</a></li>
+						<li><a href="faq">자주 묻는 질문</a></li>
+						<li><a href="inquiry">1:1 문의</a></li>
+						<li><a href="#">약관 및 정책</a></li>
+					</ul>
+				</nav>
+			</c:otherwise>
+		</c:choose>
 		<div class="align_rt">
 
 			<!-- Event -->

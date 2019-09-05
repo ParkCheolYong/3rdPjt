@@ -1,73 +1,47 @@
 package com.bit.good.dto;
 
 public class MypageDto {
-
-	private int no, phone;
-	private String email, nickname, name;
+	private String email;
+	private int phone;
+	private String nick,pw;
+	
 	public MypageDto() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-	public int getNo() {
-		return no;
-	}
-
-
-	public void setNo(int no) {
-		this.no = no;
-	}
-
-
-	public int getPhone() {
-		return phone;
-	}
-
-
-	public void setPhone(int phone) {
+	public MypageDto(String email, int phone, String nick, String pw) {
+		super();
+		this.email = email;
 		this.phone = phone;
+		this.nick = nick;
+		this.pw = pw;
 	}
-
-
 	public String getEmail() {
 		return email;
 	}
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
-	public String getNickname() {
-		return nickname;
+	public int getPhone() {
+		return phone;
 	}
-
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	
-	
-	
-	public MypageDto(int no, int phone, String email, String nickname, String name) {
-		super();
-		this.no = no;
+	public void setPhone(int phone) {
 		this.phone = phone;
-		this.email = email;
-		this.nickname = nickname;
-		this.name = name;
 	}
+	public String getNick() {
+		return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	
 	
 }
+
+
