@@ -7,8 +7,7 @@
 	<select id="listDao" resultType="com.bit.good.dto.NoticeDto">
 		<![CDATA[SELECT B.* FROM (
 	SELECT
-	CEIL(ROWNUM/8) PAGE
-	, COUNT(*) OVER() AS TOTALCOUNT
+	CEIL(ROWNUM/10) PAGE
 	,(CASE WHEN sysdate <= (nalja + INTERVAL '3' DAY) THEN 1 ELSE 0 END) AS newIco 
 	, A.* FROM (
 		SELECT * FROM NOTICE
@@ -21,7 +20,7 @@
 	<select id="detailDao" resultType="com.bit.good.dto.NoticeDto">
 		SELECT * FROM notice WHERE idx = #{idx}
 	</select>
-	<select id="getTotalCount" resultType="com.bit.good.dto.Paging">
+	<select id="getTotalCount" resultType="int">
 		select count(*) as totalCount from notice
 	</select>
 	<insert id="noticeWriteDao">

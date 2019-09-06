@@ -67,27 +67,31 @@
                		</li>
                </c:forEach>
                </ul>
-              <c:if test="${paging.totalCount >= '1' }">
-					<div id="page">totalCount= ${paging.totalCount }</div>
-					<p>pageSize= ${paging.pageSize }</p>
-					<p>firstPageNo= ${paging.firstPageNo }</p>
-					<p>prevPageNo= ${paging.prevPageNo }</p>
-					<p>startPageNo= ${paging.startPageNo }</p>
-					<p>pageNo= ${paging.pageNo }</p>
-					<p>endPageNo= ${paging.endPageNo }</p>
-					<p>nextPageNo= ${paging.nextPageNo }</p>
-					<p>finalPageNo= ${paging.finalPageNo }</p>
-					<div class="paging">
-					<c:if test="${paging.pageNo >= '6' }">
-					<button class="prev" onclick="changePage(start_page - 1)">이전</button>
-					</c:if>
-					</div>
-				</c:if>
+			  
+
+			
 					
                     <div id="notice_pagination">
                         <!-- <my-pagination></my-pagination>-->
-                        <!-- //https://hsol.tistory.com/894 참고할것 -->
-                    </div>
+             <div class="paging">
+				  <c:if test="${page.prev}" >
+					<button class="prev" onclick="javascript:page(${page.getStartPage()-1 });">&laquo;</button>
+				  </c:if>
+				  <c:forEach begin="${page.getStartPage() }" end="${page.getEndPage() }" var="index">
+				  <c:choose>
+				  	<c:when test="${index eq page.page+1 }">
+				  	<button class="on" onclick="javascript:page(${index });">${index }</button>
+				  	</c:when>
+				  	<c:otherwise>
+				  	<button onclick="javascript:page(${index });">${index }</button>
+				  	</c:otherwise>
+				  </c:choose>
+				  </c:forEach>
+				  <c:if test="${page.next }">
+				  	<button class="next" onclick="javascript:page(${page.getEndPage()+1 });">&raquo;</button>
+				  </c:if>
+			  </div>
+             		</div><!-- //notice_pagination -->
                <br>
 				<div style="text-align: right">
 					<button style="background-color: #F7323F; border: 0px; border-radius: 5px;  width: 60px; height: 35px; font-weight: bold;"><a style="color: white;" href="noticeAdd">글쓰기</a></button>
@@ -98,41 +102,26 @@
 <!-- 스크립트 -->  
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
-var page = "${page}";
-var total_count = "${total.total}"; // 전체 게시글 갯수
-var totalPaging = parseInt((parseInt(total_count)+9)/10); // 전체 페이지 갯수
-var pagingStart = (parseInt((page-1) / 5) * 5) + 1;	// 
-var lastPaging = (parseInt(parseInt(totalPaging+4) / 5)); // 현재 페이지 블록
-var pagingPrev = pagingStart - 5
-var pagingNext = pagingStart + 5
-var pagingEnd = parseInt(totalPaging % 5); // 나머지
-
-
-window.onload = function(){
-	function pagingAppend() {
-		$("#notice_pagination").append("<a href=/good/notice?page="+pagingStart+">"+pagingStart+"</a>");
-		$("#notice_pagination").append("<a href=/good/notice?page="+(pagingStart+1)+">"+(pagingStart+1)+"</a>");
-		$("#notice_pagination").append("<a href=/good/notice?page="+(pagingStart+2)+">"+(pagingStart+2)+"</a>");
-		$("#notice_pagination").append("<a href=/good/notice?page="+(pagingStart+3)+">"+(pagingStart+3)+"</a>");
-		$("#notice_pagination").append("<a href=/good/notice?page="+(pagingStart+4)+">"+(pagingStart+4)+"</a>");
-		
+	function page(idx){
+		var page=idx;
+		location.href="${pageContext.request.contextPath}/notice?page="+page;
 		}
-	
-	if(pagingStart == 1) {
-			pagingAppend();
-			$("#notice_pagination").append("<a href=/good/notice?page="+pagingNext+">"+'다음'+"</a>");
-		}else if(lastPaging == pagingEnd){
-				$("#notice_pagination").append("<a href=/good/notice?page="+pagingPrev+">"+'이전'+"</a>");
-			for(var i=0; i<pagingEnd; i++){
-				$("#notice_pagination").append("<a href=/good/notice?page="+(pagingStart+i)+">"+(pagingStart+i)+"</a>");
-				}
-		}else {
-			$("#notice_pagination").append("<a href=/good/notice?page="+pagingPrev+">"+'이전'+"</a>");
-			pagingAppend();
-			$("#notice_pagination").append("<a href=/good/notice?page="+pagingNext+">"+'다음'+"</a>");
-			}
 
-}
+	$(function(){ //a tag인 list_que 클래스명에 오픈이 붙으면 다음 div 출력 아니면 미출력
+		$('.open_list li .list_que').each(function(){	
+			$(this).click(function(){
+				if ($(this).hasClass('open')){
+					$(this).next().hide();
+					$(this).removeClass('open'); 
+				}
+		 		else{
+		 			$(this).removeClass('open');
+		 			$(this).next().show();
+		 			$(this).addClass('open');
+				}
+			});
+			});
+	});
     </script>
 
       </div>  

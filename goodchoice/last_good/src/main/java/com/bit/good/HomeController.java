@@ -1,8 +1,10 @@
 package com.bit.good;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +24,8 @@ import com.bit.good.dao.NoticeDao;
 import com.bit.good.dao.Idao;
 import com.bit.good.dao.MypageDao;
 import com.bit.good.dao.PwChangeDao;
-import com.bit.good.dto.Paging;
+import com.bit.good.dto.NoticeDto;
+import com.bit.good.dto.PageMaker;
 
 @Controller
 public class HomeController {
@@ -139,21 +142,29 @@ public class HomeController {
 	public String notice(Model model, HttpServletRequest request) {
 		//TODO : Notice
 		NoticeDao dao=sqlSession.getMapper(NoticeDao.class);
+		PageMaker pageMaker = new PageMaker();//
 		
-		
-		HashMap<String,Object> param = new HashMap<String,Object>();
 		String page = request.getParameter("page");
+		if(page==null) {page="1";}
+		int cPageNum = Integer.parseInt(page);//
 		
-		if(page == null) page = "1";	//
-		param.put("page", page);
+		pageMaker.setTotalCount(dao.getTotalCount());//전체 게시글 개수를 지정한다
+		pageMaker.setPage(cPageNum-1);//현재 페이지를 페이지 객체에 지정한다. -1을 해야 쿼리에서 사용할 수 있다.매퍼를 사용해서 전체 개수를 구해서 페이지 수를 구함
+		pageMaker.setContentNum(10);//한 페이지에 몇개씩 게시글을 보여줄지 지정한다
+		pageMaker.setCurrentBlock(cPageNum);//현재 페이지 블록이 몇번인지 현재 페이지 번호를 통해서 지정한다
+		pageMaker.setLastBlock(pageMaker.getTotalCount());//마지막 블록 번호를 전체 게시글 수를 통해서 정한다.
 		
-		model.addAttribute("list", sqlSession.selectList("com.bit.good.dao.NoticeDao.listDao", param));
-		sqlSession.selectList("com.bit.good.dao.NoticeDao.listDao", param);
+		pageMaker.prevNext(cPageNum); //현재 페이지 번호로 화살표를 나타낼지 정한다
+		pageMaker.setStartPage(pageMaker.getCurrentBlock()); //시작 페이지를 페이지 블록 번호로 정한다.
+		pageMaker.setEndPage(pageMaker.getLastBlock(), pageMaker.getCurrentBlock());
+		//마지막 페이지를 마지막페이지 블록과 현재 페이지 블록번호로 정한다.
 		
-		model.addAttribute("paging",dao.getTotalCount());
-		model.addAttribute("page", page);
+//		List<NoticeDto> listDao = dao.listDao(pageMaker.getPage()*10);
 		
-//		model.addAttribute("list",dao.listDao());
+//		request.setAttribute("list", listDao);
+		request.setAttribute("page", pageMaker);
+
+		model.addAttribute("list", sqlSession.selectList("com.bit.good.dao.NoticeDao.listDao", cPageNum));
 
 		return "more/notice"; //페이지로 이동
 	}

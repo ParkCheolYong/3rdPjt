@@ -80,5 +80,10 @@
    .hiddenContent em{font-style: italic;}
    .hiddenContent ol>li{list-style-type: decimal; list-style-position:inside;}
    .hiddenContent ul>li{list-style-type: disc; display: list-item;text-align: -webkit-match-parent;list-style-position:inside;}
-}
-       
+   
+	.paging{display:block;margin-top:20px;padding:24px 0 48px 0;border-top:1px solid rgba(0,0,0,0.04);text-align:center}
+	.paging .on{border:1px solid rgba(0,0,0,0.27);border-radius:4px;font-weight:bold;color:rgba(0,0,0,0.87)}
+	.paging button{width:32px;height:32px;box-sizing:inherit;align-items:center;border-radius:3px;border:none;box-shadow:none;background:none;font-size:13px;line-height:1.5;text-align:center;}
+	.paging .prev{background:url('//image.goodchoice.kr/images/web_v3/ico_arr_lt_4.png') 50% 50% no-repeat;background-size:10px auto;text-indent:-9999px;margin-right:5px}
+	.paging .next{background:url('//image.goodchoice.kr/images/web_v3/ico_arr_gt_4.png') 50% 50% no-repeat;background-size:10px auto;text-indent:-9999px;margin-left:5px}
+	.paging .ellip{background:url('//image.goodchoice.kr/images/web_v3/ico_ellip.png') 50% 50% no-repeat;cursor:default}
